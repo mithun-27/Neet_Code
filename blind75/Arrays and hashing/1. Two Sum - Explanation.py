@@ -49,3 +49,13 @@ print(solution.twoSum([3, 4, 5, 6], 7))  # Output: [0, 1]
 print(solution.twoSum([4, 5, 6], 10))     # Output: [0, 2]
 print(solution.twoSum([5, 5], 10))        # Output: [0, 1]
 
+"""walkthrough
+1. We define a class Solution with a method twoSum that takes a list of integers nums and an integer target as input.
+2. We initialize an empty dictionary called hashmap to store the numbers we have seen so far along with their indices.
+3. We loop through the list nums using enumerate to get both the index i and the number num.
+4. For each number num, we calculate its complement by subtracting num from the target.
+5. We check if the complement is already in the hashmap:
+   - If it is, we return a list containing the index of the complement (from the hashmap) and the current index i.
+   - If it is not, we add the current number num and its index i to the hashmap.
+6. If we finish iterating through the entire list without finding a valid pair, we return an empty list (though the problem guarantees that there will always be a solution).
+"""
