@@ -45,3 +45,13 @@ solution = Solution()
 print(solution.maxProfit([7,1,5,3,6,4]))  # Output: 5
 print(solution.maxProfit([7,6,4,3,1]))  # Output: 0
 print(solution.maxProfit([1,2,3,4,5]))  # Output: 4
+
+"""walkthrough the code:
+1. We initialize two pointers, `l` and `r`, to represent the left and right indices of the prices array. We also initialize `mp` to store the maximum profit found so far.
+2. We use a while loop to iterate through the prices array until the right pointer `r` reaches the end of the array.
+3. Inside the loop, we check if the price at the left pointer `l` is less than the price at the right pointer `r`. If it is, we calculate the profit by subtracting the price at `l` from the price at `r` and update `mp` if this profit is greater than the current maximum profit.
+4. If the price at `l` is not less than the price at `r`, we move the left pointer `l` to the right pointer `r`, effectively starting a new potential transaction from that point.  
+5. We then move the right pointer `r` to the right to continue checking for potential profits.
+6. Finally, we return the maximum profit found, which is stored in `mp`. If no profit can be made, `mp` will remain 0, which is the correct return value in that case.  
+This algorithm runs in O(n) time complexity, where n is the length of the prices array, since we are traversing the array once with the two pointers. The space complexity is O(1) since we are using only a constant amount of extra space to store the pointers and the maximum profit.   
+"""
