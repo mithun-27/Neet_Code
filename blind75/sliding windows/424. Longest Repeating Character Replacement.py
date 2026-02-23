@@ -43,3 +43,8 @@ class Solution:
             res = max(res, r - l + 1)
 
         return res
+    
+#example usage
+solution = Solution()   
+print(solution.characterReplacement("ABAB", 2))  # Output: 4
+print(solution.characterReplacement("AABABBA", 1))  # Output: 4
