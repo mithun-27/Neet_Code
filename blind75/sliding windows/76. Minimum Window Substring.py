@@ -61,3 +61,9 @@ class Solution:
                 l += 1
         l, r = res
         return s[l : r + 1] if resLen != float("infinity") else ""
+    
+#example usage
+solution = Solution()
+print(solution.minWindow("ADOBECODEBANC", "ABC"))  # Output: "BANC"
+print(solution.minWindow("a", "a"))  # Output: "a"
+print(solution.minWindow("a", "aa"))  # Output: ""  
