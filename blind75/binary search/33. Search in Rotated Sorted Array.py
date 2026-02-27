@@ -30,3 +30,46 @@ Constraints:
 All values of nums are unique.
 nums is an ascending array that is possibly rotated.
 -104 <= target <= 104"""
+
+#answer
+from typing import List
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums) - 1
+
+        while l <= r:
+            mid = (l + r) // 2
+            if target == nums[mid]:
+                return mid
+
+            if nums[l] <= nums[mid]:
+                if target > nums[mid] or target < nums[l]:
+                    l = mid + 1
+                else:
+                    r = mid - 1
+
+            else:
+                if target < nums[mid] or target > nums[r]:
+                    r = mid - 1
+                else:
+                    l = mid + 1
+        return -1
+    
+#example usage
+sol = Solution()
+print(sol.search([4,5,6,7,0,1,2], 0)) #4
+print(sol.search([4,5,6,7,0,1,2], 3)) #-1
+print(sol.search([1], 0)) #-1
+
+"""walkthrough:
+1. We initialize two pointers, `l` and `r`, to the start and end of the array, respectively.
+2. We enter a while loop that continues until `l` is less than or equal to `r`.
+3. Inside the loop, we calculate the middle index `mid` as the average of `l` and `r`.
+4. We check if the middle element `nums[mid]` is equal to the target. If it is, we return `mid`.
+5. We then check if the left half of the array (from `l` to `mid`) is sorted by comparing `nums[l]` and `nums[mid]`.
+    - If the left half is sorted, we check if the target is within the range of the left half. If it is not, we move the left pointer `l` to `mid + 1`. Otherwise, we move the right pointer `r` to `mid - 1`.
+    - If the left half is not sorted, it means the right half must be sorted. We check if the target is within the range of the right half. If it is not, we move the right pointer `r` to `mid - 1`. Otherwise, we move the left pointer `l` to `mid + 1`. 
+6. If we exit the loop without finding the target, we return -1 to indicate that the target is not in the array.
+7. The algorithm runs in O(log n) time complexity due to the binary search approach.
+8. The space complexity is O(1) since we are using only a constant amount of extra space for the pointers and variables.
+"""
