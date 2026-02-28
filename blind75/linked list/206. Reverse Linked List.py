@@ -40,6 +40,22 @@ class Solution:
             curr = temp
         return prev
     
+#example usage
+# Create a linked list 1 -> 2 -> 3 -> 4 -> 5
+head = ListNode(1)
+head.next = ListNode(2)
+head.next.next = ListNode(3)
+head.next.next.next = ListNode(4)
+head.next.next.next.next = ListNode(5)
+sol = Solution()
+reversed_head = sol.reverseList(head)
+# Print the reversed linked list
+current = reversed_head
+while current:
+    print(current.val)  # Output: 5, 4, 3, 2, 1
+    current = current.next
+
+    
 """walkthrough:
 1. We initialize two pointers, prev and curr, to keep track of the previous and current nodes in the linked list. Initially, prev is set to None and curr is set to the head of the list.
 2. We enter a while loop that continues until curr is None, which means we have reached the end of the list.
