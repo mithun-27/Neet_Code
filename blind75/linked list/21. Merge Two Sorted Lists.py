@@ -51,4 +51,20 @@ class Solution:
         node.next = list1 or list2
 
         return dummy.next
-        
+
+#example usage
+# Create first linked list 1 -> 2 -> 4
+list1 = ListNode(1)
+list1.next = ListNode(2)
+list1.next.next = ListNode(4)                       
+# Create second linked list 1 -> 3 -> 4
+list2 = ListNode(1)
+list2.next = ListNode(3)
+list2.next.next = ListNode(4)
+sol = Solution()
+merged_head = sol.mergeTwoLists(list1, list2)
+# Print the merged linked list
+current = merged_head
+while current:
+    print(current.val)  # Output: 1, 1, 2, 3, 4, 4
+    current = current.next
