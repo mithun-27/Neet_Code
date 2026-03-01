@@ -68,3 +68,12 @@ current = merged_head
 while current:
     print(current.val)  # Output: 1, 1, 2, 3, 4, 4
     current = current.next
+
+
+"""walkthrough: 
+1. We create a dummy node to serve as the starting point of the merged linked list. We also create a pointer node that will be used to build the merged list.   
+2. We enter a loop that continues until either list1 or list2 is exhausted. Inside the loop, we compare the values of the current nodes of list1 and list2. We append the smaller value to the merged list and move the corresponding pointer (list1 or list2) to the next node. We also move the node pointer to the next position in the merged list. 
+3. After the loop, one of the lists may still have remaining nodes. We append the remaining nodes to the merged list by setting node.next to the non-empty list (list1 or list2).   
+4. Finally, we return dummy.next, which is the head of the merged linked list, since dummy is a placeholder node.
+5. The time complexity of this algorithm is O(n + m), where n and m are the lengths of list1 and list2, respectively, because we traverse both lists once. The space complexity is O(1) since we are only using a few pointers to build the merged list without any additional data structures."""  
+
