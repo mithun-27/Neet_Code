@@ -68,3 +68,12 @@ print(sol.hasCycle(head2))  # Output: True
 # Create a linked list without a cycle: 1
 head3 = ListNode(1)
 print(sol.hasCycle(head3))  # Output: False
+
+"""walkthrough:
+1. We initialize two pointers, `slow` and `fast`, both starting at the head of the linked list.
+2. We enter a loop that continues as long as `fast` and `fast.next` are not null. This ensures we don't encounter a null pointer exception.
+3. Inside the loop, we move the `slow` pointer one step forward (slow = slow.next) and the `fast` pointer two steps forward (fast = fast.next.next).
+4. After moving the pointers, we check if they are pointing to the same node. If they are, it means there is a cycle in the linked list, and we return true.
+5. If the loop ends without the pointers meeting, it means there is no cycle, and we return false.
+This algorithm is efficient with a time complexity of O(n) and a space complexity of O(1) since we are using only two pointers and not any additional data structures.
+"""
