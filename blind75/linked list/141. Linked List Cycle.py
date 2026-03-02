@@ -50,3 +50,21 @@ class Solution:
             if slow == fast:
                 return True
         return False
+    
+#example usage
+# Create a linked list with a cycle: 3 -> 2 -> 0 -> -> 4 -> back to 2
+head = ListNode(3)
+head.next = ListNode(2)
+head.next.next = ListNode(0)
+head.next.next.next = ListNode(-4)
+head.next.next.next.next = head.next  # Create a cycle
+sol = Solution()
+print(sol.hasCycle(head))  # Output: True
+# Create a linked list with a cycle: 1 -> 2 -> back to 1
+head2 = ListNode(1)
+head2.next = ListNode(2)
+head2.next.next = head2  # Create a cycle
+print(sol.hasCycle(head2))  # Output: True
+# Create a linked list without a cycle: 1
+head3 = ListNode(1)
+print(sol.hasCycle(head3))  # Output: False
