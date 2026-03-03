@@ -82,3 +82,11 @@ while current:
     print(current.val, end=' ')
     current = current.next
 # Output: 1 5 2 4 3
+
+"""walktghrough the code:
+1. We start by finding the middle of the linked list using the slow and fast pointer technique. The slow pointer moves one step at a time, while the fast pointer moves two steps at a time. When the fast pointer reaches the end of the list, the slow pointer will be at the middle.
+2. We then reverse the second half of the linked list starting from the node after the slow pointer. We use a standard linked list reversal technique where we keep track of the previous node and the current node, and we reverse the links between them.
+3. Finally, we merge the two halves of the linked list. We take one node from the first half and one node from the reversed second half, and we link them together. We continue this process until we have merged all nodes from the second half into the first half.
+4. The function does not return anything as it modifies the linked list in place.
+This approach has a time complexity of O(n) and a space complexity of O(1) since we are only using a constant amount of extra space for the pointers.
+"""
