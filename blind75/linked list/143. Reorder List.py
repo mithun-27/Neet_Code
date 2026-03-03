@@ -54,3 +54,31 @@ class Solution:
             first.next = second
             second.next = tmp1
             first, second = tmp1, tmp2
+
+#example usage
+# Create a linked list: 1 -> 2 -> 3 -> 4
+head = ListNode(1)
+head.next = ListNode(2)
+head.next.next = ListNode(3)
+head.next.next.next = ListNode(4)
+sol = Solution()
+sol.reorderList(head)
+# Print the reordered list: 1 -> 4 -> 2 -> 3
+current = head
+while current:
+    print(current.val, end=' ')
+    current = current.next
+# Output: 1 4 2 3
+# Create a linked list: 1 -> 2 -> 3 -> 4 -> 5
+head2 = ListNode(1)
+head2.next = ListNode(2)
+head2.next.next = ListNode(3)
+head2.next.next.next = ListNode(4)
+head2.next.next.next.next = ListNode(5)
+sol.reorderList(head2)
+# Print the reordered list: 1 -> 5 -> 2 -> 4 ->
+current = head2
+while current:
+    print(current.val, end=' ')
+    current = current.next
+# Output: 1 5 2 4 3
