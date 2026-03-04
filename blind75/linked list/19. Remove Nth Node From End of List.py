@@ -66,3 +66,10 @@ while current:
     current = current.next
 #19. Remove Nth Node From End of List
 
+"""walkthrough
+1. We create a dummy node that points to the head of the list. This helps us handle edge cases, such as when we need to remove the head node.
+2. We initialize two pointers, left and right. The left pointer starts at the dummy node, and the right pointer starts at the head of the list.
+3. We move the right pointer n steps ahead in the list. This creates a gap of n nodes between the left and right pointers.
+4. We then move both pointers (left and right) one step at a time until the right pointer reaches the end of the list. At this point, the left pointer will be just before the node we want to remove.
+5. We update the next pointer of the left node to skip the node we want to remove, effectively removing it from the list.
+6. Finally, we return the next node of the dummy node, which is the new head of the modified list. This handles cases where the head node was removed."""
