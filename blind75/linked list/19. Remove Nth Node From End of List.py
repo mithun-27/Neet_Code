@@ -49,3 +49,20 @@ class Solution:
 
         left.next = left.next.next
         return dummy.next
+    
+#example usage
+# Create a linked list: 1 -> 2 -> 3 -> 4 -> 5
+head = ListNode(1)
+head.next = ListNode(2)
+head.next.next = ListNode(3)
+head.next.next.next = ListNode(4)
+head.next.next.next.next = ListNode(5)
+sol = Solution()
+new_head = sol.removeNthFromEnd(head, 2)
+# Print the modified list: 1 -> 2 -> 3 -> 5
+current = new_head
+while current:
+    print(current.val)
+    current = current.next
+#19. Remove Nth Node From End of List
+
