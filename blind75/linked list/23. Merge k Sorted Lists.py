@@ -96,3 +96,17 @@ current = merged_head
 while current:
     print(current.val, end=' ')
     current = current.next
+
+"""walkthrough:
+1. We define a function mergeKLists that takes a list of linked lists as input.
+2. We check if the input list is empty or contains only empty lists. If so, we return None.
+3. We use a while loop to continue merging until there is only one linked list left in the lists.
+4. Inside the while loop, we create an empty list mergedLists to store the merged linked lists.
+5. We iterate through the lists in pairs (i and i + 1) and merge them using the mergeList function.
+6. The mergeList function takes two linked lists as input and merges them into a single sorted linked list.
+7. We create a dummy node to help with merging and a tail pointer to keep track of the end of the merged list.
+8. We compare the values of the current nodes of both lists and append the smaller one to the merged list, moving the corresponding pointer forward.
+9. After the while loop, we check if there are any remaining nodes in either list and append them to the merged list.
+10. Finally, we return the head of the merged linked list, which is dummy.next.
+11. We also provide an example usage of the mergeKLists function, where we create three linked lists, merge them, and print the merged linked list.
+"""
