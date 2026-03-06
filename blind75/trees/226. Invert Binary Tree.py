@@ -45,3 +45,16 @@ class Solution:
             if node.right:
                 stack.append(node.right)
         return root
+    
+#example usasge
+# Create a binary tree:        4
+#                            /   \
+#                           2     7
+#                          / \   / \
+#                         1   3 6   9
+# Invert the binary tree
+# The inverted tree will be:   4
+#                            /   \
+#                           7     2
+#                          / \   / \
+#                         9   6 3   1
