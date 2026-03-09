@@ -86,3 +86,14 @@ class Solution:
 #              1   2
 # Check if the two trees are the same
 # The output will be false, as the trees are structurally identical but have different node values (the left child of the root in Tree 1 has a value of 2, while in Tree 2 it has a value of 1).    
+
+"""walkthrough
+1. Initialize two queues, q1 and q2, to perform a level-order traversal of both trees simultaneously. Start by adding the root nodes of both trees to their respective queues.
+2. While both queues are not empty, perform the following steps:
+   a. For each node in the current level of q1, pop the node from q1 and the corresponding node from q2.
+   b. If both nodes are None, continue to the next iteration (they are considered the same).
+   c. If one of the nodes is None or their values are not equal, return False (the trees are not the same).
+   d. If the nodes are valid and have the same value, add their left and right children to their respective queues for further comparison.          
+3. If the loop completes without finding any differences, return True (the trees are the same).
+This algorithm effectively compares the two trees level by level, ensuring that both the structure and the values of the nodes are identical. The time complexity is O(n), where n is the number of nodes in the smaller tree, as we may need to compare all nodes in the worst case. The space complexity is also O(n) due to the queues used for traversal.   
+"""
