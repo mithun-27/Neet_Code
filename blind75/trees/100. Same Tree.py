@@ -57,3 +57,32 @@ class Solution:
                 q2.append(nodeQ.right)
 
         return True
+    
+#example usage
+# Create two binary trees:
+# Tree 1:        1
+#               / \
+#              2   3
+# Tree 2:        1
+#               / \
+#              2   3
+# Check if the two trees are the same
+# The output will be true, as both trees are structurally identical and have the same node values.
+# Create two binary trees:
+# Tree 1:        1
+#               /
+#              2
+# Tree 2:        1
+#                 \
+#                  2
+# Check if the two trees are the same
+# The output will be false, as the trees are not structurally identical (one has a left child while the other has a right child).
+# Create two binary trees:
+# Tree 1:        1
+#               / \
+#              2   1
+# Tree 2:        1  
+#               / \
+#              1   2
+# Check if the two trees are the same
+# The output will be false, as the trees are structurally identical but have different node values (the left child of the root in Tree 1 has a value of 2, while in Tree 2 it has a value of 1).    
