@@ -33,6 +33,9 @@ The number of nodes in the subRoot tree is in the range [1, 1000].
 #         self.left = left
 #         self.right = right
 
+from numpy import array
+
+
 class Solution:
     def serialize(self, root: Optional[TreeNode]) -> str:
         if root == None:
@@ -79,3 +82,12 @@ subRoot.left = TreeNode(1)
 subRoot.right = TreeNode(2)
 # Check if subRoot is a subtree of root
 # The output will be true, as subRoot is a subtree of root with the same structure and node values.
+
+
+"""walkthrough the code
+1. The `serialize` function converts a binary tree into a string representation. It uses preorder traversal to create a unique string for each tree structure and node values. The special marker "$#" is used to denote null nodes, ensuring that different tree structures produce different strings.
+2. The `z_function` computes the Z-array for a given string, which is used to find occurrences of the pattern (subRoot) in the text (root). The Z-array stores the length of the longest substring starting from each position that matches a prefix of the string.
+3. The `isSubtree` function first serializes both the root and subRoot trees. It then combines the serialized subRoot and root strings with a separator (|) to create a single string for pattern matching.
+4. The Z-function is applied to the combined string, and the function checks if any position in the Z-array matches the length of the serialized subRoot. If a match is found, it means that subRoot is a subtree of root, and the function returns true. If no match is found after checking all positions, it returns false.
+This approach efficiently checks for the presence of subRoot in root by leveraging string matching techniques, resulting in a time complexity of O(n + m), where n is the length of the serialized root and m is the length of the serialized subRoot.  
+"""
