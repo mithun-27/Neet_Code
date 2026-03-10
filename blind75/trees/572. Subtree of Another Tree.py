@@ -64,3 +64,18 @@ class Solution:
             if z_values[i] == sub_len:
                 return True
         return False
+    
+#example usage
+# Create two binary trees:
+# Tree 1:        3
+#               / \
+# Tree 2:        4
+#               / \
+root = TreeNode(3)
+root.left = TreeNode(4)
+root.right = TreeNode(5)
+subRoot = TreeNode(4)
+subRoot.left = TreeNode(1)
+subRoot.right = TreeNode(2)
+# Check if subRoot is a subtree of root
+# The output will be true, as subRoot is a subtree of root with the same structure and node values.
