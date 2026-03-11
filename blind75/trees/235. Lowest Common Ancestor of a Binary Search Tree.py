@@ -70,3 +70,10 @@ q = root.right  # Node with value 8
 solution = Solution()
 lca = solution.lowestCommonAncestor(root, p, q)
 print(lca.val)  # Output: 6
+
+"""walthrough
+1. We start at the root of the BST, which is 6.
+2. We compare the values of p (2) and q (8) with the current node's value (6).
+3. Since p.val (2) is less than 6 and q.val (8) is greater than 6, we have found the split point where p and q diverge in the tree. This means that the current node (6) is the lowest common ancestor of p and q.
+4. We return the current node (6) as the result.
+The time complexity of this algorithm is O(h), where h is the height of the BST. In the worst case, if the BST is skewed, the height can be O(n), where n is the number of nodes in the tree. However, in a balanced BST, the height is O(log n), making the algorithm efficient for large trees. The space complexity is O(1) since we are using only a constant amount of extra space to store the current node."""
