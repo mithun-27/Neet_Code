@@ -51,3 +51,18 @@ class Solution:
                 res.append(level)
 
         return res
+    
+#example usage
+# Create a binary tree:
+# Tree:        3
+#             / \
+#            9   20
+#               /  \
+#              15   7
+root = TreeNode(3)
+root.left = TreeNode(9)
+root.right = TreeNode(20)
+root.right.left = TreeNode(15)
+root.right.right = TreeNode(7)
+solution = Solution()
+print(solution.levelOrder(root))  # Output: [[3], [9, 20], [15, 7]]
