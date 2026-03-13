@@ -76,3 +76,13 @@ root.right.left = TreeNode(3)
 root.right.right = TreeNode(6)
 solution = Solution()
 print(solution.isValidBST(root))  # Output: False
+
+"""walkthrough:
+1. We start by checking if the root is None. If it is, we return True since an empty tree is a valid BST.
+2. We initialize a queue (using deque) to perform a breadth-first traversal of the tree. We start by adding the root node along with its valid range (negative infinity to positive infinity) to the queue.
+3. We enter a loop that continues until the queue is empty. In each iteration, we pop a node from the queue along with its valid range (left and right).
+4. We check if the current node's value is within the valid range (left < node.val < right). If it is not, we return False since the BST property is violated.
+5. If the current node has a left child, we add it to the queue with an updated valid range (left, node.val) since all values in the left subtree must be less than the current node's value.
+6. If the current node has a right child, we add it to the queue with an updated valid range (node.val, right) since all values in the right subtree must be greater than the current node's value.
+7. If we finish processing all nodes without finding any violations of the BST property, we return True.    
+"""
