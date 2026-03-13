@@ -62,3 +62,17 @@ root.left = TreeNode(1)
 root.right = TreeNode(3)
 solution = Solution()
 print(solution.isValidBST(root))  # Output: True
+
+# Create a binary tree:
+# Tree:        5
+#             / \
+#            1   4
+#               / \
+#              3   6
+root = TreeNode(5)
+root.left = TreeNode(1)
+root.right = TreeNode(4)
+root.right.left = TreeNode(3)   
+root.right.right = TreeNode(6)
+solution = Solution()
+print(solution.isValidBST(root))  # Output: False
