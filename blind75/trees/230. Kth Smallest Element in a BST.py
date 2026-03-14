@@ -85,3 +85,23 @@ root.left.right = TreeNode(4)
 root.left.left.left = TreeNode(1)
 solution = Solution()
 print(solution.kthSmallest(root, 3))  # Output: 3
+
+"""walkthrough
+1. Initialize a variable `curr` to the root of the tree.
+2. While `curr` is not null:
+   a. If `curr` does not have a left child:
+      i. Decrement `k` by 1.
+      ii. If `k` is 0, return the value of `curr`.
+      iii. Move `curr` to its right child.
+   b. If `curr` has a left child:
+      i. Find the predecessor of `curr` in the left subtree (the rightmost node in the left subtree).
+      ii. If the predecessor's right child is null:
+         - Set the predecessor's right child to `curr`.
+         - Move `curr` to its left child.
+      iii. If the predecessor's right child is `curr`:
+         - Set the predecessor's right child to null (restore the tree).
+         - Decrement `k` by 1.
+         - If `k` is 0, return the value of `curr`.
+         - Move `curr` to its right child.
+3. If the loop ends without returning, return -1 (this should not happen if k is valid).
+This algorithm uses Morris Traversal to achieve O(1) space complexity while finding the kth smallest element in the BST. The time complexity is O(n) in the worst case, where n is the number of nodes in the tree."""
