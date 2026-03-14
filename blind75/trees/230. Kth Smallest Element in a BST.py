@@ -68,3 +68,20 @@ root.right = TreeNode(4)
 root.left.right = TreeNode(2)
 solution = Solution()
 print(solution.kthSmallest(root, 1))  # Output: 1
+
+# Create a binary tree:
+# Tree:        5
+#             / \
+#            3   6
+#           / \
+#          2   4
+#         /
+#        1
+root = TreeNode(5)
+root.left = TreeNode(3)
+root.right = TreeNode(6)
+root.left.left = TreeNode(2)
+root.left.right = TreeNode(4)
+root.left.left.left = TreeNode(1)
+solution = Solution()
+print(solution.kthSmallest(root, 3))  # Output: 3
