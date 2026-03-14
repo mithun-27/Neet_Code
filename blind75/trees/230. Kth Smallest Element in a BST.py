@@ -54,3 +54,17 @@ class Solution:
                     curr = curr.right
 
         return -1
+    
+#example usage
+# Create a binary tree:
+# Tree:        3
+#             / \
+#            1   4
+#             \
+#              2
+root = TreeNode(3)
+root.left = TreeNode(1)
+root.right = TreeNode(4)
+root.left.right = TreeNode(2)
+solution = Solution()
+print(solution.kthSmallest(root, 1))  # Output: 1
