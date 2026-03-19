@@ -66,3 +66,11 @@ inorder = [9,3,15,20,7]
 solution = Solution()
 result = solution.buildTree(preorder, inorder)
 # The result is the root of the constructed binary tree. You can perform a traversal to verify the structure of the tree.
+
+"""walkthrough
+1. We start by creating a dummy head node and a pointer `curr` that initially points to this dummy node. We also initialize two pointers `i` and `j` to keep track of our position in the `preorder` and `inorder` lists, respectively.
+2. We enter a loop that continues until we have processed all nodes in the `preorder` list. Inside the loop, we first create a new node with the value from the `preorder` list at index `i` and set it as the right child of `curr`. We then move `curr` to this new node and increment `i` to move to the next value in the `preorder` list.
+3. Next, we enter another loop that continues as long as the value of `curr` does not match the value at index `j` in the `inorder` list. Inside this loop, we create a new node with the value from the `preorder` list at index `i` and set it as the left child of `curr`. We then move `curr` to this new node and increment `i`.
+4. Once we exit the inner loop, we increment `j` to move to the next value in the `inorder` list. We then enter another loop that continues as long as the right child of `curr` exists and its value matches the value at index `j` in the `inorder` list. Inside this loop, we temporarily store the right child of `curr`, set the right child of `curr` to `None`, move `curr` to the temporarily stored node, and increment `j`.
+5. Finally, after processing all nodes, we return the right child of the dummy head node, which is the root of the constructed binary tree. This approach effectively reconstructs the binary tree by leveraging the properties of preorder and inorder traversals. The time complexity of this algorithm is O(n) since we process each node exactly once, and the space complexity is also O(n) due to the recursive stack and the storage of nodes in the tree.   
+"""
