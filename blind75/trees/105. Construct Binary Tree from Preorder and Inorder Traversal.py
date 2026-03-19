@@ -53,3 +53,16 @@ class Solution:
                 j += 1
         
         return head.right
+    
+#example usage
+# Create a binary tree:
+# Tree:        3
+#             / \
+#            9  20
+#              /  \
+#             15   7
+preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+solution = Solution()
+result = solution.buildTree(preorder, inorder)
+# The result is the root of the constructed binary tree. You can perform a traversal to verify the structure of the tree.
