@@ -52,3 +52,18 @@ class Solution:
 
         dfs(root)
         return res[0]
+    
+#example usage
+# Create a binary tree:
+# Tree:        -10
+#             /  \
+#            9   20
+#               /  \
+#              15   7
+root = TreeNode(-10)
+root.left = TreeNode(9)
+root.right = TreeNode(20)
+root.right.left = TreeNode(15)
+root.right.right = TreeNode(7)
+solution = Solution()
+print(solution.maxPathSum(root))  # Output: 42
