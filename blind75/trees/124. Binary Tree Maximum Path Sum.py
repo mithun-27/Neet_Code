@@ -67,3 +67,14 @@ root.right.left = TreeNode(15)
 root.right.right = TreeNode(7)
 solution = Solution()
 print(solution.maxPathSum(root))  # Output: 42
+
+
+"""walkthrough
+1. We define a helper function `dfs` that takes a node as input and returns the maximum path sum starting from that node and extending downwards.
+2. If the current node is `None`, we return 0, as there are no paths to consider.
+3. We recursively call `dfs` on the left and right children of the current node to get the maximum path sums from the left and right subtrees.
+4. We take the maximum of the left and right path sums and compare it with 0 to ensure that we only consider positive contributions to the path sum. If the path sum from either subtree is negative, we treat it as 0.
+5. We update the global maximum path sum `res[0]` by considering the path that goes through the current node and both left and right subtrees.
+6. Finally, we return the maximum path sum that can be extended from the current node to either the left or right subtree, which is the value of the current node plus the maximum of the left and right path sums.
+7. We call the `dfs` function starting from the root node and return the global maximum path sum stored in `res[0]`.
+This approach ensures that we consider all possible paths in the binary tree and efficiently compute the maximum path sum. The time complexity of this solution is O(n), where n is the number of nodes in the tree, as we visit each node once. The space complexity is O(h), where h is the height of the tree, due to the recursive call stack. In the worst case, for a skewed tree, this could be O(n)."""
