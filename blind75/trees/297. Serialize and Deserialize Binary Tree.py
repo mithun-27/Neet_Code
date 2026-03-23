@@ -68,3 +68,25 @@ class Codec:
                 queue.append(node.right)
             index += 1
         return root
+    
+#example usage
+# Create a binary tree:
+# Tree:        1
+#             /  \
+#            2    3
+#                /  \
+#               4    5
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.right.left = TreeNode(4)
+root.right.right = TreeNode(5)
+codec = Codec()
+serialized = codec.serialize(root)
+print("Serialized:", serialized)
+deserialized_root = codec.deserialize(serialized)
+print("Deserialized Root Value:", deserialized_root.val)  # Output: 1
+print("Deserialized Left Child Value:", deserialized_root.left.val)  # Output: 2
+print("Deserialized Right Child Value:", deserialized_root.right.val)  # Output: 3
+print("Deserialized Right Left Child Value:", deserialized_root.right.left.val)  # Output: 4
+print("Deserialized Right Right Child Value:", deserialized_root.right.right.val)  # Output: 5
