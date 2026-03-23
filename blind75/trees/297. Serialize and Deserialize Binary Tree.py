@@ -90,3 +90,22 @@ print("Deserialized Left Child Value:", deserialized_root.left.val)  # Output: 2
 print("Deserialized Right Child Value:", deserialized_root.right.val)  # Output: 3
 print("Deserialized Right Left Child Value:", deserialized_root.right.left.val)  # Output: 4
 print("Deserialized Right Right Child Value:", deserialized_root.right.right.val)  # Output: 5
+
+
+"""walkthrough
+1. **Serialization**:
+   - We use a breadth-first traversal (level order) to serialize the tree.
+   - We initialize a queue with the root node and an empty list `res` to store the serialized values.
+   - For each node, if it is not null, we append its value to `res` and enqueue its left and right children. If it is null, we append "N" to represent a null node.
+   - Finally, we join the list `res` into a string with commas as separators.   
+2. **Deserialization**:
+   - We split the input string by commas to get a list of values.
+   - If the first value is "N", it means the tree is empty, and we return None.
+   - We create the root node using the first value and initialize a queue with the root node.
+   - We use an index to keep track of our position in the list of values. For each node dequeued, we check the next two values in the list to determine if they represent left and right children. If they are not "N", we create new nodes and enqueue them.
+   - We continue this process until we have processed all values in the list, resulting in the reconstructed binary tree.   
+3. **Complexity**:
+   - The time complexity for both serialization and deserialization is O(n), where n is the number of nodes in the tree, since we need to visit each node once.
+   - The space complexity is also O(n) for both operations, as we may need to store all nodes in the queue and the resulting string.
+This approach ensures that we can accurately serialize and deserialize any binary tree structure, including those with null nodes, while maintaining a clear and efficient algorithm.   
+"""
