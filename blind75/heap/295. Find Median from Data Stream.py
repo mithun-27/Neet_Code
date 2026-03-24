@@ -65,3 +65,11 @@ class MedianFinder:
         elif len(self.large) > len(self.small):
             return self.large[0]
         return (-1 * self.small[0] + self.large[0]) / 2.0
+    
+#example usage
+medianFinder = MedianFinder()
+medianFinder.addNum(1)    # arr = [1]
+medianFinder.addNum(2)    # arr = [1, 2]
+print(medianFinder.findMedian()) # return 1.5 (i.e., (1 + 2) / 2)
+medianFinder.addNum(3)    # arr[1, 2, 3]
+print(medianFinder.findMedian()) # return 2.0
