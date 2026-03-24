@@ -73,3 +73,17 @@ medianFinder.addNum(2)    # arr = [1, 2]
 print(medianFinder.findMedian()) # return 1.5 (i.e., (1 + 2) / 2)
 medianFinder.addNum(3)    # arr[1, 2, 3]
 print(medianFinder.findMedian()) # return 2.0
+
+"""walkthrough
+1. We define a class MedianFinder with an initializer that sets up two heaps: small (a max heap) and large (a min heap).
+2. The addNum method takes an integer num as input and adds it to one of the heaps:
+   - If the large heap is not empty and num is greater than the smallest element in the large heap, we add num to the large heap.
+   - Otherwise, we add num to the small heap (as a negative value to maintain max heap property).
+3. After adding num to the appropriate heap, we check if the heaps are balanced:    
+    - If the small heap has more than one extra element compared to the large heap, we move the largest element from the small heap to the large heap.
+    - If the large heap has more than one extra element compared to the small heap, we move the smallest element from the large heap to the small heap.
+4. The findMedian method calculates the median based on the sizes of the heaps:
+   - If the small heap has more elements, the median is the largest element in the small heap (negated back to positive).
+   - If the large heap has more elements, the median is the smallest element in the large heap.
+   - If both heaps have the same number of elements, the median is the average of the largest element in the small heap and the smallest element in the large heap.
+"""
