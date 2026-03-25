@@ -52,3 +52,8 @@ class Solution:
 
         dfs(0, [], 0)
         return res
+    
+#example usage
+solution = Solution()
+result = solution.combinationSum([2,3,6,7], 7)
+print(result)
