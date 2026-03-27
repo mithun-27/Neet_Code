@@ -62,3 +62,13 @@ solution = Solution()
 result = solution.exist([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "ABCCED")
 print(result)
 #output: True
+
+"""walkthrough
+1. We define a helper function dfs that takes the current row, column, and index of the word we are trying to match.
+2. If the index i equals the length of the word, it means we have found a match, so we return True.
+3. We check if the current position is out of bounds, if the character at the current position does not match the current character in the word, or if the cell has already been visited (marked as '#'). If any of these conditions are true, we return False. 
+4. We mark the current cell as visited by setting it to '#'.
+5. We recursively call dfs for the four adjacent cells (down, up, right, left) and check if any of those calls return True. 
+6. After exploring all adjacent cells, we restore the original value of the current cell (backtracking) and return the result of the recursive calls.   
+7. We iterate through each cell in the board and call dfs starting from that cell. If any call returns True, we return True. If we finish iterating through all cells without finding a match, we return False. 
+This approach effectively explores all possible paths in the grid while ensuring that we do not reuse cells, and it efficiently backtracks when a path does not lead to a solution. The time complexity is O(N * 3^L), where N is the number of cells in the board and L is the length of the word, since each cell can lead to at most 3 unvisited neighbors (after the first step). The space complexity is O(L) for the recursion stack."""
