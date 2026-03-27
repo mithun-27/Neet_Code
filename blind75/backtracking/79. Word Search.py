@@ -56,3 +56,9 @@ class Solution:
                 if dfs(r, c, 0):
                     return True
         return False
+    
+#example usage
+solution = Solution()
+result = solution.exist([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "ABCCED")
+print(result)
+#output: True
