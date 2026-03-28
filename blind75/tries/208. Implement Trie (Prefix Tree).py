@@ -79,3 +79,11 @@ print(trie.startsWith("app")) # return True
 trie.insert("app")
 print(trie.search("app"))     # return True
 #output: True, False, True, True    
+
+"""walkthrough the code:
+1. The Trie class is initialized with an empty dictionary called root, which will serve as the starting point for our trie.     
+2. The insert method takes a word as input and iterates through each letter in the word. For each letter, it checks if the letter is already a key in the current dictionary (cur). If not, it creates a new dictionary for that letter. Then it updates cur to point to the dictionary corresponding to that letter. After processing all letters, it adds a special key '*' to indicate the end of a word.    
+3. The search method takes a word as input and iterates through each letter in the word, similar to the insert method. If at any point a letter is not found in the current dictionary, it returns False. If it successfully traverses through all letters, it checks if the '*' key is present in the final dictionary, which indicates that the word exists in the trie.    
+4. The startsWith method is similar to the search method, but instead of checking for the '*' key at the end, it simply returns True if it successfully traverses through all letters of the prefix. If any letter is not found, it returns False.
+5. The example usage demonstrates how to use the Trie class to insert words, search for words, and check for prefixes. The expected output is shown in the comments next to each operation.
+"""
