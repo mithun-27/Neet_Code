@@ -77,3 +77,11 @@ print(wordDictionary.search("pad")) # return False
 print(wordDictionary.search("bad")) # return True
 print(wordDictionary.search(".ad")) # return True
 print(wordDictionary.search("b..")) # return True
+
+"""walkthrough the code:
+1. We define a TrieNode class to represent each node in the trie. Each node has a dictionary of children and a boolean flag to indicate if it represents the end of a word.
+2. The WordDictionary class initializes with a root TrieNode.
+3. The addWord method iterates through each character in the word, creating new TrieNodes as needed. After processing all characters, it marks the last node as a word.
+4. The search method uses a depth-first search (DFS) approach to handle the search query. It checks if the current index has reached the end of the word, in which case it returns whether the current node is a word. If the current character is a dot, it recursively checks all children nodes. If the character is a specific letter, it checks if that letter exists in the children and continues the search. If neither condition is met, it returns False. This allows for efficient searching even with the presence of wildcard characters (dots).       
+5. The example usage demonstrates how to add words to the WordDictionary and search for both exact matches and patterns with dots. The expected output is shown in the comments.        
+"""
