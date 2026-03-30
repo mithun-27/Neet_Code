@@ -67,3 +67,13 @@ class WordDictionary:
             return False
     
         return dfs(self.root, 0)
+    
+#example usage
+wordDictionary = WordDictionary()
+wordDictionary.addWord("bad")
+wordDictionary.addWord("dad")
+wordDictionary.addWord("mad")
+print(wordDictionary.search("pad")) # return False
+print(wordDictionary.search("bad")) # return True
+print(wordDictionary.search(".ad")) # return True
+print(wordDictionary.search("b..")) # return True
