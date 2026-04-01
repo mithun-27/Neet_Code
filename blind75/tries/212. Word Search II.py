@@ -84,3 +84,16 @@ solution = Solution()
 board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]]
 words = ["oath","pea","eat","rain"]
 print(solution.findWords(board, words)) # Output: ["eat","oath"]
+
+"""walkthrough the code:
+1. We define a TrieNode class to represent each node in the trie, which contains a dictionary of children and a boolean flag to indicate if it represents the end of a word.    
+2. We define a Trie class to manage the trie structure, with an insert method to add words to the trie. 
+3. In the Solution class, we build the trie from the list of words and then use backtracking to explore the board.
+4. The backtrack function checks if the current node represents the end of a word and adds it to the result set. It then explores adjacent cells recursively, ensuring that we do not revisit cells in the same path.   
+5. Finally, we return the list of found words.  
+This solution efficiently finds all valid words on the board by leveraging the trie structure to quickly check for prefixes and complete words, while using backtracking to explore potential paths on the board.   
+6. The example usage demonstrates how to use the Solution class to find words on a given board, and the expected output is shown in the comments.   
+7. The time complexity of this solution is O(M * N * 4^L) in the worst case, where M and N are the dimensions of the board and L is the length of the longest word. However, the trie helps to reduce unnecessary explorations, making it more efficient in practice. The space complexity is O(W * L) for storing the trie, where W is the number of words and L is the average length of the words.   
+8. This approach is effective for handling the constraints provided, as it allows for efficient searching and backtracking without excessive overhead. The use of a set for results ensures that we avoid duplicates, and the visited set helps to manage the state during backtracking.    
+9. Overall, this solution provides a robust and efficient way to find all valid words on the board based on the given list of words, leveraging the strengths of both trie data structures and backtracking algorithms. 
+"""
