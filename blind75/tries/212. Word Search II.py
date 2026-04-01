@@ -78,3 +78,9 @@ class Solution:
                     backtrack(r, c, trie.root.children[start_char], start_char)
 
         return list(self.result)
+    
+#example usage
+solution = Solution()
+board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]]
+words = ["oath","pea","eat","rain"]
+print(solution.findWords(board, words)) # Output: ["eat","oath"]
