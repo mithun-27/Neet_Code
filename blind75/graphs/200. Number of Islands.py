@@ -83,6 +83,16 @@ class Solution:
 
         return islands
     
+# Example usage:
+grid = [
+    ["1","1","1","1","0"],
+    ["1","1","0","1","0"],
+    ["1","1","0","0","0"],
+    ["0","0","0","0","0"]
+]
+solution = Solution()
+print(solution.numIslands(grid))  # Output: 1
+
 """walkthrough:
 1. We define a Disjoint Set Union (DSU) class to manage the connected components of land cells. The DSU class has methods for finding the parent of a node and for unioning two nodes.
 2. In the numIslands method, we initialize the DSU with the total number of cells in the grid. We also define a helper function index to convert 2D grid coordinates to a 1D index for the DSU.
