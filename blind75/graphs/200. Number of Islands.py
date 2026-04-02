@@ -82,3 +82,12 @@ class Solution:
                             islands -= 1
 
         return islands
+    
+"""walkthrough:
+1. We define a Disjoint Set Union (DSU) class to manage the connected components of land cells. The DSU class has methods for finding the parent of a node and for unioning two nodes.
+2. In the numIslands method, we initialize the DSU with the total number of cells in the grid. We also define a helper function index to convert 2D grid coordinates to a 1D index for the DSU.
+3. We iterate through each cell in the grid. If we encounter a '1', we increment the island count and check its four adjacent cells. If any adjacent cell is also '1', we attempt to union the current cell with the adjacent cell in the DSU. If the union is successful (i.e., they were previously in different sets), we decrement the island count since they belong to the same island.
+4. Finally, we return the total number of islands.
+This approach efficiently counts the number of islands by leveraging the DSU to manage connected components, resulting in a time complexity of O(M*N) where M and N are the dimensions of the grid. The space complexity is also O(M*N) due to the DSU data structure.
+5. The example usage demonstrates how to use the Solution class to count the number of islands in a given grid, and the expected output is shown in the comments.
+"""
