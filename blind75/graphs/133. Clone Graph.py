@@ -91,3 +91,15 @@ Explanation: There are 4 nodes in the graph.
 3rd node (val = 3)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
 4th node (val = 4)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
 """
+
+"""walkthrough
+1. We start by checking if the input node is None. If it is, we return None since there is nothing to clone.    
+2. We create a dictionary called oldToNew to keep track of the mapping between the original nodes and their corresponding cloned nodes. We initialize it with the input node as the key and a new Node with the same value as the value. This means that we have already cloned the input node.
+3. We use a queue (deque) to perform a breadth-first traversal of the graph. We start by adding the input node to the queue.
+4. We enter a loop that continues until the queue is empty. In each iteration, we pop a node from the front of the queue and process its neighbors.
+5. For each neighbor of the current node, we check if it has already been cloned (i.e., if it is in the oldToNew dictionary). If it has not been cloned, we create a new Node with the same value as the neighbor and add it to the oldToNew dictionary. We also add the neighbor to the queue for further processing.
+6. After ensuring that the neighbor has been cloned, we append the cloned neighbor to the neighbors list of the cloned current node (which we can access through oldToNew[cur]).
+7. Once the queue is empty, we have cloned all the nodes and their relationships. We return the cloned node corresponding to the input node, which is oldToNew[node].
+This approach efficiently clones the graph using a breadth-first traversal and a dictionary to keep track of the cloned nodes, resulting in a time complexity of O(N) where N is the number of nodes in the graph. The space complexity is also O(N) due to the dictionary and the queue used for traversal.
+8. The example usage demonstrates how to use the Solution class to clone a graph represented as an adjacency list, and the expected output is shown in the comments.    
+"""
