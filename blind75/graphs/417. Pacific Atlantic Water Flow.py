@@ -78,3 +78,12 @@ heights = [[1]]
 print(Solution().pacificAtlantic(heights))  
 Solution().pacificAtlantic(heights)
 #output: [[0, 0]]   
+
+
+"""walkthrough
+1. We define a helper function `dfs` that performs a depth-first search from a given cell (r, c) and marks all reachable cells in the `visited` set.
+2. We iterate through the first and last columns of the grid to perform DFS for the Pacific and Atlantic oceans, respectively. This will populate the `pacific` and `atlantic` sets with the coordinates of cells that can reach each ocean.
+3. We iterate through the first and last rows of the grid to perform DFS for the Pacific and Atlantic oceans, respectively, to ensure we cover all edge cases.
+4. Finally, we return the intersection of the `pacific` and `atlantic` sets, which gives us the coordinates of cells that can flow to both oceans.
+The time complexity of this solution is O(m*n) because we potentially visit each cell once for each ocean. The space complexity is also O(m*n) in the worst case due to the recursion stack and the visited sets.
+"""
