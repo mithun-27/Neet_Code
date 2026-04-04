@@ -70,3 +70,11 @@ class Solution:
             dfs(m - 1, j, atlantic)
 
         return list(pacific & atlantic)
+    
+#example usage 
+heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
+print(Solution().pacificAtlantic(heights))
+heights = [[1]]
+print(Solution().pacificAtlantic(heights))  
+Solution().pacificAtlantic(heights)
+#output: [[0, 0]]   
