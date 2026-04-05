@@ -60,3 +60,11 @@ print(Solution().canFinish(numCourses, prerequisites))  # Output: true
 numCourses = 2
 prerequisites = [[1,0],[0,1]]
 print(Solution().canFinish(numCourses, prerequisites))  # Output: false
+
+"""walkthrough
+1. We first create an indegree list to keep track of the number of prerequisites for each course, and an adjacency list to represent the graph of courses and their dependencies.
+2. We populate the indegree and adjacency list based on the prerequisites provided. 
+3. We then initialize a queue with all courses that have an indegree of 0, meaning they have no prerequisites and can be taken immediately.
+4. We perform a breadth-first search (BFS) by repeatedly taking courses from the queue, reducing the indegree of their dependent courses, and adding any courses that now have an indegree of 0 to the queue.
+5. Finally, we check if the number of courses we were able to finish equals the total number of courses. If it does, we return true; otherwise, we return false, indicating that it's not possible to finish all courses due to a cycle in the prerequisites.       
+"""
