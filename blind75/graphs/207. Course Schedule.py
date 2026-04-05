@@ -52,3 +52,11 @@ class Solution:
                     q.append(nei)
 
         return finish == numCourses
+    
+#example usage
+numCourses = 2
+prerequisites = [[1,0]]
+print(Solution().canFinish(numCourses, prerequisites))  # Output: true  
+numCourses = 2
+prerequisites = [[1,0],[0,1]]
+print(Solution().canFinish(numCourses, prerequisites))  # Output: false
