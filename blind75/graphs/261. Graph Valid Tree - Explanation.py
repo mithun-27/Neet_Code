@@ -63,3 +63,11 @@ class Solution:
             if not dsu.union(u, v):
                 return False
         return dsu.components() == 1
+    
+#example usage
+n = 5
+edges = [[0, 1], [0, 2], [0, 3], [1, 4]]
+print(Solution().validTree(n, edges))  # Output: true   
+n = 5
+edges = [[0, 1], [1, 2], [2, 3], [1, 3], [1, 4]]
+print(Solution().validTree(n, edges))  # Output: false  
