@@ -71,3 +71,13 @@ print(Solution().validTree(n, edges))  # Output: true
 n = 5
 edges = [[0, 1], [1, 2], [2, 3], [1, 3], [1, 4]]
 print(Solution().validTree(n, edges))  # Output: false  
+
+
+"""walkthrough
+1. We can use a Disjoint Set Union (DSU) data structure to keep track of connected components in the graph. The DSU will help us determine if adding an edge creates a cycle and if all nodes are part of a single connected component.     
+2. We first check if the number of edges is greater than n - 1. If it is, we can immediately return false, since a tree with n nodes must have exactly n - 1 edges.     
+3. We initialize the DSU with n nodes and iterate through each edge. For each edge, we attempt to union the two nodes. If the union operation returns false, it means that the two nodes are already in the same component, which indicates a cycle, and we return false.
+4. After processing all edges, we check if the number of components in the DSU is 1. If it is, it means all nodes are connected and we have a valid tree, so we return true. Otherwise, we return false.
+5. This approach ensures that we are checking both conditions for a valid tree: no cycles and all nodes are connected.
+6. The time complexity of this solution is O(n + m), where n is the number of nodes and m is the number of edges, due to the union-find operations and the initial edge count check. The space complexity is O(n) for the DSU data structure.       
+"""
