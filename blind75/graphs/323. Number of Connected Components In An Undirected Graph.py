@@ -60,3 +60,12 @@ class Solution:
             if dsu.union(u, v):
                 res -= 1
         return res
+    
+#example 1:
+n = 5
+edges = [[0,1],[1,2],[3,4]] 
+print(Solution().countComponents(n, edges)) # Output: 2
+#example 2:
+n = 5
+edges = [[0,1],[1,2],[2,3],[3,4]]
+print(Solution().countComponents(n, edges)) # Output: 1
