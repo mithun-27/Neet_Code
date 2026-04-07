@@ -69,3 +69,16 @@ print(Solution().countComponents(n, edges)) # Output: 2
 n = 5
 edges = [[0,1],[1,2],[2,3],[3,4]]
 print(Solution().countComponents(n, edges)) # Output: 1
+
+"""walkthrough
+1. We can use a Disjoint Set Union (DSU) data structure to keep track of the connected components in the graph. The DSU will allow us to efficiently union two nodes and find the representative (or parent) of a node.
+2. We initialize the DSU with n nodes, where each node is its own parent and has a rank of 1.
+3. We iterate through the edges and for each edge (u, v), we perform a union operation on the DSU. If the union is successful (i.e., u and v were in different components), we decrement the count of connected components.
+4. Finally, we return the count of connected components, which is the initial number of nodes minus the number of successful unions.
+5. The time complexity of this solution is O(n + m * α(n)), where n is the number of nodes, m is the number of edges, and α(n) is the inverse Ackermann function, which is very slow-growing and can be considered almost constant for practical purposes. The space complexity is O(n) for the DSU data structure. 
+6. This approach efficiently counts the number of connected components in the graph by leveraging the properties of the DSU data structure to manage and merge components as we process the edges.  
+7. The DSU implementation uses path compression in the find method and union by rank in the union method to optimize the operations, ensuring that we can handle the maximum constraints efficiently.   
+8. The final result is the number of connected components in the graph, which is returned after processing all edges.   
+9. This solution is efficient and works well within the given constraints, making it suitable for large graphs with up to 2000 nodes and 5000 edges.
+10. The DSU class provides a clean and modular way to manage the connected components, making the main solution straightforward and easy to understand. The union and find operations are encapsulated within the DSU class, allowing us to focus on the logic of counting components in the main solution method.
+"""
