@@ -68,3 +68,9 @@ class Solution:
             return ""
 
         return "".join(res)
+    
+#example 1:
+solution = Solution()
+print(solution.foreignDictionary(["z","o"])) # Output: "zo"
+print(solution.foreignDictionary(["hrn","hrf","er","enn","rfnn"])) # Output: "hernf"
+print(solution.foreignDictionary(["abc","ab"])) # Output: ""
