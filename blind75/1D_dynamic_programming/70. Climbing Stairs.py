@@ -34,3 +34,14 @@ class Solution:
         psi = (1 - sqrt5) / 2
         n += 1
         return round((phi**n - psi**n) / sqrt5)
+
+
+"""walkthrough
+1. We calculate the square root of 5 and store it in the variable `sqrt5`.
+2. We calculate the golden ratio `phi` using the formula (1 + sqrt5) / 2.
+3. We calculate the conjugate of the golden ratio `psi` using the formula (1 - sqrt5) / 2.
+4. We increment `n` by 1 to account for the base case of 0 steps.
+5. We use Binet's formula to calculate the nth Fibonacci number, which gives us the number of distinct ways to climb to the top. The formula is (phi^n - psi^n) / sqrt5.
+6. We round the result to the nearest integer and return it as the final answer.
+The time complexity of this solution is O(1) since we are performing a constant number of operations, and the space complexity is also O(1) since we are using a constant amount of space to store the variables.   
+"""
