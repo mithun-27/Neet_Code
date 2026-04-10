@@ -35,6 +35,12 @@ class Solution:
             rob2 = temp
         return rob2
     
+#example
+solution = Solution()
+print(solution.rob([1,2,3,1]))  # Output: 4
+print(solution.rob([2,7,9,3,1]))  # Output: 12
+print(solution.rob([2,1,1,2]))  # Output: 4
+
 """walkthrough
 1. We initialize two variables `rob1` and `rob2` to keep track of the maximum amount of money that can be robbed up to the previous two houses.
 2. We iterate through each house in the `nums` array.
