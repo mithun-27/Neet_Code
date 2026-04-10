@@ -34,3 +34,12 @@ class Solution:
             rob1 = rob2
             rob2 = temp
         return rob2
+    
+"""walkthrough
+1. We initialize two variables `rob1` and `rob2` to keep track of the maximum amount of money that can be robbed up to the previous two houses.
+2. We iterate through each house in the `nums` array.
+3. For each house, we calculate the maximum amount of money that can be robbed by either robbing the current house and adding it to `rob1` (the maximum amount from two houses ago) or by skipping the current house and taking `rob2` (the maximum amount from the previous house).
+4. We update `rob1` to be the value of `rob2` and `rob2` to be the calculated maximum amount for the current house.
+5. After iterating through all the houses, `rob2` will contain the maximum amount of money that can be robbed without alerting the police, which we return as the final answer.
+The time complexity of this solution is O(n) since we iterate through the `nums` array once, and the space complexity is O(1) since we are using only a constant amount of space to store the variables.
+"""
