@@ -42,3 +42,9 @@ class Solution:
             rob1 = rob2
             rob2 = newRob
         return rob2
+    
+#example
+solution = Solution()
+print(solution.rob([2,3,2]))  # Output: 3
+print(solution.rob([1,2,3,1]))  # Output: 4
+print(solution.rob([1,2,3]))  # Output: 3   
