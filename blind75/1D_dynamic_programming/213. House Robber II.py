@@ -48,3 +48,11 @@ solution = Solution()
 print(solution.rob([2,3,2]))  # Output: 3
 print(solution.rob([1,2,3,1]))  # Output: 4
 print(solution.rob([1,2,3]))  # Output: 3   
+
+
+"""walkthrough
+1. Since the houses are arranged in a circle, we cannot rob both the first and the last house. Therefore, we have two scenarios to consider: robbing from the second house to the last house, or robbing from the first house to the second-to-last house.
+2. We define a helper function `helper` that takes a list of house values and calculates the maximum amount of money that can be robbed using the same logic as in the House Robber problem (without the circular constraint).
+3. In the main `rob` function, we return the maximum of three values: the amount from robbing the first house alone, the amount from robbing from the second house to the last house, and the amount from robbing from the first house to the second-to-last house.
+4. The time complexity of this solution is O(n) since we are iterating through the list of houses twice (once for each scenario), and the space complexity is O(1) since we are using only a constant amount of space to store the variables in the helper function.
+"""
