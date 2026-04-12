@@ -40,3 +40,10 @@ class Solution:
         resLen, center_idx = max((v, i) for i, v in enumerate(p))
         resIdx = (center_idx - resLen) // 2
         return s[resIdx : resIdx + resLen]
+    
+#example
+solution = Solution()
+print(solution.longestPalindrome("babad"))  # Output: "bab" or "aba"
+print(solution.longestPalindrome("cbbd"))  # Output: "bb"
+print(solution.longestPalindrome("a"))  # Output: "a"
+print(solution.longestPalindrome("ac"))  # Output: "a" or "c"   
