@@ -47,3 +47,10 @@ class Solution:
         for i in p:
             res += (i + 1) // 2
         return res
+    
+#example
+solution = Solution()
+print(solution.countSubstrings("abc"))  # Output: 3
+print(solution.countSubstrings("aaa"))  # Output: 6
+print(solution.countSubstrings("a"))  # Output: 1
+print(solution.countSubstrings("ab"))  # Output: 2
