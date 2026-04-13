@@ -54,3 +54,12 @@ print(solution.countSubstrings("abc"))  # Output: 3
 print(solution.countSubstrings("aaa"))  # Output: 6
 print(solution.countSubstrings("a"))  # Output: 1
 print(solution.countSubstrings("ab"))  # Output: 2
+
+"""walkthrough
+1. We define a helper function `manacher` that implements Manacher's algorithm to find the longest palindromic substring in linear time.
+2. We transform the input string `s` by inserting a special character (e.g., '#') between each character and at the beginning and end of the string. This allows us to handle even-length palindromes uniformly with odd-length palindromes.
+3. We initialize an array `p` to store the radius of the longest palindrome centered at each position in the transformed string, and two pointers `l` and `r` to keep track of the rightmost palindrome found so far.
+4. We iterate through each character in the transformed string, updating the `p` array based on the previously found palindromes and expanding around the current center to find the longest palindrome.
+5. After processing the transformed string, we calculate the total number of palindromic substrings by summing up the contributions from each center. The number of palindromic substrings contributed by a center with radius `i` is `(i + 1) // 2`, which accounts for both odd and even length palindromes.  
+6. The time complexity of this solution is O(n) due to the linear traversal of the transformed string, and the space complexity is O(n) for the `p` array and the transformed string.
+"""
