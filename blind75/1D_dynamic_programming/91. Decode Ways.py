@@ -87,3 +87,12 @@ print(solution.numDecodings("12"))  # Output: 2
 print(solution.numDecodings("226"))  # Output: 3
 print(solution.numDecodings("06"))  # Output: 0
 print(solution.numDecodings("10"))  # Output: 1
+
+"""walkthrough
+1. We initialize three variables `dp`, `dp1`, and `dp2` to keep track of the number of ways to decode the string at different positions. `dp1` is initialized to 1 because there is one way to decode an empty string.
+2. We iterate through the string `s` from the end to the beginning. For each character, we check if it is '0'. If it is, we set `dp` to 0 because '0' cannot be decoded on its own. Otherwise, we set `dp` to `dp1`, which represents the number of ways to decode the substring starting from the next character.
+3. We then check if the current character and the next character form a valid two-digit code (i.e., "10" to "26"). If they do, we add `dp2` to `dp`, which represents the number of ways to decode the substring starting from the character after the next one.            
+4. Finally, we update `dp`, `dp1`, and `dp2` for the next iteration. `dp` is set to 0, `dp1` is set to the current value of `dp`, and `dp2` is set to the previous value of `dp1`.      
+5. After the loop, we return `dp1`, which contains the total number of ways to decode the entire string.    
+6. The time complexity of this solution is O(n), where n is the length of the input string `s`, and the space complexity is O(1) since we are using only a constant amount of extra space.  
+"""
