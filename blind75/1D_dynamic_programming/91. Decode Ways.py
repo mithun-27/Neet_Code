@@ -80,3 +80,10 @@ class Solution:
                 dp += dp2
             dp, dp1, dp2 = 0, dp, dp1
         return dp1
+    
+#example
+solution = Solution()
+print(solution.numDecodings("12"))  # Output: 2
+print(solution.numDecodings("226"))  # Output: 3
+print(solution.numDecodings("06"))  # Output: 0
+print(solution.numDecodings("10"))  # Output: 1
