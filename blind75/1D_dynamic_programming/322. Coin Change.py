@@ -55,3 +55,9 @@ class Solution:
                     q.append(nxt)
 
         return -1   
+    
+#example usage
+solution = Solution()
+print(solution.coinChange([1,2,5], 11)) # Output: 3
+print(solution.coinChange([2], 3)) # Output: -1
+print(solution.coinChange([1], 0)) # Output: 0
