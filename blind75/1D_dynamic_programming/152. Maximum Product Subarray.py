@@ -41,3 +41,12 @@ class Solution:
 # Input: nums = [2,3,-2,4]
 # Output: 6
 # Explanation: [2,3] has the largest product 6.
+
+"""walkthrough:
+1. We initialize the variables `prefix` and `suffix` to 0, and `res` to the first element of the array.
+2. We iterate through the array from both ends simultaneously using a loop that runs `n` times, where `n` is the length of the array.
+3. In each iteration, we update `prefix` by multiplying it with the current element from the left side of the array. If `prefix` is 0, we use 1 instead to avoid resetting the product.
+4. Similarly, we update `suffix` by multiplying it with the current element from the right side of the array. If `suffix` is 0, we use 1 instead to avoid resetting the product.
+5. We then update `res` to be the maximum of the current `res`, `prefix`, and `suffix`.
+6. After the loop, we return `res`, which contains the maximum product of any subarray in the input array.
+This approach works because it considers both the products of subarrays starting from the left and the right, which allows it to handle cases where negative numbers can flip the sign of the product. By keeping track of both `prefix` and `suffix`, we can ensure that we capture the maximum product even when there are negative numbers in the array."""
