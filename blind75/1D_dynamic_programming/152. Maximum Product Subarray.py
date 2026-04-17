@@ -23,4 +23,16 @@ Constraints:
 
 1 <= nums.length <= 2 * 104
 -10 <= nums[i] <= 10
-The product of any subarray of nums is guaranteed to fit in a 32-bit integer.
+The product of any subarray of nums is guaranteed to fit in a 32-bit integer."""
+
+#answer
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        n, res = len(nums), nums[0]
+        prefix = suffix = 0
+
+        for i in range(n):
+            prefix = nums[i] * (prefix or 1)
+            suffix = nums[n - 1 - i] * (suffix or 1)
+            res = max(res, max(prefix, suffix))
+        return res
