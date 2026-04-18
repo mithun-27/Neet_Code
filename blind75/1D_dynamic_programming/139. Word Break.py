@@ -82,3 +82,13 @@ class Solution:
 # Input: s = "leetcode", wordDict = ["leet","code"]
 # Output: true
 # Explanation: Return true because "leetcode" can be segmented as "leet code".
+
+"""walkthrough:
+1. We define a `TrieNode` class to represent each node in the trie, which contains a dictionary of children and a boolean flag to indicate if the node represents the end of a word.    
+2. We define a `Trie` class to manage the trie structure, which includes methods for inserting words and searching for words in the trie.   
+3. In the `Solution` class, we create a trie and insert all the words from the `wordDict` into it.
+4. We initialize a dynamic programming array `dp` of size `len(s) + 1` with all values set to `False`, except for `dp[len(s)]` which is set to `True` to indicate that an empty string can be segmented.
+5. We calculate the maximum length of the words in the `wordDict` to optimize our search.
+6. We iterate through the string `s` from the end to the beginning, and for each position `i`, we check for all possible end positions `j` (up to the maximum word length) to see if the substring `s[i:j+1]` exists in the trie. If it does, we set `dp[i]` to the value of `dp[j + 1]`, which indicates whether the remaining substring can be segmented. If `dp[i]` becomes `True`, we break out of the inner loop to avoid unnecessary checks.
+7. Finally, we return `dp[0]`, which indicates whether the entire string `s` can be segmented into words from the `wordDict`.
+This approach efficiently checks for valid segmentations of the string `s` using a trie to store the dictionary words and a dynamic programming array to keep track of valid segmentations at each position in the string. By iterating from the end of the string to the beginning, we ensure that we can build up our solution based on previously computed results in the `dp` array.""" 
