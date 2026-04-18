@@ -77,3 +77,8 @@ class Solution:
                         break
 
         return dp[0]
+    
+#example
+# Input: s = "leetcode", wordDict = ["leet","code"]
+# Output: true
+# Explanation: Return true because "leetcode" can be segmented as "leet code".
