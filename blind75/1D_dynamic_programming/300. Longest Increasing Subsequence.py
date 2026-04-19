@@ -53,3 +53,11 @@ print(Solution().lengthOfLIS(nums)) #4
 #example 3:
 nums = [7,7,7,7,7,7,7]
 print(Solution().lengthOfLIS(nums)) #1
+
+"""walkthrough the code:
+1. We initialize an empty list `dp` to store the longest increasing subsequence found so far. We start by adding the first element of `nums` to `dp`.
+2. We also initialize a variable `LIS` to keep track of the length of the longest increasing subsequence, starting at 1 since we have at least one element in `dp`.
+3. We iterate through the `nums` array starting from the second element. For each element, we check if it is greater than the last element in `dp`. If it is, we append it to `dp` and increment the `LIS` counter.
+4. If the current element is not greater than the last element in `dp`, we use the `bisect_left` function to find the index in `dp` where the current element should be placed to maintain the increasing order. We then replace the element at that index in `dp` with the current element.
+5. Finally, we return the value of `LIS`, which represents the length of the longest increasing subsequence found in the input array `nums`.
+The `bisect_left` function is used to maintain the order of the `dp` list and ensures that we are always replacing the correct element in `dp` to keep it sorted. This approach allows us to efficiently find the length of the longest increasing subsequence in O(n log n) time complexity."""
