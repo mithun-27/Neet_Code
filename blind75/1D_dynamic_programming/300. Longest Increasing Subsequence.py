@@ -41,3 +41,15 @@ class Solution:
             dp[idx] = nums[i]
 
         return LIS
+    
+#example 1:
+nums = [10,9,2,5,3,7,101,18]
+print(Solution().lengthOfLIS(nums)) #4
+
+#example 2:
+nums = [0,1,0,3,2,3]
+print(Solution().lengthOfLIS(nums)) #4
+
+#example 3:
+nums = [7,7,7,7,7,7,7]
+print(Solution().lengthOfLIS(nums)) #1
