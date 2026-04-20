@@ -41,3 +41,15 @@ class Solution:
             j += 1
 
         return res
+    
+#example 1:
+m = 3
+n = 7
+solution = Solution()
+print(solution.uniquePaths(m, n))  # Output: 28     
+
+#example 2:
+m = 3
+n = 2
+solution = Solution()
+print(solution.uniquePaths(m, n))  # Output: 3  
