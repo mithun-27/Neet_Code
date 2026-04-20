@@ -53,3 +53,14 @@ m = 3
 n = 2
 solution = Solution()
 print(solution.uniquePaths(m, n))  # Output: 3  
+
+
+"""walkthrough the code:
+1. We first check if either `m` or `n` is 1. If so, there is only one unique path (either all right or all down), so we return 1.
+2. We ensure that `m` is the larger dimension to optimize our calculations. If `m` is less than `n`, we swap them.
+3. We initialize `res` to 1, which will hold the result of our calculations, and `j` to 1, which will be used as a divisor in our loop. 
+4. We loop from `m` to `m + n - 1`, multiplying `res` by `i` and then dividing by `j` to calculate the number of unique paths using a combinatorial approach. This is based on the formula for combinations, which is C(m+n-2, m-1) or C(m+n-2, n-1).   
+5. Finally, we return `res`, which contains the total number of unique paths from the top-left corner to the bottom-right corner of the grid.   
+The combinatorial approach is efficient and avoids the need for a large factorial calculation, which can be computationally expensive. By iteratively calculating the result, we can handle larger values of `m` and `n` without running into issues with integer overflow. 
+The time complexity of this solution is O(m) or O(n), depending on which dimension is larger, and the space complexity is O(1) since we are using only a constant amount of extra space.    
+"""
