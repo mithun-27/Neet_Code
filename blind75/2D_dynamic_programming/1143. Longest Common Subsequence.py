@@ -64,3 +64,12 @@ text1 = "abc"
 text2 = "def"
 solution = Solution()
 print(solution.longestCommonSubsequence(text1, text2))  # Output: 0
+
+"""walkthrough the code:
+1. We first check if `text1` is shorter than `text2`. If it is, we swap them to ensure that `text1` is the longer string. This optimization helps reduce the space complexity of our dynamic programming solution.  
+2. We initialize a one-dimensional list `dp` of size `len(text2) + 1` with all values set to 0. This list will be used to store the lengths of the longest common subsequences for substrings of `text1` and `text2`.   
+3. We iterate through `text1` in reverse order (from the last character to the first). For each character in `text1`, we initialize a variable `prev` to 0, which will hold the value of `dp[j]` from the previous iteration of the inner loop. This is necessary because we will be updating `dp[j]` in place, and we need to keep track of the previous value for our calculations.   
+4. We then iterate through `text2` in reverse order. For each character in `text2`, we store the current value of `dp[j]` in a temporary variable `temp` before updating it. If the characters at the current indices of `text1` and `text2` match, we set `dp[j]` to `1 + prev`, which means we have found a common character and we can extend the longest common subsequence by 1. If they do not match, we set `dp[j]` to the maximum of `dp[j]` and `dp[j + 1]`, which means we take the longest subsequence found so far without including the current character of either string. After processing each character of `text2`, we update `prev` to the value stored in `temp` for the next iteration. 
+5. After processing all characters of both strings, the length of the longest common subsequence will be stored in `dp[0]`, which we return as the final result.    
+The time complexity of this solution is O(m * n), where m and n are the lengths of `text1` and `text2`, respectively. The space complexity is O(n) due to the use of the one-dimensional `dp` list. This is an efficient solution for the longest common subsequence problem, especially when one string is significantly shorter than the other.   
+"""
