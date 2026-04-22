@@ -48,3 +48,19 @@ class Solution:
                 prev = temp
 
         return dp[0]
+    
+#example 1:
+text1 = "abcde" 
+text2 = "ace"
+solution = Solution()
+print(solution.longestCommonSubsequence(text1, text2))  # Output: 3
+#example 2:
+text1 = "abc"
+text2 = "abc"
+solution = Solution()   
+print(solution.longestCommonSubsequence(text1, text2))  # Output: 3
+#example 3:
+text1 = "abc"
+text2 = "def"
+solution = Solution()
+print(solution.longestCommonSubsequence(text1, text2))  # Output: 0
