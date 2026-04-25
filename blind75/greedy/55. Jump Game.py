@@ -44,3 +44,10 @@ print(solution.canJump(nums))  # Output: false
 nums = [0]  
 solution = Solution()
 print(solution.canJump(nums))  # Output: true
+
+"""walkthrough:
+1. We initialize a variable `goal` to the last index of the array, which represents the target position we want to reach.           
+2. We iterate through the array from the second-to-last index to the first index (in reverse order). For each index `i`, we check if we can jump from that index to the current `goal` index. This is done by checking if `i + nums[i] >= goal`. If this condition is true, it means we can jump from index `i` to the `goal` index or beyond.
+3. If we can jump from index `i` to the `goal`, we update the `goal` to be index `i`, which means we now want to check if we can jump from an earlier index to index `i`.
+4. After the loop, we check if `goal` is equal to 0. If it is, it means we can jump from the first index to the last index, and we return true. Otherwise, we return false. 
+This approach effectively works backwards from the end of the array to determine if we can reach the last index starting from the first index."""
