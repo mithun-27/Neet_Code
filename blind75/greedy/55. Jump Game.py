@@ -31,3 +31,16 @@ class Solution:
             if i + nums[i] >= goal:
                 goal = i
         return goal == 0
+    
+#example 1:
+nums = [2,3,1,1,4]
+solution = Solution()
+print(solution.canJump(nums))  # Output: true
+#example 2:
+nums = [3,2,1,0,4]
+solution = Solution()
+print(solution.canJump(nums))  # Output: false
+#example 3:
+nums = [0]  
+solution = Solution()
+print(solution.canJump(nums))  # Output: true
