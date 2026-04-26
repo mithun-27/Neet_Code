@@ -53,3 +53,13 @@ intervals = [[1,3],[6,9]]
 newInterval = [2,5]
 s = Solution()
 print(s.insert(intervals, newInterval))
+
+"""walkthrough:
+1. We initialize an empty list res to store the resulting intervals after insertion and merging.        
+2. We iterate through each interval in the input intervals list using a for loop. For each interval, we check three conditions:
+   a. If the end of the newInterval is less than the start of the current interval, it means there is no overlap and we can safely add newInterval to res and return the combined list of res and the remaining intervals.
+   b. If the start of the newInterval is greater than the end of the current interval, it means there is no overlap and we can safely add the current interval to res.
+   c. If neither of the above conditions are met, it means there is an overlap between newInterval and the current interval. In this case, we merge them by updating newInterval to be a new interval that starts at the minimum of the two starting points and ends at the maximum of the two ending points.   
+3. After the loop, if newInterval has not been added to res (which means it overlaps with the last interval), we append it to res.
+4. Finally, we return the resulting list res, which contains the merged intervals after inserting newInterval.
+The time complexity of this solution is O(n), where n is the number of intervals in the input list. This is because we iterate through the intervals once to check for overlaps and merge them if necessary. The space complexity is also O(n) in the worst case, if all intervals overlap and we need to create a new list to store the merged intervals."""
