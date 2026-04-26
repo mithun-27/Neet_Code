@@ -47,3 +47,9 @@ class Solution:
                 ]
         res.append(newInterval)
         return res
+    
+#example
+intervals = [[1,3],[6,9]]
+newInterval = [2,5]
+s = Solution()
+print(s.insert(intervals, newInterval))
