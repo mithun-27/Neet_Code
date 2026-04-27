@@ -52,3 +52,8 @@ class Solution:
             res.append([interval_start, have])
 
         return res
+    
+#example
+intervals = [[1,3],[2,6],[8,10],[15,18]]
+s = Solution()
+print(s.merge(intervals))
