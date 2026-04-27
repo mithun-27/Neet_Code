@@ -57,3 +57,14 @@ class Solution:
 intervals = [[1,3],[2,6],[8,10],[15,18]]
 s = Solution()
 print(s.merge(intervals))
+
+
+"""walkthrough:
+1. We first find the maximum starting point among all intervals to determine the size of a mapping array mp that will help us track the end points of intervals.        
+2. We initialize an array mp of size max_val + 1 with all elements set to 0. We then iterate through each interval and update mp at the index corresponding to the start of the interval to be the maximum of the current value at that index and the end of the interval plus one (to account for zero-based indexing).        
+3. We initialize an empty list res to store the resulting merged intervals, and two variables have and interval_start to keep track of the current interval we are merging. We iterate through the mp array, and for each index:
+   a. If mp[i] is not zero, it means there is an interval starting at index i. If interval_start is -1, we set it to i to mark the start of a new interval. We also update have to be the maximum of its current value and mp[i] - 1 (to get the actual end point of the interval).
+   b. If have is equal to i, it means we have reached the end of the current interval we are merging. We append the interval [interval_start, have] to res, and reset have and interval_start to -1 to prepare for the next interval.       
+4. After the loop, if interval_start is not -1, it means there is an interval that has not been added to res yet, so we append it as well. Finally, we return the resulting list of merged intervals.       
+This approach effectively uses a mapping array to track the intervals and merge them in a single pass, resulting in an efficient solution to the problem.       
+"""
