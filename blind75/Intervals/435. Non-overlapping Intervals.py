@@ -43,3 +43,15 @@ class Solution:
 
 
         return res
+    
+#example
+intervals = [[1,2],[2,3],[3,4],[1,3]]
+s = Solution()
+print(s.eraseOverlapIntervals(intervals))
+
+"""walkthrough:
+1. Sort the intervals based on their end time. This allows us to always consider the interval that finishes earliest, which helps in minimizing the number of intervals we need to remove.
+2. Initialize a variable prevEnd to keep track of the end time of the last non-overlapping interval we added to our count. Start with the end time of the first interval.
+3. Iterate through the sorted intervals starting from the second interval. For each interval, check if its start time is less than the prevEnd. If it is, it means this interval overlaps with the previous one, and we need to remove it, so we increment our result counter. If it does not overlap, we update prevEnd to the end time of the current interval.
+4. Finally, return the count of removed intervals.
+This approach ensures that we are always keeping the interval that ends earliest, which allows us to maximize the number of non-overlapping intervals and minimize the number of removals."""
