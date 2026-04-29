@@ -21,3 +21,19 @@ Constraints:
 
 0 <= intervals.length <= 500
 0 <= intervals[i].start < intervals[i].end <= 1,000,000"""
+
+#answer
+class Solution:
+    def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
+        intervals.sort(key = lambda pair: pair[0])
+
+        for i in range(1, len(intervals)):
+            if intervals[i][0] < intervals[i - 1][1]:
+                return False
+
+        return True
+    
+#example
+intervals = [(0,30),(5,10),(15,20)]
+s = Solution()
+print(s.canAttendMeetings(intervals))
