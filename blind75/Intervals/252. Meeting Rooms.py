@@ -37,3 +37,9 @@ class Solution:
 intervals = [(0,30),(5,10),(15,20)]
 s = Solution()
 print(s.canAttendMeetings(intervals))
+
+"""walkthrough:
+1. Sort the intervals based on their start time. This allows us to check for overlapping meetings in a sequential manner.
+2. Iterate through the sorted intervals starting from the second interval. For each interval, compare its start time with the end time of the previous interval. If the start time of the current interval is less than the end time of the previous interval, it means there is a conflict, and we can return False immediately.   
+3. If we finish iterating through all intervals without finding any conflicts, we can return True, indicating that a person can attend all meetings without any overlaps.
+This approach ensures that we are checking for overlaps in a straightforward manner, and the sorting step helps us to efficiently identify any conflicts between meetings. The time complexity of this solution is O(n log n) due to the sorting step, and the space complexity is O(1) if we ignore the space used for sorting.""" 
