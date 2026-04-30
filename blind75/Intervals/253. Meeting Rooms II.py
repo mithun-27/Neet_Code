@@ -32,6 +32,9 @@ class Interval(object):
         self.end = end
 """
 
+from sqlalchemy import Interval
+
+
 class Solution:
     def minMeetingRooms(self, intervals: List[Interval]) -> int:
         time = []
@@ -46,3 +49,8 @@ class Solution:
             count += t[1]
             res = max(res, count)
         return res
+    
+#example
+intervals = [Interval(0,40), Interval(5,10), Interval(15,20)]
+s = Solution()
+print(s.minMeetingRooms(intervals))
