@@ -22,3 +22,11 @@ Constraints:
 n == matrix.length == matrix[i].length
 1 <= n <= 20
 -1000 <= matrix[i][j] <= 1000"""
+
+#answer
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        matrix.reverse()
+        for i in range(len(matrix)):
+            for j in range(i + 1, len(matrix)):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
