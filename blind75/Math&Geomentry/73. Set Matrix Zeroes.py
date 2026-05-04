@@ -63,3 +63,11 @@ matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
 s = Solution()
 s.setZeroes(matrix)
 print(matrix) # Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]] 
+
+"""walkthrough:
+1. We first determine the number of rows and columns in the matrix and initialize a boolean variable `rowZero` to keep track of whether the first row contains any zeros.   
+2. We iterate through the matrix to find any zeros. If we find a zero at position (r, c), we set the first element of that column (matrix[0][c]) to zero and, if r > 0, we set the first element of that row (matrix[r][0]) to zero. If the zero is in the first row, we set `rowZero` to True. This way, we use the first row and column as markers to indicate which rows and columns should be set to zero later on. 
+3. After marking the rows and columns, we iterate through the matrix again starting from the second row and second column. If either the first element of the current column (matrix[0][c]) or the first element of the current row (matrix[r][0]) is zero, we set the current element (matrix[r][c]) to zero.  
+4. Finally, we check if the first element of the matrix (matrix[0][0]) is zero. If it is, we set the entire first column to zero. We also check if `rowZero` is True, and if so, we set the entire first row to zero. This ensures that all rows and columns that were marked with zeros are properly set to zero in the final output.
+5. The function modifies the input matrix in place, so there is no return value.
+"""
