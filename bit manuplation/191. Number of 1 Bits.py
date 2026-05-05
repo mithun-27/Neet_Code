@@ -55,3 +55,7 @@ class Solution:
 n = 11
 s = Solution()
 print(s.hammingWeight(n)) # Output: 3
+
+#example 2:
+n = 128
+print(s.hammingWeight(n)) # Output: 1
