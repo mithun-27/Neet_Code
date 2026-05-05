@@ -59,3 +59,11 @@ print(s.hammingWeight(n)) # Output: 3
 #example 2:
 n = 128
 print(s.hammingWeight(n)) # Output: 1
+
+"""walkthrough:
+1. Initialize a variable `res` to 0, which will keep track of the number of set bits.
+2. Use a while loop that continues until `n` becomes 0.
+3. In each iteration, perform `n &= n - 1` to remove the rightmost set bit from `n`.
+4. Increment `res` by 1 in each iteration.
+5. Return `res` as the final result.
+This approach is efficient because it directly counts the number of set bits by removing them one by one, resulting in a time complexity of O(k), where k is the number of set bits in `n`."""
