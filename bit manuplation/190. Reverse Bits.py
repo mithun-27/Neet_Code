@@ -50,3 +50,13 @@ print(s.reverseBits(n)) # Output: 964176192
 #example 2:
 n = 2147483644
 print(s.reverseBits(n)) # Output: 1073741822
+
+"""walkthrough:
+1. We initialize a variable `res` with the value of `n`. This variable will be used to store the intermediate results as we reverse the bits.   
+2. We perform a series of bitwise operations to reverse the bits in `res`. The operations are as follows:
+   - We first swap the left and right 16 bits of `res` using a combination of right and left shifts, and a bitwise OR operation.
+   - Next, we swap the 8-bit groups within the 16-bit halves using a similar approach.
+   - We continue this process by swapping 4-bit groups, then 2-bit groups, and finally individual bits.
+3. After all the swaps, we return the final value of `res`, ensuring that it is treated as a 32-bit unsigned integer by applying a bitwise AND with `0xFFFFFFFF`.
+The time complexity of this solution is O(1) since we perform a fixed number of operations regardless of the input size. The space complexity is also O(1) since we use only a constant amount of extra space for the variable `res`.
+"""
