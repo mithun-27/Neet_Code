@@ -46,3 +46,12 @@ n == nums.length
 1 <= n <= 104
 0 <= nums[i] <= n
 All the numbers of nums are unique."""
+
+#answer
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        res = len(nums)
+
+        for i in range(len(nums)):
+            res += i - nums[i]
+        return res
