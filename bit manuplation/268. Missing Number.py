@@ -68,3 +68,10 @@ print(s.missingNumber(nums)) # Output: 2
 #example 3:
 nums = [9,6,4,2,3,5,7,0,1]
 print(s.missingNumber(nums)) # Output: 8
+
+"""walkthrough:
+1. We initialize a variable `res` with the value of the length of the input array `nums`. This is because the missing number can be at most `n`, which is equal to the length of the array. 
+2. We then iterate through the array using a for loop. For each index `i`, we add `i` to `res` and subtract the value at `nums[i]` from `res`. This effectively adds all the indices from 0 to n-1 and subtracts all the numbers present in the array.
+3. After the loop, `res` will contain the value of the missing number, which we return.
+The time complexity of this solution is O(n) since we iterate through the array once. The space complexity is O(1) since we use only a constant amount of extra space for the variable `res`.
+"""
