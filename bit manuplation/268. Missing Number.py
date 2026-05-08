@@ -61,3 +61,10 @@ nums = [3,0,1]
 s = Solution()
 print(s.missingNumber(nums)) # Output: 2
 
+#example 2:
+nums = [0,1]
+print(s.missingNumber(nums)) # Output: 2
+
+#example 3:
+nums = [9,6,4,2,3,5,7,0,1]
+print(s.missingNumber(nums)) # Output: 8
