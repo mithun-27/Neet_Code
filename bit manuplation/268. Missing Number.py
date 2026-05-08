@@ -55,3 +55,9 @@ class Solution:
         for i in range(len(nums)):
             res += i - nums[i]
         return res
+    
+#example 1:
+nums = [3,0,1]
+s = Solution()
+print(s.missingNumber(nums)) # Output: 2
+
