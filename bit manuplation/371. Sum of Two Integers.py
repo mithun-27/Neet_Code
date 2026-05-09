@@ -41,3 +41,12 @@ a = 2
 b = 3
 s = Solution()
 print(s.getSum(a, b)) # Output: 5
+
+"""walkthrough:
+1. We define a mask to handle 32-bit integer overflow and a max_int to determine if the result is negative.
+2. We use a while loop that continues until there are no more carries (b becomes 0).
+3. Inside the loop, we calculate the carry by performing a bitwise AND between a and b, then left-shift the result by 1 to prepare for the next addition.
+4. We update a to be the result of a bitwise XOR between a and b, which gives us the sum without the carry.
+5. We update b to be the carry, which will be added in the next iteration.  
+6. After the loop, we check if a is greater than max_int. If it is, it means the result is negative, and we return the two's complement of a. Otherwise, we return a as the final result.
+This method effectively simulates the addition process using bitwise operations, allowing us to compute the sum without using the + operator."""
