@@ -29,3 +29,10 @@ class Solution:
             b = carry & mask
 
         return a if a <= max_int else ~(a ^ mask)
+    
+#example 1:
+a = 1
+b = 2
+s = Solution()
+print(s.getSum(a, b)) # Output: 3
+
