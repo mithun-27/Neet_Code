@@ -36,3 +36,8 @@ b = 2
 s = Solution()
 print(s.getSum(a, b)) # Output: 3
 
+#example 2:
+a = 2
+b = 3
+s = Solution()
+print(s.getSum(a, b)) # Output: 5
