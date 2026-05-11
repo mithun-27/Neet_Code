@@ -37,6 +37,9 @@ Constraints:
 -109 <= nums[i] <= 109"""
 
 #answer
+from typing import List
+
+
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         seen=set()
@@ -45,3 +48,8 @@ class Solution:
                 return True
             seen.add(num)
         return False
+
+#example 1:
+nums = [1,2,3,1]
+s = Solution()
+print(s.containsDuplicate(nums)) # Output: true
