@@ -53,3 +53,8 @@ class Solution:
 nums = [1,2,3,1]
 s = Solution()
 print(s.containsDuplicate(nums)) # Output: true
+
+#example 2:
+nums = [1,2,3,4]
+s = Solution()
+print(s.containsDuplicate(nums)) # Output: false
