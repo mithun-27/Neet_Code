@@ -58,3 +58,12 @@ print(s.containsDuplicate(nums)) # Output: true
 nums = [1,2,3,4]
 s = Solution()
 print(s.containsDuplicate(nums)) # Output: false
+
+"""walkthrough:
+1. We initialize an empty set called seen to keep track of the unique numbers we have encountered in the array.
+2. We iterate through each number in the input array nums.
+3. For each number, we check if it is already in the seen set. If it is, that means we have encountered a duplicate, and we return True.
+4. If the number is not in the seen set, we add it to the set.
+5. If we finish iterating through the array without finding any duplicates, we return False, indicating that all elements are distinct.
+This approach has a time complexity of O(n) and a space complexity of O(n) in the worst case, where n is the number of elements in the input array. The set allows for O(1) average time complexity for lookups and insertions, making it an efficient solution for this problem.   
+"""
