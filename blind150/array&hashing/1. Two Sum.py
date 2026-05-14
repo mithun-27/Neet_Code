@@ -28,3 +28,13 @@ Constraints:
 -109 <= nums[i] <= 109
 -109 <= target <= 109
 Only one valid answer exists."""
+
+#answer
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        pm={}
+        for i , n in enumerate(nums):
+            diff=target - n
+            if diff in pm:
+                return [pm[diff],i]
+            pm[n]=i
