@@ -38,3 +38,11 @@ class Solution:
             if diff in pm:
                 return [pm[diff],i]
             pm[n]=i
+
+"""walkthrough:
+1. We initialize an empty dictionary pm to store the numbers we have seen so far and their corresponding indices.
+2. We iterate through the list of numbers using enumerate to get both the index i and the number n at that index.
+3. For each number n, we calculate the difference diff between the target and n. This diff represents the number we need to find in order to reach the target.
+4. We check if diff is already in the dictionary pm. If it is, it means we have found the two numbers that add up to the target, and we return their indices as a list [pm[diff], i].
+5. If diff is not in the dictionary, we add the current number n and its index i to the dictionary pm for future reference.
+6. The loop continues until we find the solution, which is guaranteed to exist according to the problem statement."""
