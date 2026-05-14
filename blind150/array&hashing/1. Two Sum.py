@@ -39,6 +39,18 @@ class Solution:
                 return [pm[diff],i]
             pm[n]=i
 
+#example 1:
+nums = [2,7,11,15]
+target = 9
+solution = Solution()
+print(solution.twoSum(nums, target)) # Output: [0,1]
+
+#example 2:
+nums = [3,2,4]
+target = 6
+solution = Solution()
+print(solution.twoSum(nums, target)) # Output: [1,2]
+
 """walkthrough:
 1. We initialize an empty dictionary pm to store the numbers we have seen so far and their corresponding indices.
 2. We iterate through the list of numbers using enumerate to get both the index i and the number n at that index.
