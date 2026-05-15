@@ -44,3 +44,13 @@ class Solution:
                 count[ord(c) - ord('a')] += 1
             res[tuple(count)].append(s)
         return list(res.values())
+    
+#example 1:
+strs = ["eat","tea","tan","ate","nat","bat"]
+solution = Solution()
+print(solution.groupAnagrams(strs)) # Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+#example 2:
+strs = [""]
+solution = Solution()
+print(solution.groupAnagrams(strs)) # Output: [[""]]
