@@ -54,3 +54,16 @@ print(solution.groupAnagrams(strs)) # Output: [["bat"],["nat","tan"],["ate","eat
 strs = [""]
 solution = Solution()
 print(solution.groupAnagrams(strs)) # Output: [[""]]
+
+#example 3:
+strs = ["a"]
+solution = Solution()   
+print(solution.groupAnagrams(strs)) # Output: [["a"]]
+
+"""walkthrough: 
+1. We initialize a defaultdict of lists called res to store the grouped anagrams.
+2. We iterate through each string s in the input list strs.
+3. For each string s, we create a count list of size 26 initialized to 0, which will be used to count the frequency of each character in the string.
+4. We iterate through each character c in the string s and update the count list by incrementing the count at the index corresponding to the character (using ord(c) - ord('a') to get the index).
+5. We convert the count list to a tuple and use it as a key in the res dictionary to append the original string s to the list of anagrams corresponding to that key.
+6. Finally, we return the values of the res dictionary as a list, which will contain the grouped anagrams. Each group of anagrams will be a list of strings that are anagrams of each other.""" 
