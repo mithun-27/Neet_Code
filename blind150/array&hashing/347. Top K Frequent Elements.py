@@ -65,3 +65,12 @@ nums = [1,2,1,2,1,2,3,1,3,2]
 k = 2
 solution = Solution()
 print(solution.topKFrequent(nums, k)) # Output: [1,2]
+
+"""walkthrough:
+1. We create a dictionary `count` to count the frequency of each number in the input list `nums`.
+2. We create a list of lists `freq` where the index represents the frequency and the value at that index is a list of numbers that have that frequency.
+3. We iterate through the `count` dictionary and populate the `freq` list based on the frequency of each number.
+4. We initialize an empty list `res` to store the result.
+5. We iterate through the `freq` list in reverse order (starting from the highest frequency) and append numbers to the `res` list until we have collected `k` numbers.
+6. Finally, we return the `res` list containing the top `k` frequent elements.
+This approach has a time complexity of O(n) for counting frequencies and O(n) for building the `freq` list, resulting in an overall time complexity of O(n). The space complexity is also O(n) due to the `count` dictionary and the `freq` list."""
