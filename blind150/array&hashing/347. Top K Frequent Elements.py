@@ -47,3 +47,21 @@ class Solution:
                 res.append(num)
                 if len(res) == k:
                     return res
+                
+#example 1:
+nums = [1,1,1,2,2,3]
+k = 2
+solution = Solution()
+print(solution.topKFrequent(nums, k)) # Output: [1,2]
+
+#example 2:
+nums = [1]
+k = 1
+solution = Solution()
+print(solution.topKFrequent(nums, k)) # Output: [1] 
+
+#example 3:
+nums = [1,2,1,2,1,2,3,1,3,2]
+k = 2
+solution = Solution()
+print(solution.topKFrequent(nums, k)) # Output: [1,2]
