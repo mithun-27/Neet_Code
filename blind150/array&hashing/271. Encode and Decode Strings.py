@@ -82,3 +82,11 @@ encoded_string = solution.encode(dummy_input)
 print(encoded_string) # Output: "5#Hello5#World"
 decoded_strings = solution.decode(encoded_string)
 print(decoded_strings) # Output: ["Hello","World"]
+
+#example 2:
+dummy_input = [""]
+solution = Solution()
+encoded_string = solution.encode(dummy_input)
+print(encoded_string) # Output: "0#"
+decoded_strings = solution.decode(encoded_string)
+print(decoded_strings) # Output: [""]
