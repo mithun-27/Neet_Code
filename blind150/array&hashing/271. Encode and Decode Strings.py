@@ -74,3 +74,11 @@ class Solution:
             i = j
 
         return res
+    
+#example 1:
+dummy_input = ["Hello","World"]
+solution = Solution()
+encoded_string = solution.encode(dummy_input)
+print(encoded_string) # Output: "5#Hello5#World"
+decoded_strings = solution.decode(encoded_string)
+print(decoded_strings) # Output: ["Hello","World"]
