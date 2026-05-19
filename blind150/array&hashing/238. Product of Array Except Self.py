@@ -37,3 +37,12 @@ class Solution:
             res[i] *= postfix
             postfix *= nums[i]
         return res
+    
+#example 1:
+dummy_input = [1,2,3,4]
+output = Solution().productExceptSelf(dummy_input)
+print(output) # Output: [24,12,8,6]
+#example 2:
+dummy_input = [-1,1,0,-3,3]
+output = Solution().productExceptSelf(dummy_input)
+print(output) # Output: [0,0,9,0,0]
