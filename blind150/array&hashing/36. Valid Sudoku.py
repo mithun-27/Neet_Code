@@ -97,3 +97,11 @@ dummy_input = [["8","3",".",".","7",".",".",".","."]
 ,[".",".",".",".","8",".",".","7","9"]]
 output = Solution().isValidSudoku(dummy_input)
 print(output) # Output: false
+
+"""walkthrough: 
+1. We define a class Solution with a method isValidSudoku that takes a 2D list board as input and returns a boolean value indicating whether the Sudoku board is valid or not.  
+2. We initialize three lists: rows, cols, and squares, each of size 9, to keep track of the digits present in each row, column, and 3x3 sub-box respectively. We use bit manipulation to represent the presence of digits. Each bit in the integer represents whether a digit from 1 to 9 is present (1) or not (0).    
+3. We iterate through each cell in the board using nested loops. For each cell, we check if it contains a digit (not "."). If it does, we convert the character to an integer and adjust it to be zero-indexed by subtracting 1.
+4. We check if the corresponding bit for the digit is already set in the rows, cols, or squares lists. If it is, it means the digit has already been encountered in that row, column, or sub-box, and we return False.  
+5. If the digit is not already present, we set the corresponding bit in the rows, cols, and squares lists to indicate that the digit has been encountered.  
+6. If we finish iterating through all the cells without finding any duplicates, we return True, indicating that the Sudoku board is valid. This approach efficiently checks for duplicates using bit manipulation and runs in O(1) time since the board size is fixed at 9x9."""
