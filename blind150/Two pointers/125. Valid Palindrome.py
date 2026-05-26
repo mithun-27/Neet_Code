@@ -48,3 +48,10 @@ class Solution:
                 ord('a') <= ord(c) <= ord('z') or
                 ord('0') <= ord(c) <= ord('9'))
     
+#example 1:
+solution = Solution()
+print(solution.isPalindrome("A man, a plan, a canal: Panama")) # Output: true
+#example 2:
+print(solution.isPalindrome("race a car")) # Output: false
+#example 3:
+print(solution.isPalindrome(" ")) # Output: true
