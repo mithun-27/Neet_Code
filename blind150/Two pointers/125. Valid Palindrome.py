@@ -55,3 +55,10 @@ print(solution.isPalindrome("A man, a plan, a canal: Panama")) # Output: true
 print(solution.isPalindrome("race a car")) # Output: false
 #example 3:
 print(solution.isPalindrome(" ")) # Output: true
+
+"""walkthrough:
+1. We initialize two pointers, l and r, to the start and end of the string, respectively.           
+2. We use a while loop to move the pointers towards each other until they meet. Inside the loop, we skip any non-alphanumeric characters by moving the pointers accordingly.    
+3. After skipping non-alphanumeric characters, we compare the characters at the l and r pointers (ignoring case). If they are not equal, we return False, indicating that the string is not a palindrome.
+4. If the characters are equal, we move both pointers towards the center and continue the process until they meet. If we exit the loop without finding any mismatches, we return True, indicating that the string is a palindrome.
+This algorithm runs in O(n) time, where n is the length of the string, because we potentially check each character once. The space complexity is O(1) since we are using only a constant amount of extra space for the pointers and the helper function. """    
