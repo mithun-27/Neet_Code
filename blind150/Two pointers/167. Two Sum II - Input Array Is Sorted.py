@@ -57,3 +57,10 @@ print(solution.twoSum([2,7,11,15], 9)) # Output: [1,2]
 print(solution.twoSum([2,3,4], 6)) # Output: [1,3]
 #example 3:
 print(solution.twoSum([-1,0], -1)) # Output: [1,2]
+
+"""walkthrough:
+1. We initialize two pointers, l and r, to the start and end of the numbers array, respectively.    
+2. We enter a loop that continues until the two pointers meet.
+3. Inside the loop, we calculate the current sum of the numbers at the two pointers. If the current sum is greater than the target, we move the right pointer left to decrease the sum. If the current sum is less than the target, we move the left pointer right to increase the sum. If the current sum equals the target, we return the indices of the two numbers (adjusted for 1-indexing).   
+4. If we exit the loop without finding a solution, we return an empty array (though the problem guarantees that there will be exactly one solution).    
+This algorithm runs in O(n) time, where n is the length of the numbers array, because in the worst case we may need to check each element once. The space complexity is O(1) since we are using only a constant amount of extra space for the pointers and the output array. """        
