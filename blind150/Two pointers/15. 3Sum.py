@@ -61,3 +61,11 @@ class Solution:
                         l += 1
 
         return res
+    
+#example 1:
+solution = Solution()
+print(solution.threeSum([-1,0,1,2,-1,-4])) # Output: [[-1,-1,2],[-1,0,1]]
+#example 2:
+print(solution.threeSum([0,1,1])) # Output: []
+#example 3:
+print(solution.threeSum([0,0,0])) # Output: [[0,0,0]]
