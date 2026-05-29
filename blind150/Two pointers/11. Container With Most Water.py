@@ -41,3 +41,7 @@ class Solution:
             else:
                 r -= 1
         return res
+    
+#example:
+height = [1,8,6,2,5,4,8,3,7]
+print(Solution().maxArea(height)) # Output: 49
