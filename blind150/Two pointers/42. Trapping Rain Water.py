@@ -47,3 +47,12 @@ print(Solution().trap(height)) # Output: 6
 #example 2:
 height = [4,2,0,3,2,5]
 print(Solution().trap(height)) # Output: 9
+
+"""walkthrough:
+1. We initialize two pointers, l and r, to the beginning and end of the height array, respectively. We also initialize leftMax and rightMax to the heights at these pointers, and a variable res to store the total amount of trapped water.    
+2. We enter a while loop that continues until the two pointers meet.
+3. Inside the loop, we compare leftMax and rightMax. If leftMax is less than rightMax, it means that the amount of water trapped at the left pointer is limited by leftMax. We move the left pointer to the right, update leftMax if necessary, and add the difference between leftMax and the current height at the left pointer to res.   
+4. If rightMax is less than or equal to leftMax, it means that the amount of water trapped at the right pointer is limited by rightMax. We move the right pointer to the left, update rightMax if necessary, and add the difference between rightMax and the current height at the right pointer to res.    
+5. Finally, we return res, which contains the total amount of trapped water.
+6. The time complexity of this algorithm is O(n) since we traverse the height array at most once, and the space complexity is O(1) as we only use a constant amount of extra space.
+7. This approach efficiently calculates the trapped water without needing to check every possible pair of bars, which would have a time complexity of O(n^2).    """    
