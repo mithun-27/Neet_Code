@@ -48,3 +48,13 @@ print(Solution().maxProfit(prices)) # Output: 0
 #example 3:
 prices = [1,2,3,4,5]
 print(Solution().maxProfit(prices)) # Output: 4
+
+"""walkthrough:
+1. We initialize two pointers, l and r, to the first and second elements of the prices array, respectively. We also initialize a variable mp to store the maximum profit.
+2. We enter a while loop that continues until the right pointer reaches the end of the prices array.
+3. Inside the loop, we compare the prices at the left and right pointers. If the price at the left pointer is less than the price at the right pointer, it means we can make a profit by buying at the left pointer and selling at the right pointer. We calculate this profit and update mp if it's greater than the current maximum profit.   
+4. If the price at the left pointer is greater than or equal to the price at the right pointer, it means we cannot make a profit by selling at the right pointer. In this case, we move the left pointer to the right pointer, effectively starting a new potential transaction from that point.    
+5. We then move the right pointer to the next position and repeat the process until we have checked all possible transactions.  
+6. Finally, we return mp, which contains the maximum profit that can be achieved from a single transaction.
+7. The time complexity of this algorithm is O(n) since we traverse the prices array at most once, and the space complexity is O(1) as we only use a constant amount of extra space.
+8. This approach efficiently calculates the maximum profit without needing to check every possible pair of days, which would have a time complexity of O(n^2).    """
