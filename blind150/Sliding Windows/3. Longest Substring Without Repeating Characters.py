@@ -40,3 +40,13 @@ class Solution:
             charSet.add(s[r])
             res = max(res, r - l + 1)
         return res
+    
+#example 1:
+s = "abcabcbb"
+print(Solution().lengthOfLongestSubstring(s)) # Output: 3
+#example 2:
+s = "bbbbb"
+print(Solution().lengthOfLongestSubstring(s)) # Output: 1
+#example 3:
+s = "pwwkew"
+print(Solution().lengthOfLongestSubstring(s)) # Output: 3
