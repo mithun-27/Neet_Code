@@ -56,3 +56,12 @@ class Solution:
                 matches -= 1
             l += 1
         return matches == 26
+    
+#example 1:
+s1 = "ab"
+s2 = "eidbaooo"
+print(Solution().checkInclusion(s1, s2)) # Output: true
+#example 2:
+s1 = "ab"
+s2 = "eidboaoo"
+print(Solution().checkInclusion(s1, s2)) # Output: false
