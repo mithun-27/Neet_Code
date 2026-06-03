@@ -61,3 +61,16 @@ class Solution:
                 l += 1
         l, r = res
         return s[l : r + 1] if resLen != float("infinity") else ""
+    
+#example 1:
+s = "ADOBECODEBANC" 
+t = "ABC"   
+print(Solution().minWindow(s, t)) # Output: "BANC"
+#example 2:
+s = "a"
+t = "a"
+print(Solution().minWindow(s, t)) # Output: "a"
+#example 3:
+s = "a"
+t = "aa"
+print(Solution().minWindow(s, t)) # Output: ""
