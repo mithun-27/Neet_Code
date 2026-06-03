@@ -74,3 +74,13 @@ print(Solution().minWindow(s, t)) # Output: "a"
 s = "a"
 t = "aa"
 print(Solution().minWindow(s, t)) # Output: ""
+
+"""walkthrough:
+1. We first check if t is an empty string. If it is, we return an empty string since there are no characters to include in the window.
+2. We create two dictionaries, countT and window, to keep track of the character counts in t and the current window of s, respectively. We populate countT with the frequency of each character in t.
+3. We initialize two variables, have and need, to keep track of how many unique characters from t we have in the current window and how many unique characters we need to have, respectively. We also initialize res and resLen to keep track of the minimum window found so far.
+4. We use a sliding window approach with two pointers, l and r, to traverse through s. For each character at index r, we add it to the window dictionary and check if it matches the required count in countT. If it does, we increment have.
+5. We then enter a while loop that continues as long as have is equal to need, which means we have all the required characters in the current window. Inside the loop, we check if the current window is smaller than the previously recorded minimum window and update res and resLen accordingly.
+6. We then remove the character at index l from the window and check if this causes us to lose a required character. If it does, we decrement have. We then move the left pointer l to the right to continue searching for smaller windows.
+7. After the loop, we return the minimum window substring found, or an empty string if no valid window was found.
+"""
