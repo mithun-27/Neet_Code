@@ -51,3 +51,12 @@ class Solution:
             r += 1
 
         return output
+
+#example 1:
+nums = [1,3,-1,-3,5,3,6,7]
+k = 3
+print(Solution().maxSlidingWindow(nums, k)) # Output: [3,3,5,5,6,7]
+#example 2:
+nums = [1]
+k = 1
+print(Solution().maxSlidingWindow(nums, k)) # Output: [1]
