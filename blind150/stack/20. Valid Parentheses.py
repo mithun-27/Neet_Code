@@ -61,3 +61,13 @@ class Solution:
                 stack.append(c)
 
         return True if not stack else False
+    
+#example 1:
+s = "()"
+print(Solution().isValid(s)) # Output: true
+#example 2:
+s = "()[]{}"
+print(Solution().isValid(s)) # Output: true
+#example 3:
+s = "(]"
+print(Solution().isValid(s)) # Output: false    
