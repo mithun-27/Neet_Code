@@ -71,3 +71,14 @@ print(Solution().isValid(s)) # Output: true
 #example 3:
 s = "(]"
 print(Solution().isValid(s)) # Output: false    
+#example 4:
+s = "([])"
+print(Solution().isValid(s)) # Output: true
+
+"""walkthrough:
+1. We initialize an empty stack to keep track of the opening brackets and a dictionary to map each closing bracket to its corresponding opening bracket.
+2. We iterate through each character c in the input string s. If c is a closing bracket, we check if the stack is not empty and if the top of the stack is the corresponding opening bracket. If it is, we pop the top of the stack. If it is not, we return False because it means there is a mismatch.
+3. If c is an opening bracket, we simply push it onto the stack.
+4. After iterating through all characters in the string, we check if the stack is empty. If it is empty, it means all brackets were matched correctly, and we return True. If it is not empty, it means there are unmatched opening brackets, and we return False.  
+This algorithm runs in O(n) time, where n is the length of the input string, because we need to iterate through each character once. The space complexity is also O(n) in the worst case, if all characters are opening brackets and we need to store them in the stack.    
+"""
