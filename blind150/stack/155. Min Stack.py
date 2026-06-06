@@ -82,3 +82,12 @@ minStack.pop()
 print(minStack.top())    # return 0
 print(minStack.getMin()) # return -2
 print(minStack.stack) 
+
+"""walkthrough:
+1. We initialize the stack and set the minimum value to positive infinity.
+2. When we push a value onto the stack, we check if the stack is empty. If it is, we simply push 0 onto the stack and set the minimum value to the pushed value. If the stack is not empty, we push the difference between the pushed value and the current minimum value onto the stack. If the pushed value is less than the current minimum value, we update the minimum value to the pushed value.
+3. When we pop a value from the stack, we check if the popped value is negative. If it is, it means that the popped value was the minimum value at the time it was pushed, so we update the minimum value by subtracting the popped value from the current minimum value.
+4. When we get the top value of the stack, we check if the top value is positive. If it is, we return the sum of the top value and the current minimum value. If it is negative, it means that the top value is the minimum value, so we return the current minimum value.
+5. When we get the minimum value, we simply return the current minimum value.   
+This implementation allows us to perform all operations in constant time while keeping track of the minimum value efficiently.  
+"""
