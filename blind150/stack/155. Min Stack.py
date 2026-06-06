@@ -71,3 +71,14 @@ class MinStack:
 
     def getMin(self) -> int:
         return self.min
+    
+#example 1:
+minStack = MinStack()   
+minStack.push(-2)
+minStack.push(0)
+minStack.push(-3)
+print(minStack.getMin()) # return -3
+minStack.pop()
+print(minStack.top())    # return 0
+print(minStack.getMin()) # return -2
+print(minStack.stack) 
