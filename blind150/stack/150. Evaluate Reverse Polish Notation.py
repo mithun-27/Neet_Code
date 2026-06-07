@@ -78,3 +78,13 @@ class Solution:
 #= (0 + 17) + 5 
 #= 17 + 5
 #= 22
+
+"""walkthrough:
+1. We initialize an empty stack to store the operands.
+2. We iterate through each token in the input list:
+   - If the token is an operator ("+", "-", "*", "/"), we pop the top two operands from the stack, perform the corresponding operation, and push the result back onto the stack.
+   - If the token is an integer, we convert it to an integer and push it onto the stack.
+3. After processing all tokens, the final result will be the only remaining element in the stack, which we return.  
+The time complexity of this solution is O(n), where n is the number of tokens in the input list, since we process each token once. The space complexity is O(n) in the worst case, if all tokens are operands and we push them onto the stack. However, in practice, the space used will be less than n due to the presence of operators that reduce the number of operands on the stack.   
+This solution correctly handles the order of operations and the division truncation towards zero as specified in the problem statement. The use of a stack allows us to easily manage the operands and operators as we evaluate the expression in Reverse Polish Notation.  
+"""
