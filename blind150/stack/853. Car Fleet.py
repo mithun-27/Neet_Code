@@ -79,3 +79,12 @@ class Solution:
 #example 3: 
 #Input: target = 100, position = [0,2,4], speed = [4,2,1]
 #Output: 1      
+
+"""walkthrough :
+1. We create a list of pairs (position, speed) for each car using the zip function and sort it in reverse order based on the position. This allows us to process the cars starting from the one closest to the target.  
+2. We initialize a variable fleets to 1, which will count the number of car fleets. We also calculate the time it takes for the first car (the one closest to the target) to reach the target and store it in prevTime. This is calculated as (target - position) / speed for that car. 
+3. We iterate through the sorted list of pairs starting from the second car (index 1). For each car, we calculate the time it takes for that car to reach the target in the same way as we did for the first car and store it in currTime.  
+4. We compare currTime with prevTime. If currTime is greater than prevTime, it means that the current car cannot catch up to the fleet ahead of it and will form a new fleet. In this case, we increment the fleets count by 1 and update prevTime to currTime. If currTime is less than or equal to prevTime, it means that the current car will catch up to the fleet ahead of it and will be part of the same fleet, so we do not increment the fleets count.    
+5. After iterating through all the cars, we return the total number of fleets.  
+6. The time complexity of this solution is O(n log n) due to the sorting step, and the space complexity is O(n) for storing the pairs.
+"""
