@@ -69,3 +69,13 @@ class Solution:
                 fleets += 1
                 prevTime = currTime
         return fleets
+    
+#example 1:
+#Input: target = 12, position = [10,8,0,5,3], speed = [2,4,1,1,3]
+#Output: 3  
+#example 2:
+#Input: target = 10, position = [3], speed = [3]    
+#Output: 1
+#example 3: 
+#Input: target = 100, position = [0,2,4], speed = [4,2,1]
+#Output: 1      
