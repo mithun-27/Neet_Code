@@ -46,3 +46,11 @@ Output: 1  """
 #example 3:
 """Input: target = 100, position = [0,2,4], speed = [4,2,1] 
 Output: 1  """
+
+"""walkthrough:
+1. We initialize an empty stack to keep track of the indices of the histogram bars and a variable maxArea to store the maximum area found.
+2. We iterate through the histogram bars using a loop that goes from 0 to n (the length of the heights array). We also include an extra iteration (i == n) to handle the case when we reach the end of the histogram.
+3. Inside the loop, we check if the stack is not empty and if the current bar is shorter than the bar at the top of the stack. If this condition is true, it means we have found a right boundary for the bar at the top of the stack. We pop the index from the stack and calculate the height of the rectangle using the height of the bar at that index. We also calculate the width of the rectangle, which is the distance between the current index and the index of the new top of the stack (after popping). If the stack is empty after popping, it means the rectangle extends all the way to the left, so the width is simply the current index (i). We then calculate the area of the rectangle and update maxArea if the calculated area is larger.
+4 . After processing all bars, we return the maxArea found. 
+This algorithm efficiently computes the largest rectangle in the histogram with a time complexity of O(n) and a space complexity of O(n) due to the stack.          
+"""
