@@ -36,3 +36,10 @@ class Solution:
             elif nums[m] < target:
                 l = m + 1
         return l if (l < len(nums) and nums[l] == target) else -1
+    
+#example 1:
+"""Input: nums = [-1,0,3,5,9,12], target = 9
+Output: 4  """  
+#example 2:
+"""Input: nums = [-1,0,3,5,9,12], target = 2
+Output: -1  """
