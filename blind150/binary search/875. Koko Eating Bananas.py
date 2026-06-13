@@ -31,6 +31,9 @@ piles.length <= h <= 109
 """
 
 #answer
+import math
+
+
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
         l, r = 1, max(piles)
@@ -48,3 +51,13 @@ class Solution:
             else:
                 l = k + 1
         return res
+    
+#example 1:
+"""Input: piles = [3,6,7,11], h = 8 
+Output: 4  """
+#example 2:
+"""Input: piles = [30,11,23,4,20], h = 5
+Output: 30  """     
+#example 3:
+"""Input: piles = [30,11,23,4,20], h = 6
+Output: 23  """ 
