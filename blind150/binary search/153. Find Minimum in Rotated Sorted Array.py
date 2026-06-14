@@ -60,3 +60,13 @@ Explanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times. 
 """Input: nums = [11,13,15,17]
 Output: 11
 Explanation: The original array was [11,13,15,17] and it was rotated 4 times.  """  
+
+
+"""walkthrough:
+1. Initialize two pointers, l and r, to the start and end of the array, respectively.
+2. While l is less than r, calculate the middle index m.
+3. Compare the middle element nums[m] with the rightmost element nums[r]:
+   - If nums[m] is less than nums[r], it means the minimum element is in the left half of the array (including m), so we set r = m.
+   - Otherwise, the minimum element is in the right half of the array (excluding m), so we set l = m + 1.   
+4. When the loop ends, l will point to the minimum element in the rotated sorted array, so we return nums[l].
+5. This algorithm runs in O(log n) time due to the binary search approach, making it efficient for large arrays."""
