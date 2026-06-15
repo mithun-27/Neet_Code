@@ -60,3 +60,17 @@ Output: 4"""
 #example 2:
 """Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1"""   
+
+
+"""walkthrough:
+1. Initialize two pointers, l and r, to the start and end of the array, respectively.
+2. While l is less than or equal to r, calculate the mid index.     
+3. If the target is equal to nums[mid], return mid.
+4. If the left half of the array (from l to mid) is sorted:     
+   - If the target is greater than nums[mid] or less than nums[l], it means the target is in the right half of the array, so we set l = mid + 1.
+   - Otherwise, the target is in the left half of the array, so we set r = mid - 1.
+5. If the right half of the array (from mid to r) is sorted:
+   - If the target is less than nums[mid] or greater than nums[r], it means the target is in the left half of the array, so we set r = mid - 1.
+   - Otherwise, the target is in the right half of the array, so we set l = mid + 1.
+6. If the target is not found, return -1.       
+7. The time complexity of this algorithm is O(log n) since we are performing a binary search on the array.  """
