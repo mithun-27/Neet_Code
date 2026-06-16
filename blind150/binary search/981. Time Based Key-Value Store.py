@@ -61,3 +61,7 @@ class TimeMap:
 """Input ["TimeMap", "set", "get", "get", "set", "get", "get"]
 [[], ["foo", "bar", 1], ["foo", 1], ["foo", 3], ["foo", "bar2", 4], ["foo", 4], ["foo", 5]]
 Output [null, null, "bar", "bar", null, "bar2", "bar2"]"""
+#example 2:
+"""Input ["TimeMap", "set", "set", "get", "get", "get", "get", "get"]
+[[], ["love", "high", 10], ["love", "low", 20], ["love", 5], ["love", 10], ["love", 15], ["love", 20], ["love", 25]]   
+Output [null, null, null, "", "high", "high", "low", "low"]"""
