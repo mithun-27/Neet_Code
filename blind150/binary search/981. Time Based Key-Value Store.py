@@ -56,3 +56,8 @@ class TimeMap:
             else:
                 r = m - 1
         return res
+    
+#example 1:
+"""Input ["TimeMap", "set", "get", "get", "set", "get", "get"]
+[[], ["foo", "bar", 1], ["foo", 1], ["foo", 3], ["foo", "bar2", 4], ["foo", 4], ["foo", 5]]
+Output [null, null, "bar", "bar", null, "bar2", "bar2"]"""
