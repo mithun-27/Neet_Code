@@ -65,3 +65,10 @@ Output [null, null, "bar", "bar", null, "bar2", "bar2"]"""
 """Input ["TimeMap", "set", "set", "get", "get", "get", "get", "get"]
 [[], ["love", "high", 10], ["love", "low", 20], ["love", 5], ["love", 10], ["love", 15], ["love", 20], ["love", 25]]   
 Output [null, null, null, "", "high", "high", "low", "low"]"""
+
+"""walkthrough:
+1. Initialize a dictionary to store the key-value pairs along with their timestamps.
+2. In the set method, check if the key exists in the dictionary. If not, create an empty list for that key. Append the value and timestamp as a list to the key's list.
+3. In the get method, retrieve the list of values for the given key. If the key does not exist, return an empty string. Use binary search to find the value with the largest timestamp that is less than or equal to the given timestamp. Return the corresponding value if found, otherwise return an empty string.    
+4. The time complexity of the set method is O(1) and the time complexity of the get method is O(log n) due to the binary search. The overall space complexity is O(n) where n is the number of set operations performed.        
+"""
