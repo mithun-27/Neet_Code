@@ -63,3 +63,12 @@ Explanation: merged array = [1,2,3] and median is 2."""
 """Input: nums1 = [1,2], nums2 = [3,4]
 Output: 2.50000
 Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5."""
+
+"""walkthrough:
+1. We want to find the median of two sorted arrays, which means we need to find the middle element(s) of the combined sorted array.
+2. We can use binary search to find the correct partition of the two arrays such that the left side of the partition contains the smaller half of the elements and the right side contains the larger half.
+3. We will ensure that we always binary search on the smaller array to optimize the search process.
+4. We will calculate the indices for the partition and check if the elements on the left side of the partition are less than or equal to the elements on the right side.
+5. If the partition is correct, we can calculate the median based on whether the total number of elements is odd or even.
+6. The time complexity of this algorithm is O(log(min(m, n))) where m and n are the lengths of the two arrays. The space complexity is O(1) since we are using only a constant amount of extra space.   
+7. This approach is efficient and works well even when the two arrays have different sizes."""
