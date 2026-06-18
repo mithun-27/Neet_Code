@@ -50,3 +50,11 @@ Output: [2,1]"""
 #example 3:
 """Input: head = []
 Output: []"""
+
+"""walkthrough:
+1. We initialize two pointers, `prev` and `curr`. `prev` starts as `None` and `curr` starts at the head of the list.
+2. We iterate through the list until `curr` is `None`. In each iteration, we store the next node in a temporary variable `temp`, reverse the link by pointing `curr.next` to `prev`, then move `prev` and `curr` one step forward.
+3. Finally, we return `prev`, which will be the new head of the reversed list.      
+Time complexity: O(n) where n is the number of nodes in the linked list, since we need to traverse the entire list once.
+Space complexity: O(1) since we are using only a constant amount of extra space for the pointers.   
+"""
