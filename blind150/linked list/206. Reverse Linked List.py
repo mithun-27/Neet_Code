@@ -40,3 +40,13 @@ class Solution:
             prev = curr
             curr = temp
         return prev
+    
+#example 1:
+"""Input: head = [1,2,3,4,5]
+Output: [5,4,3,2,1]"""
+#example 2:
+"""Input: head = [1,2]
+Output: [2,1]"""
+#example 3:
+"""Input: head = []
+Output: []"""
