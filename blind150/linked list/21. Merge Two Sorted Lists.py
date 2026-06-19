@@ -61,3 +61,12 @@ Output: []"""
 #example 3:
 """Input: list1 = [], list2 = [0]
 Output: [0]"""
+
+"""walkthrough:
+1. We create a dummy node to serve as the starting point of the merged list and a pointer `node` that will be used to build the merged list.    
+2. We iterate through both lists while both `list1` and `list2` are not empty. In each iteration, we compare the values of the current nodes of both lists. We attach the smaller node to the merged list and move the pointer of that list forward. We also move the `node` pointer forward to continue building the merged list.  
+3. After the loop, one of the lists may still have remaining nodes. We attach the remaining nodes to the merged list by setting `node.next` to the non-empty list (either `list1` or `list2`).  
+4. Finally, we return `dummy.next`, which points to the head of the merged list.
+Time complexity: O(n + m) where n and m are the lengths of list1 and list2, respectively, since we traverse both lists once.
+Space complexity: O(1) since we are using only a constant amount of extra space for the pointers.   
+"""
