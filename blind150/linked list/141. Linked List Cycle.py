@@ -64,3 +64,11 @@ Explanation: There is a cycle in the linked list, where the tail connects to the
 """Input: head = [1], pos = -1
 Output: false
 Explanation: There is no cycle in the linked list."""
+
+
+"""walkthrough:
+1. We initialize two pointers, slow and fast, to the head of the linked list.
+2. We enter a loop that continues as long as fast and fast.next are not null.
+3. In each iteration, slow moves one step forward, and fast moves two steps forward.
+4. If there is a cycle, fast will eventually catch up to slow, indicating a cycle.
+5. If there is no cycle, fast will reach the end of the list."""
