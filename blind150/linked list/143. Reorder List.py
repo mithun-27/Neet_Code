@@ -54,3 +54,13 @@ class Solution:
             first.next = second
             second.next = tmp1
             first, second = tmp1, tmp2
+
+#example 1:
+"""Input: head = [1,2,3,4]
+Output: [1,4,2,3]"""
+#example 2:
+"""Input: head = [1,2,3,4,5]    
+Output: [1,5,2,4,3]"""  
+#example 3:
+"""Input: head = [1]            
+Output: [1]"""  
