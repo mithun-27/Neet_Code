@@ -64,3 +64,11 @@ Output: [1,5,2,4,3]"""
 #example 3:
 """Input: head = [1]            
 Output: [1]"""  
+
+"""walkthrough:
+1. Use the slow and fast pointer technique to find the middle of the linked list.                                       
+2. Reverse the second half of the linked list.
+3. Merge the two halves of the linked list together in the required order.          
+4. The first half of the list remains in its original order, while the second half is reversed and interleaved with the first half. This results in the desired reordered list format.      
+5. The algorithm runs in O(n) time complexity, where n is the number of nodes in the linked list, and uses O(1) additional space since we are modifying the list in place.  
+"""
