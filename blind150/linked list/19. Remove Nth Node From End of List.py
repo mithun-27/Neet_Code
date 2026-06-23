@@ -51,3 +51,13 @@ class Solution:
 
         left.next = left.next.next
         return dummy.next
+    
+#example 1:
+"""Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]"""
+#example 2:
+"""Input: head = [1], n = 1     
+Output: []"""   
+#example 3:
+"""Input: head = [1,2], n = 1   
+Output: [1]"""  
