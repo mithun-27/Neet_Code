@@ -87,3 +87,10 @@ Output: [[1,1],[2,1]]"""
 #example 3:
 """Input: head = [[3,null],[3,0],[3,null]]  
 Output: [[3,null],[3,0],[3,null]]"""    
+
+"""walkthrough the code:
+1. Check if the head is None. If it is, return None.        
+2. Create a new node for each node in the original list and insert it between the original node and its next node. The new node's random pointer is set to the original node's random pointer. This way, we can easily access the new nodes later.
+3. Set the random pointers of the new nodes. For each original node, set its new node's random pointer to the new node corresponding to the original node's random pointer. This is done by accessing the new node through the original node's random pointer.
+4. Restore the original list and extract the new list. For each original node, restore its random pointer to its original value and set the new node's next pointer to the new node corresponding to the original node's next pointer. Finally, return the head of the new list.        
+5. The time complexity of this solution is O(n), where n is the number of nodes in the original list. The space complexity is O(1) since we are not using any additional data structures that grow with the input size.     """
