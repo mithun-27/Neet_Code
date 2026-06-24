@@ -77,3 +77,13 @@ class Solution:
             l1 = l1.next
 
         return newHead
+    
+#example 1:
+"""Input: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]"""
+#example 2:     
+"""Input: head = [[1,1],[2,1]]
+Output: [[1,1],[2,1]]"""
+#example 3:
+"""Input: head = [[3,null],[3,0],[3,null]]  
+Output: [[3,null],[3,0],[3,null]]"""    
