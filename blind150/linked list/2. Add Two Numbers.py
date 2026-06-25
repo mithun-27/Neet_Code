@@ -66,3 +66,14 @@ Output: [0]"""
 #example:3
 """Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 Output: [8,9,9,9,0,0,0,1]"""    
+
+"""WALKTHROUGH
+1. Create a dummy node to serve as the head of the result linked list.
+2. Initialize a pointer (cur) to the dummy node and a variable (carry) to 0 to keep track of any carry-over during addition.
+3. Iterate through the linked lists l1 and l2 until both are fully traversed and there is no carry left:
+   a. Retrieve the values of the current nodes of l1 and l2 (v1 and v2). If a list is exhausted, use 0 as the value.
+   b. Calculate the sum of v1, v2, and carry. Update carry for the next iteration and determine the new digit to be added to the result linked list.
+   c. Create a new node with the calculated digit and link it to the result linked list.
+   d. Move the cur pointer to the newly created node and advance l1 and l2 pointers to their next nodes if they exist.
+4. After the loop, return the next node of the dummy, which is the head of the resulting linked list representing the sum of the two numbers.       
+5. The time complexity of this solution is O(max(m, n)), where m and n are the lengths of the two linked lists. The space complexity is O(max(m, n)) for the new linked list created to store the result."""
