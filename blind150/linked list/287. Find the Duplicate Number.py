@@ -60,3 +60,11 @@ Output: 3"""
 #example:3
 """Input: nums = [3,3,3,3,3]        
 Output: 3"""    
+
+"""walkthrough:
+1. Initialize two pointers, slow and fast, both starting at the first index of the array.
+2. Move the slow pointer one step at a time (slow = nums[slow]) and the fast pointer two steps at a time (fast = nums[nums[fast]]) until they meet. This meeting point indicates that there is a cycle in the array, which is caused by the duplicate number.
+3. Once a cycle is detected, initialize a new pointer, slow2, starting at the first index of the array.
+4. Move both slow and slow2 one step at a time until they meet. The meeting point will be the duplicate number in the array.
+5. Return the value at the meeting point, which is the duplicate number.    
+6. The time complexity of this solution is O(n), where n is the length of the array. The space complexity is O(1) since we are using only a constant amount of extra space for the pointers."""
