@@ -50,3 +50,13 @@ class Solution:
             slow2 = nums[slow2]
             if slow == slow2:
                 return slow
+            
+#example:1
+"""Input: nums = [1,3,4,2,2]
+Output: 2"""
+#example:2
+"""Input: nums = [3,1,3,4,2]
+Output: 3"""
+#example:3
+"""Input: nums = [3,3,3,3,3]        
+Output: 3"""    
