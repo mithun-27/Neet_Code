@@ -84,3 +84,18 @@ Output: [1,1,2,3,4,4,5,6]"""
 #example:2
 """Input: lists = []
 Output: []"""
+
+"""walkthrough:
+1. Check if the input list of linked lists is empty or has no elements. If so, return None.
+2. While there is more than one linked list in the input, perform the following steps:              
+   a. Initialize an empty list called mergedLists to store the merged linked lists.
+   b. Iterate through the input lists in pairs (two at a time) using a for loop with a step of 2.
+   c. For each pair of linked lists (l1 and l2), call the mergeList function to merge them into a single sorted linked list.
+   d. Append the merged linked list to the mergedLists list.    
+   e. If there is an odd number of linked lists, the last linked list will be merged with None, effectively keeping it unchanged.
+3. After merging all pairs of linked lists, update the input lists to be the mergedLists.
+4. Repeat the process until there is only one linked list left in the input lists.
+5. Return the final merged linked list, which is the only element left in the input lists.          
+6. The mergeList function takes two sorted linked lists (l1 and l2) as input and merges them into a single sorted linked list. It uses a dummy node to simplify the merging process and a tail pointer to keep track of the last node in the merged list.
+7. The time complexity of this solution is O(N log k), where N is the total number of nodes across all linked lists and k is the number of linked lists. The space complexity is O(1) since we are merging the lists in place without using any additional data structures.     
+"""
