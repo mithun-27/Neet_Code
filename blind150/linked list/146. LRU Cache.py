@@ -65,3 +65,11 @@ class LRUCache:
 [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]  
 Output:
 [null, null, null, 1, null, -1, null, -1, 3, 4]"""
+
+"""walkthrough:
+1. Initialize the LRUCache with a given capacity.
+2. Use an OrderedDict to maintain the order of insertion and access.
+3. In the get method, check if the key exists in the cache. If it does, move it to the end to mark it as recently used and return its value. If not, return -1.
+4. In the put method, check if the key already exists. If it does, move it to the end and update its value. If it doesn't exist, add the key-value pair to the cache. If the cache exceeds its capacity, remove the least recently used item (the first item in the OrderedDict).   
+5. The get and put methods both run in O(1) average time complexity due to the properties of the OrderedDict.
+6. The space complexity is O(capacity) since we are storing up to 'capacity' number of key-value pairs in the cache."""
