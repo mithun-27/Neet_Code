@@ -71,3 +71,14 @@ Output: [3,2,1,4,5]"""
 #example 3:
 """Input: head = [1,2,3,4,5], k = 1
 Output: [1,2,3,4,5]"""  
+
+
+"""walkthrough:
+1. Create a dummy node and set groupPrev to the dummy.
+2. While True, find the kth node from groupPrev using getKth function.
+3. If kth is None, break the loop.
+4. Reverse the group of k nodes.
+5. Update the pointers to connect the reversed group with the rest of the list.
+6. Move groupPrev to the next group.
+7. Return the modified list.    
+"""
