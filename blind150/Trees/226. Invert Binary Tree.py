@@ -56,3 +56,13 @@ Output: [2,3,1] """
 #example 3:
 """Input: root = []
 Output: [] """
+
+"""walkthrough:
+1. If the root is None, return None.
+2. Initialize a stack with the root node.
+3. While the stack is not empty, pop a node from the stack.
+4. Swap the left and right children of the current node.
+5. If the left child exists, push it onto the stack.
+6. If the right child exists, push it onto the stack.
+7. Return the root node.    
+"""
