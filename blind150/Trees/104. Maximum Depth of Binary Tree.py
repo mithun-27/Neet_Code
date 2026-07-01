@@ -46,3 +46,14 @@ class Solution:
                     q.append(node.right)
             level += 1
         return level
+    
+
+#example 1:
+"""Input: root = [3,9,20,null,null,15,7]    
+Output: 3 """
+#example 2:
+"""Input: root = [1,null,2]
+Output: 2 """
+#example 3:
+"""Input: root = []     
+Output: 0 """       
