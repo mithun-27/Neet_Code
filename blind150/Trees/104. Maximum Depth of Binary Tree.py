@@ -57,3 +57,16 @@ Output: 2 """
 #example 3:
 """Input: root = []     
 Output: 0 """       
+
+
+"""walkthrough:
+1. Initialize a queue and add the root node to it if it's not None.
+2. Initialize a variable level to 0 to keep track of the depth of the tree.
+3. While the queue is not empty, do the following:
+   a. For each node in the current level, remove it from the queue.
+   b. If the node has a left child, add it to the queue.
+   c. If the node has a right child, add it to the queue.
+   d. Increment the level counter.
+4. Return the level counter.
+5. The time complexity of this solution is O(n), where n is the number of nodes in the tree, since we visit each node once. The space complexity is O(w), where w is the maximum width of the tree, which is the maximum number of nodes at any level in the tree.  
+"""
