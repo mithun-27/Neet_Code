@@ -54,3 +54,23 @@ class Solution:
                            max(leftHeight + rightHeight, leftDiameter, rightDiameter))
 
         return mp[root][1]
+    
+#example 1:
+"""Input: root = [1,2,3,4,5]
+Output: 3"""
+#example 2:
+"""Input: root = [1,2]  
+Output: 1"""    
+#example 3:
+"""Input: root = [1,2,3,4,5,6,7]
+Output: 4"""
+
+"""walkthrough:
+1. Initialize a stack with the root node and a dictionary `mp` to store the height and diameter of each node, with `None` mapped to (0, 0).
+2. While the stack is not empty, peek at the top node.  
+3. If the left child exists and is not in `mp`, push it onto the stack.
+4. If the right child exists and is not in `mp`, push it onto the stack.
+5. If both children are processed, pop the node from the stack and calculate its height and diameter based on its children's values. Store these in `mp`.
+6. Finally, return the diameter of the root node from `mp`.         
+7. The time complexity is O(n) since we visit each node once, and the space complexity is O(n) for the stack and dictionary.                    
+"""
