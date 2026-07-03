@@ -70,3 +70,10 @@ Output: false"""
 #example 3:
 """Input: root = [] 
 Output: true"""
+
+"""walkthrough:
+1. Use a stack to perform a post-order traversal of the tree.
+2. For each node, calculate the depth of its left and right subtrees.
+3. If the difference in depths is greater than 1, return False.
+4. Store the depth of each node in a dictionary for future reference.
+5. If the traversal completes without finding any unbalanced nodes, return True."""
