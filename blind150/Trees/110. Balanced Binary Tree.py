@@ -60,3 +60,13 @@ class Solution:
                     node = node.right
 
         return True
+    
+#example 1:
+"""Input: root = [3,9,20,null,null,15,7]    
+Output: true"""
+#example 2:
+"""Input: root = [1,2,2,3,3,null,null,4,4]
+Output: false"""
+#example 3:
+"""Input: root = [] 
+Output: true"""
