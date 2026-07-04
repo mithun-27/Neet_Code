@@ -35,6 +35,9 @@ The number of nodes in both trees is in the range [0, 100].
 #         self.left = left
 #         self.right = right
 
+from sqlalchemy import true
+
+
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         q1 = deque([p])
@@ -56,3 +59,7 @@ class Solution:
                 q2.append(nodeQ.right)
 
         return True
+    
+#example 1:     
+"""input: p = [1,2,3], q = [1,2,3]
+output: true"""
