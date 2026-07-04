@@ -69,3 +69,13 @@ output: false"""
 #example 3:
 """input: p = [1,2,1], q = [1,1,2]
 output: false"""
+
+"""walkthrough:
+1. Create two queues, q1 and q2, to hold the nodes of the two trees.
+2. While both queues are not empty, do the following:
+   a. For each node in the current level of the trees, dequeue a node from each queue.
+   b. If both nodes are None, continue to the next iteration.
+   c. If one node is None or the values of the nodes are not equal, return False.
+   d. Enqueue the left and right children of both nodes into their respective queues.
+3. If the loop completes without returning False, return True, indicating that the trees are the same.  
+4. The time complexity of this solution is O(n), where n is the number of nodes in the trees, since we visit each node once. The space complexity is also O(n) in the worst case, due to the storage of nodes in the queues."""
