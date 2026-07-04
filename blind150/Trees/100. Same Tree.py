@@ -63,3 +63,9 @@ class Solution:
 #example 1:     
 """input: p = [1,2,3], q = [1,2,3]
 output: true"""
+#example 2:
+"""input: p = [1,2], q = [1,null,2] ]
+output: false"""
+#example 3:
+"""input: p = [1,2,1], q = [1,1,2]
+output: false"""
