@@ -73,3 +73,24 @@ output: false"""
 #example 3:
 """input: root = [1,1], subRoot = [1]   
 output: true"""
+
+"""walkthrough:
+1. Serialize both trees using pre-order traversal, marking null nodes with a special character (e.g., "$").
+2. Concatenate the serialized subRoot with a separator (e.g., "|") and the serialized root.
+3. Use the Z-function algorithm to find occurrences of the serialized subRoot in the serialized root.   
+4. If any Z-value equals the length of the serialized subRoot, return True (indicating subRoot is a subtree of root). Otherwise, return False.
+5. The Z-function efficiently computes the longest substring matches, allowing us to check for subtree presence in linear time relative to the combined length of the serialized strings.
+6. This approach ensures that we can handle the constraints of the problem efficiently, even for larger trees.  
+7. The overall time complexity is O(n + m), where n is the number of nodes in root and m is the number of nodes in subRoot, due to the serialization and Z-function processing. 
+8. The space complexity is also O(n + m) for storing the serialized strings and Z-values.   
+9. This method is efficient and avoids the need for repeated tree comparisons, making it suitable for larger inputs within the given constraints.   
+10. The use of serialization and string matching techniques provides a clear and effective solution to the subtree problem, leveraging well-known algorithms for string processing. 
+11. The serialization step ensures that the structure and values of the trees are captured in a linear format, allowing for straightforward comparison. 
+12. The Z-function is a powerful tool for pattern matching, enabling us to efficiently find occurrences of the serialized subRoot within the serialized root without the need for nested loops or repeated comparisons.
+13. Overall, this approach combines tree serialization with advanced string matching techniques to provide a robust solution to the subtree problem, ensuring correctness and efficiency within the specified constraints.
+14. The solution is designed to handle edge cases, such as when either tree is empty, by appropriately marking null nodes during serialization. This ensures that the comparison accurately reflects the structure of the trees, even in cases where one tree may have missing children.    
+15. The use of a special character to denote null nodes during serialization is crucial for maintaining the integrity of the tree structure in the serialized string, allowing for accurate subtree detection.  
+16. The overall design of the solution emphasizes clarity and efficiency, making it suitable for a wide range of binary tree configurations while adhering to the problem's constraints.    
+17. The solution is implemented in Python, leveraging the language's capabilities for handling data structures and algorithms effectively. The use of classes and methods provides a clear organization of the code, facilitating understanding and maintenance.    
+18. The implementation is designed to be easily understandable, with clear method names and logical flow, making it accessible to developers with varying levels of experience in tree algorithms and string processing techniques. 
+"""  
