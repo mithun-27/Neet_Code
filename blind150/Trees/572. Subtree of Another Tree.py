@@ -63,3 +63,13 @@ class Solution:
             if z_values[i] == sub_len:
                 return True
         return False
+    
+#example 1:
+"""input: root = [3,4,5,1,2], subRoot = [4,1,2] 
+output: true"""
+#example 2:
+"""input: root = [3,4,5,1,2,null,null,null,null,0], subRoot = [4,1,2]
+output: false"""
+#example 3:
+"""input: root = [1,1], subRoot = [1]   
+output: true"""
