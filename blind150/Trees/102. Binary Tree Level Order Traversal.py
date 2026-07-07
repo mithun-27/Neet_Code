@@ -61,3 +61,14 @@ Output: [[1]] """
 #example 3
 """ Input: root = []
 Output: [] """
+
+"""walkthrough:
+1. Initialize an empty list res to store the final result.  
+2. Create a deque (double-ended queue) q and append the root node to it. This will be used for level order traversal.
+3. While the queue is not empty, do the following:
+   - Get the number of nodes at the current level (qLen).
+   - Initialize an empty list level to store the values of nodes at the current level.
+   - For each node at the current level, pop it from the queue, append its value to level, and append its children (if any) to the queue.
+   - If level is not empty, append it to res.
+4. Return res.
+5. The time complexity is O(n), where n is the number of nodes in the tree, since we visit each node once. The space complexity is O(n) as well, due to the storage of the result and the queue. """    
