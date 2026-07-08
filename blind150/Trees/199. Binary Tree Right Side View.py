@@ -82,3 +82,17 @@ Output: [1,3] """
 #example 4
 """ Input: root = []
 Output: [] """
+
+"""walkthrough:
+1. Initialize an empty list res to store the right side view of the binary tree.
+2. Initialize a queue (deque) and add the root node to it.
+3. While the queue is not empty, do the following:
+   a. Initialize a variable rightSide to None. This will hold the rightmost node at the current level.
+   b. Get the number of nodes at the current level (qLen).
+   c. For each node at the current level, do the following:
+      i. Pop a node from the queue.
+      ii. If the node is not None, update rightSide to this node and add its left and right children to the queue.
+   d. After processing all nodes at the current level, if rightSide is not None, append its value to res.
+4. Return res, which contains the values of the nodes visible from the right side of the binary tree.
+5. The time complexity of this solution is O(n), where n is the number of nodes in the binary tree, as we visit each node exactly once. The space complexity is also O(n) in the worst case, which occurs when the binary tree is completely unbalanced (e.g., a linked list). In the best case, when the tree is balanced, the space complexity would be O(log n) due to the height of the tree.   
+"""
