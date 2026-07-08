@@ -69,3 +69,16 @@ class Solution:
             if rightSide:
                 res.append(rightSide.val)
         return res
+    
+#example 1
+""" Input: root = [1,2,3,null,5,null,4]
+Output: [1,3,4] """
+#example 2
+""" Input: root = [1,2,3,4,null,null,null,5]
+Output: [1,3,4,5] """
+#example 3
+""" Input: root = [1,null,3]    
+Output: [1,3] """
+#example 4
+""" Input: root = []
+Output: [] """
