@@ -34,3 +34,13 @@ Constraints:
 
 The number of nodes in the binary tree is in the range [1, 10^5].
 Each node's value is between [-10^4, 10^4]."""
+
+#example 1:
+"""Input: root = [3,1,4,3,null,1,5]
+Output: 4"""
+#example 2:
+"""Input: root = [3,3,null,4,2]
+Output: 3"""
+#example 3:
+"""Input: root = [1]
+Output: 1"""
