@@ -25,3 +25,10 @@ Constraints:
 
 The number of nodes in the tree is in the range [1, 104].
 -231 <= Node.val <= 231 - 1"""
+
+#example 1:
+"""Input: root = [2,1,3]
+Output: true"""
+#example 2:
+"""Input: root = [5,1,4,null,null,3,6]  
+Output: false"""
