@@ -65,3 +65,11 @@ Output: 3"""
 #example 3:
 """Input: root = [1], k = 1
 Output: 1"""
+
+"""walkthrough:
+1. To find the kth smallest element in a binary search tree (BST), we can perform an in-order traversal of the tree, which visits the nodes in ascending order.
+2. We can use a stack to simulate the in-order traversal iteratively. We start from the root node and push all the left children onto the stack until we reach a null node.
+3. Once we reach a null node, we pop the top node from the stack, which represents the next smallest element in the BST. We decrement k by 1, and if k becomes 0, we return the value of the current node as the kth smallest element.
+4. If k is not 0, we move to the right child of the current node and repeat the process of pushing left children onto the stack.
+5. We continue this process until we find the kth smallest element or exhaust all nodes in the BST. If we reach the end of the traversal without finding the kth smallest element, we return -1 as an indication that k is out of bounds.           
+6. The time complexity of this approach is O(h + k), where h is the height of the tree, as we may need to traverse down to the leftmost node and then visit k nodes. The space complexity is O(h) for the stack used in the traversal, where h is the height of the tree. In the worst case, for a skewed tree, the space complexity can be O(n), but for a balanced tree, it will be O(log n)."""
