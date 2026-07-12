@@ -63,3 +63,12 @@ Output: [-1]"""
 #example 3:
 """Input: preorder = [1,2], inorder = [2,1]
 Output: [1,2]"""
+
+"""walkthrough:
+1. Create a dummy head node to simplify tree construction.
+2. Initialize pointers for preorder and inorder traversals. 
+3. Iterate through the preorder list, creating right child nodes for each value.
+4. For each node, check if its value matches the current inorder value. If not, create left child nodes until a match is found.
+5. Once a match is found, backtrack to the parent node and continue the process until all nodes are processed.
+6. Return the right child of the dummy head as the root of the constructed tree.
+7. The algorithm runs in O(n) time complexity, where n is the number of nodes in the tree, and uses O(n) space for the recursion stack in the worst case."""
