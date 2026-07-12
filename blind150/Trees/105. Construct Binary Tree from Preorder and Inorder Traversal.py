@@ -71,4 +71,5 @@ Output: [1,2]"""
 4. For each node, check if its value matches the current inorder value. If not, create left child nodes until a match is found.
 5. Once a match is found, backtrack to the parent node and continue the process until all nodes are processed.
 6. Return the right child of the dummy head as the root of the constructed tree.
-7. The algorithm runs in O(n) time complexity, where n is the number of nodes in the tree, and uses O(n) space for the recursion stack in the worst case."""
+7. The algorithm runs in O(n) time complexity, where n is the number of nodes in the tree, and uses O(n) space for the recursion stack in the worst case.
+"""
