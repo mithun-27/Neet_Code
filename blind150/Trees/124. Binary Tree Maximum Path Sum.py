@@ -52,3 +52,13 @@ class Solution:
 
         dfs(root)
         return res[0]
+    
+#example 1:
+"""Input: root = [1,2,3]    
+Output: 6"""
+#example 2:
+"""Input: root = [-10,9,20,null,null,15,7]  
+Output: 42"""
+#example 3:
+"""Input: root = [2,-1] 
+Output: 2"""
