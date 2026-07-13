@@ -62,3 +62,15 @@ Output: 42"""
 #example 3:
 """Input: root = [2,-1] 
 Output: 2"""
+
+"""walkthrough:
+1. Initialize a variable `res` to store the maximum path sum, starting with the value of the root node.
+2. Define a recursive function `dfs` that takes a node as input and returns the maximum path sum that can be obtained from that node down to its children.
+3. In the `dfs` function, if the current node is None, return 0.    
+4. Recursively call `dfs` on the left and right children of the current node to get their maximum path sums.
+5. Update the maximum path sum `res` by considering the current node's value plus the maximum path sums from both left and right children. Use `max(leftMax, 0)` and `max(rightMax, 0)` to ignore negative path sums.
+6. Return the maximum path sum that can be obtained from the current node down to its children, which is the current node's value plus the maximum of the left and right path sums.     
+7. Call the `dfs` function starting from the root node to compute the maximum path sum for the entire tree.
+8. Finally, return the value stored in `res`, which contains the maximum path sum found during the traversal of the tree.   
+9. The algorithm has a time complexity of O(n), where n is the number of nodes in the tree, as each node is visited once. The space complexity is O(h), where h is the height of the tree, due to the recursion stack.  
+"""
