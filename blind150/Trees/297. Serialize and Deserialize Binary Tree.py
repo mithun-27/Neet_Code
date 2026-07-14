@@ -68,3 +68,13 @@ class Codec:
                 queue.append(node.right)
             index += 1
         return root
+    
+#example 1:
+"""Input: root = [1,2,3,null,null,4,5]      
+Output: [1,2,3,null,null,4,5]"""
+#example 2:
+"""Input: root = []
+Output: []"""
+#example 3:
+"""Input: root = [1]
+Output: [1]"""
