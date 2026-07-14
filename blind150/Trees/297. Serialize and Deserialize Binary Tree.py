@@ -78,3 +78,17 @@ Output: []"""
 #example 3:
 """Input: root = [1]
 Output: [1]"""
+
+"""walkthrough:
+1. Serialize:
+- If the root is None, return "N".
+- Otherwise, use a queue to perform a level-order traversal and append each node's value or "N" for null nodes.
+2. Deserialize:
+- Split the serialized string by commas.
+- If the first value is "N", return None.
+- Otherwise, create the root node and use a queue to reconstruct the tree level by level.   
+3. Return the reconstructed tree's root node.
+4. The serialized string can be used to reconstruct the original tree structure accurately.
+5. The algorithm handles edge cases such as empty trees and single-node trees effectively.
+6. The time complexity for both serialization and deserialization is O(n), where n is the number of nodes in the tree, as each node is processed once. The space complexity is also O(n) due to the storage of the serialized string and the queue used for traversal.  
+"""
