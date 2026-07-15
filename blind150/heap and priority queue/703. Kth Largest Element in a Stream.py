@@ -83,3 +83,13 @@ output
 output
 [null, 7, 7, 7, 8]  
 """
+
+"""walkthrough:
+1. Initialize the KthLargest class with a given integer k and a list of test scores nums.
+2. Use a min-heap to keep track of the k largest elements in the stream of test scores.
+3. In the constructor, heapify the nums list and pop elements until only k elements remain in the heap.
+4. In the add method, push the new score val into the min-heap.
+5. If the size of the min-heap exceeds k, pop the smallest element to maintain only the k largest elements.
+6. Return the smallest element in the min-heap, which represents the kth largest score in the stream of test scores so far.
+7. The add method is called each time a new score is submitted, and it returns the current kth largest score after the addition.    
+"""
