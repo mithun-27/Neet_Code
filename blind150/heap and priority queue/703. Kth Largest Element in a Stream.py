@@ -52,6 +52,9 @@ Constraints:
 At most 104 calls will be made to add."""
 
 #answer
+import heapq
+
+
 class KthLargest:
 
     def __init__(self, k: int, nums: List[int]):
@@ -65,3 +68,18 @@ class KthLargest:
         if len(self.minHeap) > self.k:
             heapq.heappop(self.minHeap)
         return self.minHeap[0]
+    
+#example 1:
+"""input
+["KthLargest", "add", "add", "add", "add", "add"]
+[[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+output
+[null, 4, 5, 5, 8, 8]
+"""
+#example 2:
+"""input
+["KthLargest", "add", "add", "add", "add"]
+[[4, [7, 7, 7, 7, 8, 3]], [2], [10], [9], [9]]
+output
+[null, 7, 7, 7, 8]  
+"""
