@@ -58,3 +58,14 @@ class Solution:
             bucket[first - second] += 1
             first = max(first - second, second)
         return first
+    
+#example 1:
+solution = Solution()
+stones = [2,7,4,1,8,1]
+print(solution.lastStoneWeight(stones)) #Output: 1
+#example 2:
+stones = [1]
+print(solution.lastStoneWeight(stones)) #Output: 1
+#example 3:
+stones = [3, 7, 2, 5, 8]
+print(solution.lastStoneWeight(stones)) #Output: 1
