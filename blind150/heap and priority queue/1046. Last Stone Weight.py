@@ -69,3 +69,14 @@ print(solution.lastStoneWeight(stones)) #Output: 1
 #example 3:
 stones = [3, 7, 2, 5, 8]
 print(solution.lastStoneWeight(stones)) #Output: 1
+
+"""walkthrough:
+1. We first find the maximum weight of the stones and create a bucket array to count the occurrences of each weight.
+2. We then initialize two variables, first and second, to keep track of the heaviest stones. We start with first as the maximum weight and second as the same value.
+3. We enter a while loop that continues until first is greater than 0. Inside the loop, we check if the count of the first stone is even. If it is, we decrement first and continue to the next iteration.
+4. If the count of the first stone is odd, we find the next heaviest stone by decrementing j from first - 1 until we find a stone with a non-zero count in the bucket.
+5. If we reach j == 0, it means there are no more stones left to smash, and we return the weight of the first stone.
+6. If we find a second stone, we decrement the counts of both first and second stones in the bucket and increment the count of the new stone formed by smashing them together (first - second).
+7. We then update first to be the maximum of (first - second) and second, and continue the loop.
+8. Finally, when the loop ends, we return the weight of the last remaining stone, which is stored in first. If there are no stones left, first will be 0, and we return 0 as specified in the problem statement.    
+"""
