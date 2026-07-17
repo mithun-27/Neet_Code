@@ -54,3 +54,13 @@ class Solution:
             else:
                 R = pivot - 1
         return points[:k]
+
+#example 1:
+solution = Solution()
+points = [[1,3],[-2,2]]
+k = 1
+print(solution.kClosest(points, k)) #Output: [[-2,2]]
+#example 2:
+points = [[3,3],[5,-1],[-2,4]]
+k = 2
+print(solution.kClosest(points, k)) #Output: [[3,3],[-2,4]]
