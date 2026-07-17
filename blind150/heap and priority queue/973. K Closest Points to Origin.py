@@ -64,3 +64,13 @@ print(solution.kClosest(points, k)) #Output: [[-2,2]]
 points = [[3,3],[5,-1],[-2,4]]
 k = 2
 print(solution.kClosest(points, k)) #Output: [[3,3],[-2,4]]
+
+
+"""walkthrough:
+1. Define a lambda function `euclidean` to calculate the squared Euclidean distance of a point from the origin.
+2. Define a `partition` function that rearranges the points based on their distance to the origin, using the last point as the pivot.
+3. Initialize two pointers `L` and `R` to represent the current range of points being considered, and set `pivot` to the length of the points list.
+4. Use a while loop to repeatedly partition the points until the pivot index equals `k`.
+5. Inside the loop, call the `partition` function and update the pointers `L` and `R` based on the pivot index.
+6. Once the loop exits, return the first `k` points from the list, which are the closest to the origin.     
+7. The algorithm has an average time complexity of O(n) due to the partitioning process, making it efficient for large datasets."""
