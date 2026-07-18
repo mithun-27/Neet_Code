@@ -100,4 +100,4 @@ print(solution.findKthLargest(nums, k)) #Output: 10
 4. The `partition` function is used to rearrange the elements in the array such that all elements greater than the pivot are on the left side and all elements less than the pivot are on the right side. The pivot is chosen as the median of three elements (the first, middle, and last elements) to improve performance.
 5. The `quickSelect` function continues to partition the array until the pivot index matches k-1. If the pivot index is greater than k-1, it narrows the search to the left side of the array; if it is less than k-1, it narrows the search to the right side.
 6. Once the pivot index matches k-1, the function returns the element at that index, which is the kth largest element in the original array.        
-"""
+7.The time complexity of this algorithm is O(n) on average, but can degrade to O(n^2) in the worst case. The space complexity is O(1) since it uses a constant amount of extra space."""
