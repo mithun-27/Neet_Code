@@ -93,4 +93,11 @@ k = 3
 print(solution.findKthLargest(nums, k)) #Output: 10
 
 
-""""""
+"""walkthrough:
+1. The function `findKthLargest` takes an array of integers `nums` and an integer `k`, and returns the kth largest element in the array.
+2. The function uses the Quickselect algorithm, which is a selection algorithm to find the kth smallest/largest element in an unordered list. It is related to the quicksort sorting algorithm.
+3. The `quickSelect` function is called with the input array and k-1 (since the array is 0-indexed). It initializes two pointers, `left` and `right`, to the start and end of the array, respectively.
+4. The `partition` function is used to rearrange the elements in the array such that all elements greater than the pivot are on the left side and all elements less than the pivot are on the right side. The pivot is chosen as the median of three elements (the first, middle, and last elements) to improve performance.
+5. The `quickSelect` function continues to partition the array until the pivot index matches k-1. If the pivot index is greater than k-1, it narrows the search to the left side of the array; if it is less than k-1, it narrows the search to the right side.
+6. Once the pivot index matches k-1, the function returns the element at that index, which is the kth largest element in the original array.        
+"""
