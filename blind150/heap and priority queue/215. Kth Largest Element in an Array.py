@@ -23,6 +23,9 @@ Constraints:
 -104 <= nums[i] <= 104"""
 
 #answer
+from typing import List
+
+
 class Solution:
     def partition(self, nums: List[int], left: int, right: int) -> int:
         mid = (left + right) >> 1
@@ -74,3 +77,17 @@ class Solution:
 
     def findKthLargest(self, nums: List[int], k: int) -> int:
         return self.quickSelect(nums, k - 1)
+    
+#example 1:
+solution = Solution()
+nums = [3,2,1,5,6,4]
+k = 2
+print(solution.findKthLargest(nums, k)) #Output: 5
+#example 2:
+nums = [3,2,3,1,2,4,5,5,6]
+k = 4   
+print(solution.findKthLargest(nums, k)) #Output: 4
+#example 3:
+nums = [7,10,4,3,20,15]
+k = 3
+print(solution.findKthLargest(nums, k)) #Output: 10
