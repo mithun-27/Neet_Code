@@ -57,3 +57,18 @@ class Solution:
 
         time = (maxf - 1) * (n + 1) + maxCount
         return max(len(tasks), time)
+    
+
+#example 1:
+solution = Solution()
+tasks = ["A","A","A","B","B","B"]
+n = 2
+print(solution.leastInterval(tasks, n))  # Output: 8
+#example 2:
+tasks = ["A","C","A","B","D","B"]
+n = 1
+print(solution.leastInterval(tasks, n))  # Output: 6
+#example 3:
+tasks = ["A","A","A", "B","B","B"]
+n = 3
+print(solution.leastInterval(tasks, n))  # Output: 10
