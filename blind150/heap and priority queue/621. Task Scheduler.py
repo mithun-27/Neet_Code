@@ -72,3 +72,10 @@ print(solution.leastInterval(tasks, n))  # Output: 6
 tasks = ["A","A","A", "B","B","B"]
 n = 3
 print(solution.leastInterval(tasks, n))  # Output: 10
+
+"""walkthrough:
+1. We first create a count array of size 26 to count the frequency of each task
+2. We then find the maximum frequency of any task and count how many tasks have that maximum frequency
+3. We calculate the minimum time required to complete all tasks using the formula: (maxf - 1) * (n + 1) + maxCount
+4. Finally, we return the maximum of the length of tasks and the calculated time to ensure that we account for cases where the number of tasks is greater than the calculated time. This ensures that we have enough intervals to complete all tasks while respecting the cooling period.       
+5. The time complexity of this solution is O(n), where n is the number of tasks, and the space complexity is O(1) since the count array has a fixed size of 26."""
