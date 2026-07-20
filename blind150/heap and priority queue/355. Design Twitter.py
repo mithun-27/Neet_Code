@@ -100,3 +100,13 @@ twitter.postTweet(2, 6)  # User 2 posts a new tweet (id = 6).
 print(twitter.getNewsFeed(1))  # User 1's news feed should return a list with 2 tweet ids -> [6, 5]. Tweet id 6 should precede tweet id 5 because it is posted after tweet id 5.
 twitter.unfollow(1, 2)  # User 1 unfollows user 2   
 print(twitter.getNewsFeed(1))  # User 1's news feed should return a list with 1 tweet id -> [5], since user 1 is no longer following user 2.    
+
+
+"""walkthrough:
+1. Initialize the Twitter class with a count variable to keep track of the order of tweets, a tweetMap to store tweets for each user, and a followMap to store the follow relationships.
+2. In the postTweet method, append the tweet to the user's list in tweetMap along with the current count, and decrement the count. If the user's tweet list exceeds 10, remove the oldest tweet.
+3. In the getNewsFeed method, create a minHeap to store the most recent tweets from the user and their followees. Add the user's own tweets and the tweets of their followees to the heap, ensuring that only the 10 most recent tweets are kept.
+4. In the follow method, add the followeeId to the followerId's set in followMap.
+5. In the unfollow method, remove the followeeId from the followerId's set in followMap if it exists.
+6. The time complexity for postTweet is O(1), for getNewsFeed is O  (k log k) where k is the number of followees, and for follow/unfollow is O(1). The space complexity is O(n) where n is the number of users and tweets stored.       
+"""
