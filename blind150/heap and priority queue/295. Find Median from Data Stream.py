@@ -79,3 +79,11 @@ solution = MedianFinder()
 solution.addNum(2)    # arr = [2]
 solution.addNum(3)    # arr = [2, 3]    
 print(solution.findMedian()) # return 2.5 (i.e., (2 + 3) / 2)   
+
+
+"""walkthrough:
+1. We will use two heaps to store the numbers. The first heap (small) will be a max heap that stores the smaller half of the numbers, and the second heap (large) will be a min heap that stores the larger half of the numbers.
+2. When we add a new number, we will first check if it is greater than the smallest number in the large heap. If it is, we will add it to the large heap; otherwise, we will add it to the small heap.
+3. After adding the new number, we will check if the heaps are balanced. If the small heap has more than one extra element compared to the large heap, we will move the largest element from the small heap to the large heap. If the large heap has more than one extra element compared to the small heap, we will move the smallest element from the large heap to the small heap.
+4. To find the median, we will check the sizes of the heaps. If the small heap has more elements, the median is the largest element in the small heap. If the large heap has more elements, the median is the smallest element in the large heap. If both heaps have the same number of elements, the median is the average of the largest element in the small heap and the smallest element in the large heap.    
+5. The time complexity for adding a number is O(log n) due to the heap operations, and finding the median is O(1) since we are just accessing the top elements of the heaps."""
