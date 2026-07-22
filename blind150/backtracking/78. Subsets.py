@@ -24,6 +24,8 @@ All the numbers of nums are unique.
 """
 
 #answer
+from typing import List
+
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
@@ -32,3 +34,12 @@ class Solution:
             subset = [nums[j] for j in range(n) if (i & (1 << j))]
             res.append(subset)
         return res
+    
+#example 1:
+solution = Solution()
+nums = [1,2,3]
+print(solution.subsets(nums)) #output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+
+#example 2:
+nums = [0]
+print(solution.subsets(nums)) #output: [[],[0]]
