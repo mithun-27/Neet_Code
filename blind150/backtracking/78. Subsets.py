@@ -43,3 +43,12 @@ print(solution.subsets(nums)) #output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]
 #example 2:
 nums = [0]
 print(solution.subsets(nums)) #output: [[],[0]]
+
+"""Walkthrough:
+1. We want to generate all possible subsets (the power set) of the given array `nums`.
+2. If the array contains `n` elements, there are exactly `2^n` possible subsets because each element has two choices: either include it or exclude it.
+3. We loop from `0` to `(1 << n) - 1`, where each number represents one possible subset using its binary representation.
+4. For each number `i`, we check every bit position `j`. If the `j`th bit is set (i.e., `i & (1 << j)` is non-zero), we include `nums[j]` in the current subset.
+5. After checking all the bits, the constructed subset is added to the result list.
+6. We repeat this process for every number from `0` to `2^n - 1`, ensuring that every possible combination of elements is generated exactly once.
+7. The final result contains all subsets of the input array. The time complexity is `O(n × 2^n)` because we generate `2^n` subsets and examine all `n` elements for each subset. The auxiliary space complexity is `O(n)` (excluding the output), while the total space including the returned subsets is `O(n × 2^n)`."""
