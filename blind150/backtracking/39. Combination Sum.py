@@ -64,3 +64,13 @@ Example 3:
 
 Input: candidates = [2], target = 1
 Output: []"""
+
+"""Walkthrough:
+1. We want to find all unique combinations of numbers from the `candidates` array whose sum is equal to the given `target`.
+2. Since each candidate can be used an unlimited number of times, we use a backtracking (depth-first search) approach to explore every possible combination.
+3. At each recursive call, we decide whether to include the current candidate in the combination. If we include it, we subtract its value from the remaining target and continue from the same index so that the candidate can be reused.
+4. If the remaining target becomes exactly `0`, we have found a valid combination, so we add a copy of the current combination to the result list.
+5. If the remaining target becomes negative or we have considered all candidates, we stop exploring that path because it cannot produce a valid solution.
+6. After exploring a candidate, we backtrack by removing it from the current combination and continue exploring the next candidates. This ensures that every possible valid combination is considered without modifying previously found solutions.
+7. Since we always move forward through the candidate list (or stay at the same index when reusing a number), duplicate combinations such as `[2,3,2]` and `[3,2,2]` are avoided automatically.
+8. The algorithm continues until all possible combinations have been explored. The time complexity is exponential in the worst case because many combinations may need to be explored, while the space complexity is `O(target)` for the recursion stack and the current combination (excluding the output list)."""
