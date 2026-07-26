@@ -20,7 +20,8 @@ Constraints:
 1 <= nums.length <= 10
 -10 <= nums[i] <= 10"""
 
-#class Solution:
+#answer
+class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         res = [[]]
