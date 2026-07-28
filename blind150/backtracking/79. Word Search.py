@@ -56,7 +56,7 @@ class Solution:
                     return True
         return False
 
-#examples
+#example 1
 """Input: 
 board = [
   ["A","B","C","D"],
@@ -66,3 +66,13 @@ board = [
 word = "CAT"
 
 Output: true"""
+#example 2 
+"""Input: 
+board = [
+  ["A","B","C","D"],
+  ["S","A","A","T"],
+  ["A","C","A","E"]
+],
+word = "BAT"
+
+Output: false"""
