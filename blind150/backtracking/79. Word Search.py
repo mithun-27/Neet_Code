@@ -76,3 +76,14 @@ board = [
 word = "BAT"
 
 Output: false"""
+
+"""Walkthrough:
+1. We want to determine whether the given `word` can be formed by sequentially connecting adjacent cells (up, down, left, or right) in the board, where each cell can be used only once in a single path.
+2. We iterate through every cell in the board and treat each cell as a possible starting position for the word.
+3. From each starting cell, we perform a depth-first search (DFS) to check whether the remaining characters of the word can be matched by moving to adjacent cells.
+4. During the DFS, we first check the base case. If the current index reaches the length of the word, it means every character has been matched successfully, so we return `True`.
+5. We then check whether the current position is out of bounds, whether the character in the board does not match the current character of the word, or whether the cell has already been visited. If any of these conditions are true, we return `False`.
+6. If the current cell is valid, we temporarily mark it as visited by replacing its value with a special character (such as `'#'`). This prevents revisiting the same cell while constructing the current path.
+7. We recursively explore the four possible directions (down, up, right, and left) to match the next character of the word. If any recursive call returns `True`, the current search path is successful.
+8. After exploring all directions, we restore the original character in the board (backtracking) so that the cell can be used in other search paths starting from different positions.
+9. If a valid path is found from any starting cell, we immediately return `True`. If all possible starting positions have been explored without matching the entire word, we return `False`. The time complexity is `O(ROWS × COLS × 4^L)`, where `L` is the length of the word, and the auxiliary space complexity is `O(L)` for the recursion stack."""
