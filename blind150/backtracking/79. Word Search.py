@@ -57,3 +57,12 @@ class Solution:
         return False
 
 #examples
+"""Input: 
+board = [
+  ["A","B","C","D"],
+  ["S","A","A","T"],
+  ["A","C","A","E"]
+],
+word = "CAT"
+
+Output: true"""
