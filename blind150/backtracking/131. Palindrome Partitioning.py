@@ -44,3 +44,13 @@ class Solution:
             return ret
 
         return dfs(0)
+
+#example 1
+"""Input: s = "aab"
+
+Output: [["a","a","b"],["aa","b"]]"""
+
+#example 2
+"""Input: s = "a"
+
+Output: [["a"]]"""
