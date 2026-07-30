@@ -47,3 +47,14 @@ class Solution:
                     tmp.append(curStr + c)
             res = tmp
         return res
+
+"""Example 1:
+
+Input: digits = "34"
+
+Output: ["dg","dh","di","eg","eh","ei","fg","fh","fi"]
+Example 2:
+
+Input: digits = ""
+
+Output: []"""
