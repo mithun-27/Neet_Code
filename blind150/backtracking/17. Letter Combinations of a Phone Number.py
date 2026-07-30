@@ -58,3 +58,14 @@ Example 2:
 Input: digits = ""
 
 Output: []"""
+
+"""Walkthrough:
+1. We want to generate all possible letter combinations represented by the given string of digits using the standard telephone keypad mapping.
+2. We first create a mapping from each digit (`2`–`9`) to its corresponding letters. If the input string is empty, we return an empty list because there are no possible combinations.
+3. We use a backtracking (depth-first search) approach to build each combination one letter at a time. The recursion keeps track of the current digit index and the current combination being formed.
+4. At each recursive call, we look up the letters corresponding to the current digit and try each letter as the next character in the combination.
+5. For every selected letter, we add it to the current combination and recursively move to the next digit in the input string.
+6. If the current index reaches the length of the input string, it means we have selected one letter for every digit, so we add the completed combination to the result list.
+7. After each recursive call, we backtrack by removing the last added letter. This allows us to explore all other possible letter choices for the current digit.
+8. The algorithm continues until every possible combination has been generated exactly once. Since each digit contributes multiple choices, backtracking efficiently explores all valid combinations.
+9. The time complexity is `O(4^n × n)` in the worst case, where `n` is the number of digits, because each digit can map to at most four letters and each generated combination has length `n`. The auxiliary space complexity is `O(n)` for the recursion stack and the current combination (excluding the output list)."""
