@@ -56,3 +56,19 @@ class Solution:
 
         backtrack(0)
         return res
+
+
+"""Example 1:
+
+
+
+Input: n = 4
+
+Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
+Explanation: There are two different solutions to the 4-queens puzzle.
+
+Example 2:
+
+Input: n = 1
+
+Output: [["Q"]]"""
