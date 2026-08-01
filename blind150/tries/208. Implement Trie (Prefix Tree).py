@@ -69,3 +69,19 @@ class Trie:
             cur=cur[letter]
 
         return True
+
+#example:
+"""Input:
+["Trie", "insert", "dog", "search", "dog", "search", "do", "startsWith", "do", "insert", "do", "search", "do"]
+
+Output:
+[null, null, true, false, true, null, true]
+
+Explanation:
+PrefixTree prefixTree = new PrefixTree();
+prefixTree.insert("dog");
+prefixTree.search("dog");    // return true
+prefixTree.search("do");     // return false
+prefixTree.startsWith("do"); // return true
+prefixTree.insert("do");
+prefixTree.search("do");     // return true"""
