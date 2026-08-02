@@ -67,3 +67,12 @@ class WordDictionary:
             return False
     
         return dfs(self.root, 0)
+
+#example 1:
+"""Input
+["WordDictionary","addWord","addWord","addWord","search","search","search","search"]
+[[],["bad"],["dad"],["mad"],["pad"],["bad"],[".ad"],["b.."]]
+Output
+[null,null,null,null,false,true,true,true]
+Expected
+[null,null,null,null,false,true,true,true]"""
