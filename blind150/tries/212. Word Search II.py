@@ -100,3 +100,14 @@ Output
 []
 Expected
 []"""
+
+"""Walkthrough:
+1. We want to find all the words from the given `words` list that can be formed on the board by moving horizontally or vertically to adjacent cells without reusing the same cell in a single word.
+2. Instead of searching for each word separately, we first build a Trie (Prefix Tree) containing all the words. This allows us to search for many words simultaneously while sharing common prefixes.
+3. We iterate through every cell of the board and treat each cell as a possible starting position. From each cell, we perform a depth-first search (DFS) while traversing both the board and the Trie at the same time.
+4. During the DFS, we first check whether the current board character exists as a child of the current Trie node. If it does not, we immediately stop exploring that path because no word in the Trie can start with the current prefix.
+5. If the character exists, we move to the corresponding Trie node. If this Trie node marks the end of a word, we have found a valid word, so we add it to the result list and remove its end marker to avoid reporting the same word multiple times.
+6. We temporarily mark the current board cell as visited (for example, by replacing it with `'#'`) so that it cannot be reused while constructing the current word. We then recursively explore the four adjacent directions: up, down, left, and right.
+7. After exploring all possible directions, we restore the original character in the board (backtracking) so that the cell can be used in other search paths.
+8. As an optimization, if a Trie node no longer has any children after a word has been found, we remove that node from its parent. This prunes unnecessary search paths and improves performance for the remaining DFS calls.
+9. The algorithm continues until every cell has been explored. Using the Trie significantly reduces redundant searches compared to checking each word individually. The worst-case time complexity is `O(m × n × 4^L)`, where `L` is the maximum word length, although Trie pruning makes it much faster in practice. The auxiliary space complexity is `O(W × L)` for the Trie, where `W` is the number of words, plus `O(L)` for the recursion stack (excluding the output list)."""
