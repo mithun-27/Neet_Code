@@ -78,3 +78,25 @@ class Solution:
                     backtrack(r, c, trie.root.children[start_char], start_char)
 
         return list(self.result)
+
+#example 1 :
+"""Input
+board =
+[["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]]
+words =
+["oath","pea","eat","rain"]
+Output
+["oath","eat"]
+Expected
+["oath","eat"]"""
+
+#example 2:
+"""Input
+board =
+[["a","b"],["c","d"]]
+words =
+["abcb"]
+Output
+[]
+Expected
+[]"""
