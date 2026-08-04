@@ -100,3 +100,14 @@ Output
 3
 Expected
 3"""
+
+"""Walkthrough:
+1. We want to count the number of islands in the given binary grid, where an island is formed by connecting adjacent land cells (`'1'`) horizontally or vertically.
+2. We iterate through every cell in the grid. Whenever we encounter a land cell (`'1'`) that has not been visited, we have discovered a new island, so we increment the island count.
+3. From the newly discovered land cell, we perform a depth-first search (DFS) or breadth-first search (BFS) to visit all connected land cells belonging to the same island.
+4. During the traversal, we first check whether the current position is out of bounds or whether the current cell is water (`'0'`). If either condition is true, we stop exploring that path.
+5. If the current cell is land, we mark it as visited (for example, by changing `'1'` to `'0'` or by storing it in a visited set). This ensures that the same land cell is not counted multiple times.
+6. We then recursively (or iteratively) explore the four adjacent directions: up, down, left, and right. Every connected land cell is marked as visited, meaning the entire island is explored in a single traversal.
+7. After the DFS/BFS completes, all cells belonging to the current island have been visited. The next unvisited land cell encountered in the grid will represent a new island.
+8. The algorithm continues until every cell in the grid has been processed. Since each land cell is visited exactly once, every island is counted exactly once.
+9. Let `m` and `n` be the number of rows and columns in the grid. The time complexity is `O(m × n)` because each cell is visited at most once. The auxiliary space complexity is `O(m × n)` in the worst case for the recursion stack (or queue/visited set), depending on the traversal method."""
