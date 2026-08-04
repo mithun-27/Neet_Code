@@ -82,3 +82,12 @@ class Solution:
                             islands -= 1
 
         return islands
+
+#example 1 :
+"""Input
+grid =
+[["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]
+Output
+1
+Expected
+1"""
