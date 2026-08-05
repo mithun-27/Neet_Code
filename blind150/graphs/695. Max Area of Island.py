@@ -90,3 +90,14 @@ Output
 6
 Expected
 6"""
+
+"""Walkthrough:
+1. We want to find the maximum area of an island in the given binary matrix, where an island is formed by connected `1`s in the four directions (up, down, left, and right).
+2. We iterate through every cell in the grid. Whenever we encounter a cell containing `1`, we start a depth-first search (DFS) to calculate the area of that island.
+3. During the DFS, we first check whether the current cell is out of bounds or contains `0`. If either condition is true, we return `0` because it does not contribute to the island's area.
+4. If the current cell contains `1`, we mark it as visited (for example, by changing its value to `0`) so that it is not counted again in future searches.
+5. We initialize the current island's area as `1` for the current cell, then recursively explore its four neighboring cells (up, down, left, and right).
+6. The recursive calls return the areas contributed by the neighboring land cells, and we add these values to the current island's area.
+7. Once the DFS finishes, it returns the total area of the current island. We compare this value with the maximum area found so far and update the answer if necessary.
+8. We continue scanning the remaining cells in the grid until every island has been explored exactly once.
+9. The algorithm returns the largest island area found. The time complexity is `O(m × n)` because each cell is visited at most once, and the auxiliary space complexity is `O(m × n)` in the worst case due to the recursion stack (excluding the input grid)."""
