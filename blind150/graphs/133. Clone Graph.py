@@ -81,7 +81,7 @@ class Solution:
         return oldToNew[node]
 
 
-#example:
+#example 1:
 """Input
 edges =
 [[2,4],[1,3],[2,4],[1,3]]
@@ -90,3 +90,11 @@ Output
 Expected
 [[2,4],[1,3],[2,4],[1,3]]
 """
+#example 2:
+"""Input
+edges =
+[[]]
+Output
+[[]]
+Expected
+[[]]"""
