@@ -79,3 +79,14 @@ class Solution:
                 oldToNew[cur].neighbors.append(oldToNew[nei])
 
         return oldToNew[node]
+
+
+#example:
+"""Input
+edges =
+[[2,4],[1,3],[2,4],[1,3]]
+Output
+[[2,4],[1,3],[2,4],[1,3]]
+Expected
+[[2,4],[1,3],[2,4],[1,3]]
+"""
