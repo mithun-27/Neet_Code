@@ -82,3 +82,11 @@ Output
 4
 Expected
 4"""
+#example 2:
+"""Input
+grid =
+[[2,1,1],[0,1,1],[1,0,1]]
+Output
+-1
+Expected
+-1"""
