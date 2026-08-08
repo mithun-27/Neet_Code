@@ -73,3 +73,12 @@ class Solution:
             time += 1
 
         return time
+
+#example 1:
+"""Input
+grid =
+[[2,1,1],[1,1,0],[0,1,1]]
+Output
+4
+Expected
+4"""
