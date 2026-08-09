@@ -102,3 +102,15 @@ Output
 [[0,0]]
 Expected
 [[0,0]]"""
+
+
+"""Walkthrough:
+1. We want to find all cells from which water can flow to both the Pacific Ocean and the Atlantic Ocean. Water can flow from a cell to a neighboring cell only if the neighboring cell's height is less than or equal to the current cell's height.
+2. Instead of starting from every cell and checking whether it can reach both oceans, we reverse the process. We start from the oceans and find all cells that can flow into them.
+3. We create two boolean matrices: `pac` to mark cells reachable from the Pacific Ocean and `atl` to mark cells reachable from the Atlantic Ocean.
+4. The Pacific Ocean touches the top row and left column, while the Atlantic Ocean touches the bottom row and right column. We collect these boundary cells as starting points for two separate BFS traversals.
+5. During BFS, we process cells level by level. From a current cell, we can move to a neighboring cell only if the neighbor's height is greater than or equal to the current cell's height. This is the reverse of the water-flow direction and allows us to find all cells that can eventually flow into the ocean.
+6. Every cell visited during the Pacific BFS is marked as reachable in the `pac` matrix, and every cell visited during the Atlantic BFS is marked as reachable in the `atl` matrix.
+7. After both BFS traversals are complete, `pac[r][c]` indicates that water from cell `(r, c)` can reach the Pacific Ocean, and `atl[r][c]` indicates that it can reach the Atlantic Ocean.
+8. We then iterate through all cells in the grid and select those that are marked as reachable in both matrices. These cells can flow to both oceans.
+9. The algorithm returns all such cells. The time complexity is `O(ROWS × COLS)` because each cell is visited at most once in each BFS traversal, and the auxiliary space complexity is `O(ROWS × COLS)` for the visited matrices and BFS queues."""
