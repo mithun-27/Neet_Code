@@ -85,3 +85,14 @@ class Solution:
             for c in range(COLS):
                 if not dsu.connected(ROWS * COLS, r * COLS + c):
                     board[r][c] = "X"
+
+
+#example 1:
+"""Input
+board =
+[["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
+Output
+[["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
+Expected
+[["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
+"""
