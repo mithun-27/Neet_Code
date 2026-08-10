@@ -105,3 +105,15 @@ Output
 [["X"]]
 Expected
 [["X"]]"""
+
+
+"""Walkthrough:
+1. We want to capture all regions of `'O'` that are completely surrounded by `'X'`. Any `'O'` connected to the boundary of the board cannot be captured because it is not fully enclosed.
+2. Instead of checking every region individually, we first identify all `'O'` cells that are connected to the board's boundary. These cells are guaranteed to remain `'O'`.
+3. We traverse the boundary cells (first row, last row, first column, and last column). Whenever we find an `'O'`, we start a DFS or BFS from that cell.
+4. During the DFS/BFS, we mark every reachable `'O'` as a temporary character (for example, `'T'`) to indicate that it is connected to the boundary and should not be captured.
+5. The search continues through all horizontally and vertically adjacent `'O'` cells, marking the entire boundary-connected region as safe.
+6. After processing all boundary cells, every remaining `'O'` on the board must belong to a surrounded region because it is not connected to any edge.
+7. We then traverse the entire board. If a cell contains `'O'`, we change it to `'X'` because it is fully surrounded and should be captured.
+8. If a cell contains the temporary marker `'T'`, we restore it back to `'O'` because it was connected to the boundary and must remain unchanged.
+9. The algorithm modifies the board in-place and ensures that only surrounded regions are captured. The time complexity is `O(m × n)` because each cell is visited at most once, and the auxiliary space complexity is `O(m × n)` in the worst case due to the DFS/BFS recursion stack or queue."""
