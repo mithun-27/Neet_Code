@@ -96,3 +96,12 @@ Output
 Expected
 [["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
 """
+
+#example 2:
+"""Input
+board =
+[["X"]]
+Output
+[["X"]]
+Expected
+[["X"]]"""
