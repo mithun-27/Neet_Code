@@ -53,3 +53,15 @@ class Solution:
                     q.append(nei)
 
         return finish == numCourses
+
+#example 1 :
+"""Input
+numCourses =
+2
+prerequisites =
+[[1,0]]
+Output
+true
+Expected
+true
+"""
