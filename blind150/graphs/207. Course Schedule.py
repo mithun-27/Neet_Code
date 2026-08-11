@@ -65,3 +65,15 @@ true
 Expected
 true
 """
+
+#example 2 :
+"""Input
+numCourses =
+2
+prerequisites =
+[[1,0],[0,1]]
+Output
+false
+Expected
+false
+"""
