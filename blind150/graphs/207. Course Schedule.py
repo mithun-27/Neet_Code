@@ -77,3 +77,14 @@ false
 Expected
 false
 """
+
+"""Walkthrough:
+1. We want to determine whether it is possible to finish all courses while satisfying every prerequisite. This can be represented as a directed graph where each course is a node and each prerequisite creates an edge from the prerequisite course to the course that depends on it.
+2. We use Topological Sort with Breadth-First Search (BFS) to determine whether the graph contains a cycle.
+3. We first build an adjacency list where `graph[bi]` contains all courses that can be taken after completing course `bi`. At the same time, we calculate the indegree of every course, which represents the number of prerequisites it still has.
+4. We find all courses with an indegree of `0`. These courses have no remaining prerequisites, so they can be taken immediately. We add them to a queue.
+5. We process the queue using BFS. Whenever we complete a course, we reduce the indegree of all courses that depend on it because one of their prerequisites has now been completed.
+6. If the indegree of a neighboring course becomes `0`, all of its prerequisites have been completed, so we add that course to the queue.
+7. We keep a count of how many courses have been successfully processed. If all `numCourses` courses are processed, it means there is a valid ordering of courses and we return `True`.
+8. If some courses cannot be processed, their prerequisites form a cycle. For example, `[1,0]` and `[0,1]` create a cycle where course `0` requires course `1` and course `1` requires course `0`, so we return `False`.
+9. The time complexity is `O(V + E)`, where `V` is the number of courses and `E` is the number of prerequisites, because every course and prerequisite relationship is processed at most once. The auxiliary space complexity is `O(V + E)` for the adjacency list, indegree array, and BFS queue."""
