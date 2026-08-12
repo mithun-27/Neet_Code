@@ -80,3 +80,14 @@ Output
 [0,1,2,3]
 Expected
 [0,2,1,3]"""
+
+#example 3 :
+"""Input
+numCourses =
+1
+prerequisites =
+[]
+Output
+[0]
+Expected
+[0]"""
