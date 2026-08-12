@@ -56,3 +56,16 @@ class Solution:
                 dfs(i)
 
         return output if len(output) == numCourses else []
+
+
+#example 1 :
+"""Input
+numCourses =
+2
+prerequisites =
+[[1,0]]
+Output
+[0,1]
+Expected
+[0,1]
+"""
