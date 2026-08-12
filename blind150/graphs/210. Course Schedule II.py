@@ -91,3 +91,15 @@ Output
 [0]
 Expected
 [0]"""
+
+
+"""Walkthrough:
+1. We want to find a valid ordering of all courses such that every prerequisite course is completed before the course that depends on it. This can be represented as a directed graph.
+2. We use Topological Sort with Breadth-First Search (BFS). Each course is a node, and a prerequisite relationship `[a, b]` creates an edge from course `b` to course `a`.
+3. We first build an adjacency list where `graph[b]` contains the courses that can be taken after completing course `b`. At the same time, we calculate the indegree of every course, which represents how many prerequisites are still remaining for that course.
+4. We find all courses with an indegree of `0`. These courses have no prerequisites, so they can be taken immediately, and we add them to the queue.
+5. We process the queue using BFS. When we take a course, we add it to the result ordering and reduce the indegree of every course that depends on it.
+6. If the indegree of a dependent course becomes `0`, it means all of its prerequisites have been completed, so we add that course to the queue.
+7. We continue this process until the queue becomes empty. If the result contains all `numCourses` courses, the ordering is valid, so we return the result.
+8. If the result contains fewer than `numCourses` courses, it means there is a cycle in the prerequisite graph. Since the courses involved in the cycle can never have an indegree of `0`, they cannot be added to the result, so we return an empty array.
+9. The time complexity is `O(V + E)`, where `V` is the number of courses and `E` is the number of prerequisites, because every course and prerequisite relationship is processed at most once. The auxiliary space complexity is `O(V + E)` for the adjacency list, indegree array, queue, and result."""
