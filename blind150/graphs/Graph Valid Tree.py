@@ -100,3 +100,15 @@ Expected output:
 
 
 false"""
+
+
+"""Walkthrough:
+1. We want to determine whether the given undirected graph forms a valid tree. A valid tree must satisfy two conditions: it must be fully connected, and it must not contain any cycles.
+2. We first build an adjacency list to represent the graph, where each node stores its neighboring nodes.
+3. We use a Depth-First Search (DFS) or Breadth-First Search (BFS) starting from node `0` to explore the graph.
+4. During the traversal, we maintain a visited set to keep track of nodes that have already been explored. Since the graph is undirected, we also keep track of the parent node to avoid treating the edge back to the parent as a cycle.
+5. While visiting a node, if we encounter a neighbor that has already been visited and is not the parent of the current node, a cycle exists. In this case, the graph cannot be a valid tree, so we return `False`.
+6. If the traversal completes without detecting a cycle, we then check whether all `n` nodes have been visited.
+7. If some nodes were not visited, the graph is disconnected, meaning there are multiple components. A disconnected graph cannot be a valid tree, so we return `False`.
+8. If there is no cycle and every node is reachable from the starting node, the graph is connected and acyclic, which satisfies the definition of a tree.
+9. The algorithm returns `True` only when both conditions are met. The time complexity is `O(V + E)`, where `V` is the number of nodes and `E` is the number of edges, because every node and edge is visited at most once. The auxiliary space complexity is `O(V + E)` for the adjacency list, visited set, and recursion stack or queue."""
