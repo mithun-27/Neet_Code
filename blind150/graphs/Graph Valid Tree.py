@@ -69,3 +69,19 @@ class Solution:
             if not dsu.union(u, v):
                 return False
         return dsu.components() == 1
+
+
+#example 1 :
+"""Input:
+
+
+n=5
+edges=[[0,1],[0,2],[0,3],[1,4]]
+Your Output:
+
+
+true
+Expected output:
+
+
+true"""
