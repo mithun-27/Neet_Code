@@ -79,3 +79,18 @@ Expected output:
 
 
 2"""
+
+#example 2 :
+"""Input:
+
+
+n=5
+edges=[[0,1],[1,2],[2,3],[3,4]]
+Your Output:
+
+
+1
+Expected output:
+
+
+1"""
