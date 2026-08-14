@@ -64,3 +64,18 @@ class Solution:
             if dsu.union(u, v):
                 res -= 1
         return res
+
+#example 1 :
+"""Input:
+
+
+n=5
+edges=[[0,1],[1,2],[3,4]]
+Your Output:
+
+
+2
+Expected output:
+
+
+2"""
