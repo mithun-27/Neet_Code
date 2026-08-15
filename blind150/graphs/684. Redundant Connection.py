@@ -58,3 +58,15 @@ class Solution:
         for n1, n2 in edges:
             if not union(n1, n2):
                 return [n1, n2]
+
+
+"""Walkthrough:
+1. We are given a graph that started as a tree and then had one extra edge added. Our goal is to find the edge that creates a cycle, also known as the redundant connection.
+2. We use the Disjoint Set Union (DSU) / Union-Find data structure to efficiently track which nodes belong to the same connected component.
+3. We initialize two arrays: `par`, where each node is initially its own parent, and `rank`, which stores the size of each component.
+4. The `find()` function is used to determine the ultimate parent (representative) of a node. It uses path compression to make future searches faster by shortening the paths in the tree.
+5. The `union()` function attempts to connect two nodes. First, it finds the parent of both nodes using the `find()` function.
+6. If both nodes already have the same parent, they are already connected. Adding this edge would create a cycle, so `union()` returns `False`.
+7. If the nodes belong to different components, we merge them using union by rank. The smaller component is attached to the larger component, and the rank (size) is updated accordingly.
+8. We process the edges one by one. For each edge `[n1, n2]`, we call `union(n1, n2)`. If `union()` returns `False`, it means this edge connects two nodes that are already in the same component and therefore creates a cycle.
+9. The first edge that causes `union()` to fail is the redundant connection, so we immediately return that edge. The time complexity is approximately `O(E × α(N))`, where `α(N)` is the inverse Ackermann function (nearly constant), making the algorithm very efficient. The auxiliary space complexity is `O(N)` for the parent and rank arrays."""
