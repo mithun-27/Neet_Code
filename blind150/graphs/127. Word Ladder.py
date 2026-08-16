@@ -60,3 +60,17 @@ class Solution:
                             fromBegin[nei] = steps + 1
                             qb.append(nei)
         return 0
+
+#example 1 :
+"""Input
+beginWord =
+"hit"
+endWord =
+"cog"
+wordList =
+["hot","dot","dog","lot","log","cog"]
+Output
+5
+Expected
+5
+"""
