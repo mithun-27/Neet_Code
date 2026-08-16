@@ -74,3 +74,16 @@ Output
 Expected
 5
 """
+
+#example 2 :
+"""Input
+beginWord =
+"hit"
+endWord =
+"cog"
+wordList =
+["hot","dot","dog","lot","log"]
+Output
+0
+Expected
+0"""
