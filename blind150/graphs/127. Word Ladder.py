@@ -87,3 +87,14 @@ Output
 0
 Expected
 0"""
+
+"""Walkthrough:
+1. We want to find the length of the shortest transformation sequence from `beginWord` to `endWord`, where only one letter can be changed at a time and every intermediate word must exist in `wordList`.
+2. Since we need the shortest sequence, we use Breadth-First Search (BFS). BFS explores words level by level, guaranteeing that the first time we reach `endWord` is through the shortest path.
+3. To efficiently find neighboring words, we create a mapping of generic patterns to words. For example, the word `"hot"` generates the patterns `"*ot"`, `"h*t"`, and `"ho*"`. All words sharing the same pattern differ by only one letter and are potential transformations.
+4. We preprocess every word in `wordList` and store them in a dictionary where each pattern points to all words that match that pattern.
+5. We initialize a BFS queue with `beginWord` and start the transformation length as `1` because the sequence already contains the starting word.
+6. During BFS, we remove a word from the queue and generate all of its generic patterns. For each pattern, we retrieve all neighboring words that differ by exactly one character.
+7. If any neighboring word is equal to `endWord`, we return the current transformation length plus one because we have found the shortest valid sequence.
+8. Otherwise, every unvisited neighboring word is added to the queue and marked as visited so that it is processed only once. This prevents cycles and unnecessary repeated work.
+9. If the queue becomes empty without reaching `endWord`, no valid transformation sequence exists, so we return `0`. The time complexity is approximately `O(N × L²)`, where `N` is the number of words and `L` is the word length, while the auxiliary space complexity is `O(N × L)` for the pattern mapping, visited set, and BFS queue."""
