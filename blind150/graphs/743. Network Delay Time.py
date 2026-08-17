@@ -51,3 +51,17 @@ class Solution:
                 if n2 not in visit:
                     heapq.heappush(minHeap, (w1 + w2, n2))
         return t if len(visit) == n else -1
+
+
+#example 1 :
+"""Input
+times =
+[[2,1,1],[2,3,1],[3,4,1]]
+n =
+4
+k =
+2
+Output
+2
+Expected
+2"""
