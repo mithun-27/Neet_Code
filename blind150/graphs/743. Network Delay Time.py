@@ -78,3 +78,16 @@ Output
 1
 Expected
 1"""
+
+#example 3 :
+"""Input
+times =
+[[1,2,1]]
+n =
+2
+k =
+2
+Output
+-1
+Expected
+-1"""
