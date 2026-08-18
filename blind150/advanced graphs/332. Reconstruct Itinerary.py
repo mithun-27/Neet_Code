@@ -49,3 +49,21 @@ class Solution:
                 stack.append(adj[curr].pop())
 
         return res[::-1]
+
+#example 1 :
+"""Input
+tickets =
+[["MUC","LHR"],["JFK","MUC"],["SFO","SJC"],["LHR","SFO"]]
+Output
+["JFK","MUC","LHR","SFO","SJC"]
+Expected
+["JFK","MUC","LHR","SFO","SJC"]"""
+
+#example 2 :
+"""Input
+tickets =
+[["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
+Output
+["JFK","ATL","JFK","SFO","ATL","SFO"]
+Expected
+["JFK","ATL","JFK","SFO","ATL","SFO"]"""
