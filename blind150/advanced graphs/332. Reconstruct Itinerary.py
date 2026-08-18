@@ -67,3 +67,15 @@ Output
 ["JFK","ATL","JFK","SFO","ATL","SFO"]
 Expected
 ["JFK","ATL","JFK","SFO","ATL","SFO"]"""
+
+
+"""Walkthrough:
+1. We want to reconstruct the complete flight itinerary using all tickets exactly once, starting from `"JFK"`. If multiple valid itineraries exist, we must return the one with the smallest lexical (alphabetical) order.
+2. The tickets form a directed graph where each airport is a node and each ticket represents a directed edge from the source airport to the destination airport.
+3. We first sort the tickets in reverse lexical order and build an adjacency list. By storing destinations in reverse order, we can efficiently retrieve the smallest lexical destination using `pop()`.
+4. We use an iterative version of Hierholzer's Algorithm to find an Eulerian Path, since every ticket (edge) must be used exactly once.
+5. We initialize a stack with `"JFK"` as the starting airport. The stack represents the current path being explored.
+6. While the stack is not empty, we look at the airport on top of the stack. If it has any unused outgoing flights, we take the lexicographically smallest available destination and push it onto the stack.
+7. If the current airport has no remaining outgoing flights, it means we have reached the end of a valid path. We remove it from the stack and add it to the result list.
+8. This process continues until all tickets have been used and all airports have been added to the result. Since airports are added after exploring all outgoing edges, the result is built in reverse order.
+9. Finally, we reverse the result list to obtain the correct itinerary. The time complexity is `O(E log E)` due to sorting the tickets, where `E` is the number of tickets. The traversal itself takes `O(E)`. The auxiliary space complexity is `O(E)` for the adjacency list, stack, and result list."""
