@@ -53,3 +53,13 @@ class Solution:
             edges += 1
 
         return res
+
+#example 1:
+"""Input
+points =
+[[0,0],[2,2],[3,10],[5,2],[7,0]]
+Output
+20
+Expected
+20
+"""
