@@ -72,3 +72,14 @@ Output
 18
 Expected
 18"""
+
+"""Walkthrough:
+1. We want to connect all given points with the minimum possible total cost, where the cost between two points is their Manhattan distance. Since every point must be connected with exactly one simple path between any two points, we are looking for a Minimum Spanning Tree (MST).
+2. We can solve this problem using Prim's Algorithm, which gradually builds the MST by always selecting the cheapest edge that connects a new point to the existing connected component.
+3. We start with any point (usually point `0`) and mark it as visited. This point becomes the initial part of the MST.
+4. For every unvisited point, we calculate its Manhattan distance from the current point and add the pair `(cost, point)` to a min-heap (priority queue).
+5. The min-heap always stores the cheapest available edges. We repeatedly remove the edge with the smallest cost from the heap.
+6. If the destination point of that edge has already been visited, we ignore it because adding it would create a cycle. Otherwise, we add the point to the MST and include the edge cost in the total answer.
+7. After adding a new point, we compute its Manhattan distance to all remaining unvisited points and push those edges into the min-heap. This ensures that the heap always contains all possible ways to expand the MST.
+8. We continue this process until all points have been visited. At that moment, every point belongs to a single connected component, and the selected edges form a valid minimum spanning tree.
+9. The accumulated cost is the minimum cost required to connect all points. The time complexity is `O(n² log n)` because distances to other points are inserted into the heap during the MST construction, and the auxiliary space complexity is `O(n²)` for the heap and distance information in the worst case."""
