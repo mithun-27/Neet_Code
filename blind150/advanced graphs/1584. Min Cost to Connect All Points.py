@@ -63,3 +63,12 @@ Output
 Expected
 20
 """
+
+#example 2:
+"""Input
+points =
+[[3,12],[-2,5],[-4,1]]
+Output
+18
+Expected
+18"""
