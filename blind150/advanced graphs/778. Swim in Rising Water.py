@@ -75,3 +75,14 @@ class Solution:
                     dsu.union(r * N + c, nr * N + nc)
             if dsu.connected(0, N * N - 1):
                 return t
+
+"""Walkthrough:
+1. We want to find the minimum time `t` at which it becomes possible to travel from the top-left cell `(0,0)` to the bottom-right cell `(n-1,n-1)`. The water level rises with time, and a cell can only be entered when its elevation is less than or equal to the current time.
+2. We can view the grid as a graph where each cell is a node and edges connect adjacent cells. The cost of moving to a cell is determined by its elevation because we must wait until the water reaches at least that height.
+3. We use Dijkstra's Algorithm (or a minimum-priority BFS) to always explore the path that minimizes the maximum elevation encountered so far.
+4. We initialize a min-heap with the starting cell `(0,0)`. The initial time required is `grid[0][0]` because we must wait until the starting cell is submerged.
+5. Each heap entry stores `(current_time, row, col)`, where `current_time` represents the highest elevation encountered along the path to that cell.
+6. We repeatedly remove the cell with the smallest `current_time` from the heap. This guarantees that we process cells in order of the minimum possible water level needed to reach them.
+7. For each neighboring cell, we calculate the new required time as `max(current_time, neighbor_elevation)`. This is because we must wait until the water level is high enough for every cell on the path.
+8. If the neighboring cell has not been visited, we add it to the heap with its newly calculated required time. The algorithm continues expanding the most promising path first.
+9. When we reach the bottom-right cell `(n-1, n-1)`, the associated `current_time` is the minimum time required to connect the start and destination. The time complexity is `O(n² log n²)` = `O(n² log n)` because each cell may be inserted into the priority queue, and the auxiliary space complexity is `O(n²)` for the visited set and heap."""
