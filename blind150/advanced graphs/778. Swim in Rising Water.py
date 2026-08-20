@@ -76,6 +76,27 @@ class Solution:
             if dsu.connected(0, N * N - 1):
                 return t
 
+
+#example 1:
+"""Input
+grid =
+[[0,2],[1,3]]
+Output
+3
+Expected
+3"""
+
+#example 2:
+"""Input
+grid =
+[[0,1,2,3,4],[24,23,22,21,5],[12,13,14,15,16],[11,17,18,19,20],[10,9,8,7,6]]
+Output
+16
+Expected
+16
+"""
+
+
 """Walkthrough:
 1. We want to find the minimum time `t` at which it becomes possible to travel from the top-left cell `(0,0)` to the bottom-right cell `(n-1,n-1)`. The water level rises with time, and a cell can only be entered when its elevation is less than or equal to the current time.
 2. We can view the grid as a graph where each cell is a node and edges connect adjacent cells. The cost of moving to a cell is determined by its elevation because we must wait until the water reaches at least that height.
