@@ -112,3 +112,15 @@ Expected output:
 
 
 hernf"""
+
+
+"""Walkthrough:
+1. We are given a list of words sorted according to the rules of an unknown language, and our goal is to determine the order of characters in that language.
+2. We first create a graph where each unique character is a node. We also initialize an indegree count for every character, representing how many characters must come before it.
+3. We compare each pair of adjacent words because the first position where they differ tells us the relative ordering of two characters.
+4. For two consecutive words `w1` and `w2`, we find the first index where the characters are different. If `w1[j] != w2[j]`, then `w1[j]` must come before `w2[j]` in the foreign alphabet.
+5. We add a directed edge from `w1[j]` to `w2[j]` and increase the indegree of `w2[j]`. We only add the edge once to avoid duplicate indegree counts.
+6. Before processing character differences, we handle an invalid case: if `w1` is longer than `w2` and `w2` is a prefix of `w1`, then no valid character ordering exists, so we immediately return an empty string.
+7. Once the graph is built, we perform Topological Sort using BFS (Kahn's Algorithm). We start by placing all characters with indegree `0` into a queue because they have no prerequisites.
+8. We repeatedly remove a character from the queue, add it to the result, and decrease the indegree of its neighboring characters. Whenever a neighbor's indegree becomes `0`, we add it to the queue.
+9. After the BFS finishes, if the result contains all characters, we join them into a string and return it as a valid character ordering. If some characters remain unprocessed, the graph contains a cycle, meaning no valid ordering exists, so we return an empty string. The time complexity is `O(C + E)`, where `C` is the number of unique characters and `E` is the number of ordering relationships, while the auxiliary space complexity is `O(C + E)` for the graph, indegree map, queue, and result."""
