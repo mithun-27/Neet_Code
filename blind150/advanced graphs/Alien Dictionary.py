@@ -98,3 +98,17 @@ Expected output:
 
 
 zo"""
+
+#example 2:
+"""Input:
+
+
+words=["hrn","hrf","er","enn","rfnn"]
+Your Output:
+
+
+hernf
+Expected output:
+
+
+hernf"""
