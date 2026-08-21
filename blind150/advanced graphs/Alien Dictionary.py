@@ -83,3 +83,18 @@ class Solution:
             return ""
 
         return "".join(res)
+
+
+#example 1:
+"""Input:
+
+
+words=["z","o"]
+Your Output:
+
+
+zo
+Expected output:
+
+
+zo"""
