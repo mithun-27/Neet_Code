@@ -66,3 +66,21 @@ class Solution:
                     q.append((nextCost, nei, stops + 1))
 
         return prices[dst] if prices[dst] != float("inf") else -1
+
+
+#example 1:
+"""Input
+n =
+4
+flights =
+[[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]]
+src =
+0
+dst =
+3
+k =
+1
+Output
+700
+Expected
+700"""
