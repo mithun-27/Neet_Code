@@ -101,3 +101,16 @@ Output
 200
 Expected
 200"""
+
+
+#walkthrough:
+"""
+1. We want to find the cheapest price from `src` to `dst` while using at most `k` stops. Since a path with more stops may be cheaper, a normal shortest-path algorithm cannot be used directly without considering the stop limit.
+2. We use a modified Bellman-Ford Algorithm because it naturally handles paths with a limited number of edges. If we are allowed `k` stops, then the route can contain at most `k + 1` flights.
+3. We initialize a distance array where `dist[src] = 0` and all other cities are assigned infinity, representing that they are initially unreachable.
+4. We perform exactly `k + 1` relaxation rounds. Each round represents allowing one more flight in the path.
+5. At the start of each round, we create a copy of the current distance array. This prevents updates made during the current round from affecting other relaxations within the same round.
+6. We iterate through every flight `[from, to, price]`. If the source city of the flight is reachable, we attempt to improve the cost of reaching the destination city using that flight.
+7. If `dist[from] + price` is smaller than the current recorded cost for `to`, we update the copied distance array with the cheaper value.
+8. After processing all flights in a round, we replace the original distance array with the updated copy. This ensures that only paths using up to the allowed number of flights are considered.
+9. After completing all `k + 1` rounds, the value of `dist[dst]` represents the cheapest valid route. If it is still infinity, no route exists within the stop limit, so we return `-1`. The time complexity is `O((k + 1) × E)`, where `E` is the number of flights, and the auxiliary space complexity is `O(n)` for the distance arrays."""
