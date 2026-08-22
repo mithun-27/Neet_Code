@@ -84,3 +84,20 @@ Output
 700
 Expected
 700"""
+
+#example 2:
+"""Input
+n =
+3
+flights =
+[[0,1,100],[1,2,100],[0,2,500]]
+src =
+0
+dst =
+2
+k =
+1
+Output
+200
+Expected
+200"""
