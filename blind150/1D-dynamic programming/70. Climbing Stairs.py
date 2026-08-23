@@ -25,3 +25,12 @@ Explanation: There are three ways to climb to the top.
 Constraints:
 
 1 <= n <= 45"""
+
+#answer :
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        sqrt5 = math.sqrt(5)
+        phi = (1 + sqrt5) / 2
+        psi = (1 - sqrt5) / 2
+        n += 1
+        return round((phi**n - psi**n) / sqrt5)
