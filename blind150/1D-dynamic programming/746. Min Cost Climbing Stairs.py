@@ -40,3 +40,13 @@ class Solution:
             cost[i] += min(cost[i + 1], cost[i + 2])
 
         return min(cost[0], cost[1])
+
+
+#example:
+"""Input
+cost =
+[10,15,20]
+Output
+15
+Expected
+15"""
