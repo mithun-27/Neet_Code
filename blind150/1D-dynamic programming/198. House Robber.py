@@ -34,3 +34,14 @@ class Solution:
             rob1 = rob2
             rob2 = temp
         return rob2
+
+
+#example:
+"""Input
+nums =
+[1,2,3,1]
+Output
+4
+Expected
+4
+"""
