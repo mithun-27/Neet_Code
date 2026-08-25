@@ -45,3 +45,23 @@ Output
 Expected
 4
 """
+
+
+#walkthrough:
+"""Walkthrough:
+1. We want to maximize the amount of money robbed from the houses without robbing two adjacent houses, because robbing adjacent houses would trigger the alarm.
+2. At each house, we have two choices: either rob the current house or skip it.
+3. If we rob the current house, we cannot rob the previous house, so the total money becomes:
+   `current_house_money + profit_until_house_(i-2)`.
+4. If we skip the current house, the total money remains:
+   `profit_until_house_(i-1)`.
+5. Therefore, the recurrence relation is:
+   `dp[i] = max(dp[i-1], nums[i] + dp[i-2])`.
+6. Instead of storing the entire DP array, we only keep track of the last two computed values because each state depends only on the previous two states.
+7. Let:
+   - `rob1` = maximum profit up to house `i-2`
+   - `rob2` = maximum profit up to house `i-1`
+8. For each house amount `n`, we calculate:
+   `newRob = max(rob2, rob1 + n)`
+   This chooses the better option between skipping the current house or robbing it.
+9. We update `rob1 = rob2` and `rob2 = newRob` and continue until all houses are processed. The final answer is stored in `rob2`. The time complexity is `O(n)` because each house is processed once, and the auxiliary space complexity is `O(1)` since only two variables are used."""
