@@ -61,3 +61,27 @@ Output
 4
 Expected
 4"""
+
+#walkthrough:
+"""Walkthrough:
+1. This is the House Robber II problem, where the houses are arranged in a circle. Because the first and last houses are adjacent, we cannot rob both of them on the same night.
+2. To handle the circular arrangement, we split the problem into two separate linear House Robber problems:
+   - Rob houses from index `1` to `n-1` (exclude the first house).
+   - Rob houses from index `0` to `n-2` (exclude the last house).
+3. We also consider the special case where only the first house is robbed, which is represented by `nums[0]`.
+4. The final answer is the maximum among:
+   - `nums[0]`
+   - Maximum profit from `nums[1:]`
+   - Maximum profit from `nums[:-1]`
+5. The `helper()` function solves the normal House Robber problem for a linear street using Dynamic Programming with constant space.
+6. Inside `helper()`, `rob1` stores the maximum profit up to house `i-2`, and `rob2` stores the maximum profit up to house `i-1`.
+7. For each house value `num`, we decide whether to rob it or skip it:
+   - Rob it: `rob1 + num`
+   - Skip it: `rob2`
+   We choose the larger value using:
+   `newRob = max(rob1 + num, rob2)`
+8. After calculating `newRob`, we shift the DP window:
+   - `rob1 = rob2`
+   - `rob2 = newRob`
+   This allows us to process the next house while keeping only the last two DP states.
+9. After all houses have been processed, `rob2` contains the maximum profit for that linear arrangement. We compute the answer for both possible ranges and return the larger value. The time complexity is `O(n)` because each house is processed once, and the auxiliary space complexity is `O(1)` since only a few variables are used."""
