@@ -52,3 +52,12 @@ Output
 Expected
 3
 """
+
+#example:
+"""Input
+nums =
+[1,2,3,1]
+Output
+4
+Expected
+4"""
