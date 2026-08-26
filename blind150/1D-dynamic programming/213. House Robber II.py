@@ -42,3 +42,13 @@ class Solution:
             rob1 = rob2
             rob2 = newRob
         return rob2
+
+#example:
+"""Input
+nums =
+[2,3,2]
+Output
+3
+Expected
+3
+"""
