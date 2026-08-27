@@ -49,3 +49,19 @@ Output
 "aba"
 Expected
 "bab"""
+
+#walkthrough:
+"""
+1. We want to find the longest palindromic substring in the given string. A palindrome reads the same forward and backward.
+2. A naive approach would expand around every center, resulting in `O(n²)` time complexity. This solution uses Manacher's Algorithm, which solves the problem in linear time `O(n)`.
+3. First, we transform the string by inserting `'#'` between every character and at both ends. For example:
+   `"abba"` → `"#a#b#b#a#"`
+   This allows us to treat odd-length and even-length palindromes uniformly.
+4. We create an array `p` where `p[i]` stores the radius of the palindrome centered at index `i` in the transformed string.
+5. We maintain two pointers:
+   - `l` = left boundary of the rightmost palindrome found so far.
+   - `r` = right boundary of the rightmost palindrome found so far.
+6. For each position `i`, if `i` lies inside the current palindrome (`i < r`), we use the mirror property of palindromes to initialize `p[i]` without rechecking all characters. This avoids redundant work.
+7. We then try to expand the palindrome centered at `i` by comparing characters on both sides. As long as the characters match, we increase the radius `p[i]`.
+8. If the palindrome centered at `i` extends beyond the current right boundary `r`, we update `l` and `r` to represent this new rightmost palindrome.
+9. After processing all positions, the maximum value in `p` represents the longest palindrome radius. Using its center index and radius, we convert the position back to the original string and return the corresponding substring. The time complexity is `O(n)` because each character is processed at most a constant number of times, and the auxiliary space complexity is `O(n)` for the transformed string and radius array."""
