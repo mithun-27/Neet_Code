@@ -40,3 +40,12 @@ class Solution:
         resLen, center_idx = max((v, i) for i, v in enumerate(p))
         resIdx = (center_idx - resLen) // 2
         return s[resIdx : resIdx + resLen]
+
+#example:
+"""Input
+s =
+"babad"
+Output
+"aba"
+Expected
+"bab"""
