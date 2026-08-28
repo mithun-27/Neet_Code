@@ -67,3 +67,19 @@ Output
 Expected
 6
 """
+
+#walthrough:
+"""
+1. We want to count all palindromic substrings in the given string. A palindrome is a substring that reads the same forward and backward.
+2. Instead of checking every possible substring, this solution uses Manacher's Algorithm, which finds information about all palindromes in linear time.
+3. First, we transform the string by inserting `'#'` between every character and at both ends. For example:
+   `"aba"` → `"#a#b#a#"`
+   This allows odd-length and even-length palindromes to be handled uniformly.
+4. We create an array `p` where `p[i]` stores the radius of the longest palindrome centered at position `i` in the transformed string.
+5. We maintain two pointers:
+   - `l` = left boundary of the current rightmost palindrome.
+   - `r` = right boundary of the current rightmost palindrome.
+6. For each position `i`, if it lies inside the current palindrome (`i < r`), we use the mirror position to initialize `p[i]`. This avoids recomputing information that is already known.
+7. We then expand around the center `i` by comparing characters on both sides. As long as they match, we increase the palindrome radius `p[i]`.
+8. Once all centers are processed, the array `p` contains the radius of the largest palindrome centered at every position. For each radius value `i`, the number of palindromic substrings contributed by that center is `(i + 1) // 2`.
+9. We sum `(radius + 1) // 2` for all centers in `p` to obtain the total number of palindromic substrings. The time complexity is `O(n)` because Manacher's Algorithm processes each character a constant number of times, and the auxiliary space complexity is `O(n)` for the transformed string and radius array."""
