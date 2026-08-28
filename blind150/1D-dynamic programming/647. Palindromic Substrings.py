@@ -47,3 +47,13 @@ class Solution:
         for i in p:
             res += (i + 1) // 2
         return res
+
+    
+#example 1 :
+"""Input
+s =
+"abc"
+Output
+3
+Expected
+3""" 
