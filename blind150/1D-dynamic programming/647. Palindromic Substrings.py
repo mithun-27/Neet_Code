@@ -57,3 +57,13 @@ Output
 3
 Expected
 3""" 
+
+#example 2 :
+"""Input
+s =
+"aaa"
+Output
+6
+Expected
+6
+"""
