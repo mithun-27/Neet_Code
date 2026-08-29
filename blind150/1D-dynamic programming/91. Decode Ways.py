@@ -80,3 +80,12 @@ class Solution:
                 dp += dp2
             dp, dp1, dp2 = 0, dp, dp1
         return dp1
+
+#example 1 :
+"""Input
+s =
+"12"
+Output
+2
+Expected
+2"""
