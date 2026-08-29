@@ -109,3 +109,32 @@ Output
 Expected
 0
 """
+
+#walkthrough:
+"""Walkthrough:
+1. We want to find the number of ways to decode the string, where:
+   - `'1' -> 'A'`
+   - `'2' -> 'B'`
+   - ...
+   - `'26' -> 'Z'`
+2. At each position, we have two possible choices:
+   - Decode the current digit alone (if it is not `'0'`).
+   - Decode the current digit together with the next digit (if they form a valid number from `10` to `26`).
+3. This naturally leads to a Dynamic Programming problem where:
+   `dp[i] = number of ways to decode the substring starting at index i`.
+4. Instead of storing an entire DP array, this solution uses three variables:
+   - `dp1` = result for `dp[i+1]`
+   - `dp2` = result for `dp[i+2]`
+   - `dp`  = current result for `dp[i]`
+5. We process the string from right to left because each state depends on future positions.
+6. If the current character is `'0'`, it cannot be decoded by itself, so the number of ways is `0`.
+7. Otherwise, we can decode the current digit alone, so we start with:
+   `dp = dp1`
+   because the remaining substring can be decoded in `dp1` ways.
+8. Next, we check whether the current digit and the next digit form a valid two-digit number (`10` to `26`). If they do, we add:
+   `dp += dp2`
+   because decoding those two digits together leaves the substring starting at `i+2`.
+9. After calculating the current answer, we shift the DP variables:
+   - `dp2 = dp1`
+   - `dp1 = dp`
+   and continue moving left. When the loop finishes, `dp1` contains the total number of valid decodings. The time complexity is `O(n)` because each character is processed once, and the auxiliary space complexity is `O(1)` since only a few variables are used."""
