@@ -89,3 +89,13 @@ Output
 2
 Expected
 2"""
+
+#example 2 :
+"""Input
+s =
+"226"
+Output
+3
+Expected
+3
+"""
