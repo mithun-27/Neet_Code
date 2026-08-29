@@ -99,3 +99,13 @@ Output
 Expected
 3
 """
+
+#example 3 :
+"""Input
+s =
+"06"
+Output
+0
+Expected
+0
+"""
