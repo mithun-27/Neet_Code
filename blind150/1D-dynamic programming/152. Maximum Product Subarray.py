@@ -37,3 +37,12 @@ class Solution:
             suffix = nums[n - 1 - i] * (suffix or 1)
             res = max(res, max(prefix, suffix))
         return res
+
+#example:
+"""Input
+nums =
+[2,3,-2,4]
+Output
+6
+Expected
+6"""
