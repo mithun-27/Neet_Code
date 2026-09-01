@@ -77,3 +77,15 @@ class Solution:
                         break
 
         return dp[0]
+
+
+#example:
+"""Input
+s =
+"leetcode"
+wordDict =
+["leet","code"]
+Output
+true
+Expected
+true"""
