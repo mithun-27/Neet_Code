@@ -89,3 +89,15 @@ Output
 true
 Expected
 true"""
+
+#example:
+"""Input
+s =
+"applepenapple"
+wordDict =
+["apple","pen"]
+Output
+true
+Expected
+true
+"""
