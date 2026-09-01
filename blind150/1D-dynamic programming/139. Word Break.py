@@ -101,3 +101,18 @@ true
 Expected
 true
 """
+
+
+"""Walkthrough:
+1. We want to determine whether the string `s` can be segmented into one or more words from the given dictionary `wordDict`.
+2. To efficiently check whether a substring is a valid dictionary word, we first build a Trie (Prefix Tree) containing all words from `wordDict`.
+3. Each Trie node stores its children characters and a flag `is_word` indicating whether a complete dictionary word ends at that node.
+4. We create a Dynamic Programming array `dp` of size `len(s) + 1`, where:
+   `dp[i] = True` means the substring starting at index `i` can be successfully segmented into dictionary words.
+5. The base case is:
+   `dp[len(s)] = True`
+   because an empty string can always be segmented successfully.
+6. To reduce unnecessary checks, we compute `t`, the length of the longest word in the dictionary. This ensures we never examine substrings longer than any possible dictionary word.
+7. We process the string from right to left. For each starting index `i`, we try all possible ending indices `j` such that the substring length does not exceed `t`.
+8. For every substring `s[i:j+1]`, we use the Trie's `search()` method to check whether it is a valid dictionary word. If it is, we look at `dp[j+1]` to determine whether the remaining suffix can also be segmented.
+9. If both conditions are true, we set `dp[i] = True` and stop checking further substrings from index `i`. After filling the DP array, `dp[0]` tells us whether the entire string can be segmented. The time complexity is approximately `O(n × L²)`, where `n` is the string length and `L` is the maximum dictionary word length, and the auxiliary space complexity is `O(n + total_dictionary_characters)` for the DP array and Trie."""
