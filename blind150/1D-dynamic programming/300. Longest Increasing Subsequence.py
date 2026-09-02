@@ -51,3 +51,15 @@ Output
 4
 Expected
 4"""
+
+
+"""Walkthrough:
+1. We want to find the length of the longest strictly increasing subsequence (LIS) in the given array `nums`.
+2. Instead of storing every possible subsequence, we maintain a list `dp` where `dp[i]` represents the smallest possible ending value of an increasing subsequence of length `i + 1`.
+3. We start by putting the first element `nums[0]` into `dp`. At this point, the longest increasing subsequence has length `1`.
+4. We iterate through the remaining elements of `nums`. If the current number is greater than the last element of `dp`, we can extend the current longest increasing subsequence, so we append the number to `dp` and increase `LIS` by `1`.
+5. If the current number is smaller than or equal to the last element of `dp`, we cannot directly extend the subsequence. Instead, we use `bisect_left()` to find the first position in `dp` whose value is greater than or equal to the current number.
+6. We replace the value at that position with the current number. This does not necessarily change the actual LIS, but it gives future elements a smaller value to build an increasing subsequence from.
+7. The important idea is that `dp` does not store the actual longest subsequence. It stores the smallest possible tail values for increasing subsequences of different lengths, which allows us to efficiently determine the maximum length.
+8. We continue processing every element. The variable `LIS` keeps track of the length of the longest increasing subsequence found so far, so after processing the entire array, we return `LIS`.
+9. The time complexity is `O(n log n)` because each element requires a binary search using `bisect_left()`, and the auxiliary space complexity is `O(n)` for the `dp` list."""
