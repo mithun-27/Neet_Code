@@ -41,3 +41,13 @@ class Solution:
             dp[idx] = nums[i]
 
         return LIS
+
+
+#example:
+"""Input
+nums =
+[10,9,2,5,3,7,101,18]
+Output
+4
+Expected
+4"""
