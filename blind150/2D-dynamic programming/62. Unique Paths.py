@@ -41,3 +41,15 @@ class Solution:
             j += 1
 
         return res
+
+
+#example:
+"""Input
+m =
+3
+n =
+7
+Output
+28
+Expected
+28"""
