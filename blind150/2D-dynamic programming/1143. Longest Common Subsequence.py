@@ -50,3 +50,15 @@ class Solution:
                 prev = temp
 
         return dp[0]
+
+
+#example:
+"""Input
+text1 =
+"abcde"
+text2 =
+"ace"
+Output
+3
+Expected
+3"""
