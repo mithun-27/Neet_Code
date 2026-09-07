@@ -38,3 +38,13 @@ class Solution:
             dp1_buy, dp1_sell = dp_buy, dp_sell
 
         return dp1_buy
+
+#example:
+"""Input
+prices =
+[1,2,3,0,2]
+Output
+3
+Expected
+3
+"""
