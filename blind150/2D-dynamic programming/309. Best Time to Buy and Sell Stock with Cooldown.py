@@ -48,3 +48,23 @@ Output
 Expected
 3
 """
+
+
+"""Walkthrough:
+1. We want to maximize profit while buying and selling stocks multiple times. However, after selling a stock, we must wait one day before buying again due to the cooldown rule.
+2. At any day, we can be in one of three states:
+   - Holding a stock (`hold`)
+   - Just sold a stock (`sell`)
+   - Not holding a stock and free to buy (`cooldown/rest`)
+3. Dynamic Programming is used because the best decision on the current day depends on the results of previous days.
+4. The `hold` state represents the maximum profit achievable while currently owning a stock. We can either continue holding the previous stock or buy today from the cooldown/rest state.
+5. The `sell` state represents the maximum profit achievable after selling a stock today. The only way to enter this state is by selling a stock that was previously held.
+6. The `cooldown` (or rest) state represents the maximum profit when we are not holding a stock and are allowed to buy. We can either remain in cooldown or enter it after completing the cooldown day following a sale.
+7. For each day's price, we update:
+   - `hold = max(previous_hold, previous_cooldown - price)`
+   - `sell = previous_hold + price`
+   - `cooldown = max(previous_cooldown, previous_sell)`
+8. These transitions ensure that:
+   - We never buy immediately after selling.
+   - We always consider the best possible profit for each state.
+9. After processing all days, the answer is the maximum profit among the states where we are not holding a stock (`sell` or `cooldown`). The time complexity is `O(n)` because each price is processed once, and the auxiliary space complexity is `O(1)` since only a few variables are maintained."""
