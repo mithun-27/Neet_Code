@@ -51,3 +51,16 @@ class Solution:
                     nextDP[a] += nextDP[a - coins[i]]
             dp = nextDP
         return dp[amount]
+
+
+#example:
+"""Input
+amount =
+5
+coins =
+[1,2,5]
+Output
+4
+Expected
+4
+"""
