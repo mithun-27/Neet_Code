@@ -64,3 +64,22 @@ Output
 Expected
 4
 """
+
+
+"""Walkthrough:
+1. We want to find the number of different combinations of coins that can make up the given `amount`. Each coin can be used an unlimited number of times.
+2. This is a Dynamic Programming problem where we count combinations rather than finding a minimum or maximum value.
+3. We create a DP array where:
+   `dp[a]` = number of ways to make amount `a` using the coins processed so far.
+4. The base case is:
+   `dp[0] = 1`
+   because there is exactly one way to make amount `0` — by choosing no coins.
+5. We process the coins one by one from right to left. For each coin, we build a new DP array called `nextDP`.
+6. For every amount `a`, we first copy:
+   `nextDP[a] = dp[a]`
+   This represents all combinations that do not use the current coin.
+7. If the current coin can fit into the amount (`a - coins[i] >= 0`), we add:
+   `nextDP[a] += nextDP[a - coins[i]]`
+   This represents combinations that use the current coin at least once.
+8. Notice that we use `nextDP[a - coins[i]]` rather than `dp[a - coins[i]]`. This allows the same coin to be used multiple times because the current row's results are immediately available.
+9. After processing all amounts for the current coin, we replace `dp` with `nextDP`. When all coins have been processed, `dp[amount]` contains the total number of unique combinations. The time complexity is `O(n × amount)`, where `n` is the number of coins, and the auxiliary space complexity is `O(amount)`."""
