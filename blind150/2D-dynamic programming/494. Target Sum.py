@@ -45,3 +45,15 @@ class Solution:
             dp = next_dp
 
         return dp[target]
+
+
+#example:
+"""Input
+nums =
+[1,1,1,1,1]
+target =
+3
+Output
+5
+Expected
+5"""
