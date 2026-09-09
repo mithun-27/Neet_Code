@@ -57,3 +57,24 @@ Output
 5
 Expected
 5"""
+
+"""Walkthrough:
+1. We want to find the number of ways to assign either a `'+'` or `'-'` sign to each number in `nums` so that the final expression evaluates to the given `target`.
+2. This is a Dynamic Programming problem where we track all possible sums that can be formed after processing each number.
+3. We use a hash map (`dp`) where:
+   `dp[sum] = number of ways to achieve that sum`.
+4. Initially, before processing any numbers, we have:
+   `dp[0] = 1`
+   because there is exactly one way to obtain a sum of `0` — by choosing no numbers.
+5. We process the numbers one by one. For each number `num`, we create a new hash map called `next_dp`.
+6. For every existing sum `total` in `dp`, we have two choices:
+   - Add the current number: `total + num`
+   - Subtract the current number: `total - num`
+7. If there are `count` ways to reach `total`, then:
+   - `count` ways contribute to `total + num`
+   - `count` ways contribute to `total - num`
+   Therefore:
+   `next_dp[total + num] += count`
+   `next_dp[total - num] += count`
+8. After processing all existing sums, `next_dp` contains every possible sum and the number of ways to achieve it after including the current number. We then replace `dp` with `next_dp`.
+9. Once all numbers have been processed, `dp[target]` contains the total number of valid expressions that evaluate to the target value. The time complexity is `O(n × S)`, where `S` is the number of distinct sums generated during the process, and the auxiliary space complexity is also `O(S)` for the hash maps."""
