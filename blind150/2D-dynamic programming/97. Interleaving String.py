@@ -61,3 +61,28 @@ class Solution:
                 dp[j] = res
                 nextDp = dp[j]
         return dp[0]
+
+
+"""Walkthrough:
+1. We want to determine whether `s3` can be formed by interleaving the characters of `s1` and `s2` while preserving the relative order of characters within each string.
+2. Before doing any computation, we check whether:
+   len(s1) + len(s2) == len(s3)
+   If not, forming `s3` is impossible, so we immediately return `False`.
+3. This is a Dynamic Programming problem because at every position we can choose the next character from either `s1` or `s2`.
+4. Define:
+   `dp[i][j] = True`
+   if the substring `s3[i+j:]` can be formed using:
+   - `s1[i:]`
+   - `s2[j:]`
+5. The base case is:
+   `dp[len(s1)][len(s2)] = True`
+   because when both strings are exhausted, we have successfully formed all of `s3`.
+6. Starting from the end of both strings and moving backward:
+   - If `s1[i]` matches `s3[i+j]`, we can take a character from `s1`.
+   - If `s2[j]` matches `s3[i+j]`, we can take a character from `s2`.
+7. Therefore:
+   ```python
+   dp[i][j] =
+       (s1[i] == s3[i+j] and dp[i+1][j])
+       or
+       (s2[j] == s3[i+j] and dp[i][j+1])"""
