@@ -67,3 +67,19 @@ class Solution:
                             q.append([nr, nc])
             LIS += 1
         return LIS
+
+"""Walkthrough:
+1. We want to find the length of the Longest Increasing Path (LIP) in the matrix, where we can move only up, down, left, or right.
+2. Instead of using DFS + Memoization, this solution models the matrix as a Directed Acyclic Graph (DAG).
+3. For every cell `(r, c)`, we create directed edges from smaller-valued neighbors to larger-valued neighbors. This means a valid increasing path follows the direction of the edges.
+4. We compute an `indegree` for every cell:
+   - `indegree[r][c]` = number of neighboring cells with smaller values that can reach `(r, c)`.
+5. A cell with `indegree = 0` has no smaller neighbor. Therefore, it can be the starting point of an increasing path.
+6. We add all cells with `indegree = 0` into a queue. These form the first layer of a topological ordering.
+7. We then perform a multi-source BFS (Kahn's Topological Sort):
+   - Remove all cells in the current layer.
+   - Visit their larger neighbors.
+   - Decrease the neighbor's indegree.
+   - If a neighbor's indegree becomes `0`, add it to the queue for the next layer.
+8. Each BFS layer represents one level in an increasing path. Therefore, after processing an entire layer, we increment `LIS` by `1`.
+9. When the queue becomes empty, all cells have been processed. The number of BFS layers traversed is exactly the length of the longest increasing path. The time complexity is `O(ROWS × COLS)` because each cell and edge is processed a constant number of times, and the auxiliary space complexity is `O(ROWS × COLS)` for the indegree matrix and queue."""
