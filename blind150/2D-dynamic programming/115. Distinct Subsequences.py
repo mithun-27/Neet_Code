@@ -64,3 +64,32 @@ Output
 Expected
 3
 """
+
+"""Walkthrough:
+1. We want to find the number of distinct subsequences of `s` that are equal to `t`.
+2. A subsequence is formed by deleting zero or more characters from `s` without changing the order of the remaining characters.
+3. Let:
+   `dp[i][j]`
+   represent the number of ways to form `t[j:]` using `s[i:]`.
+4. The base case is:
+   - If we have matched all characters of `t`, there is exactly one valid subsequence (choose nothing more).
+   - Therefore:
+     `dp[*][n] = 1`
+     where `n = len(t)`.
+5. Instead of storing the entire 2D DP table, this solution uses a 1D DP array to optimize space.
+6. We initialize:
+   `dp[n] = 1`
+   because an empty target string can always be formed.
+7. We process `s` from right to left. For each character `s[i]`, we process `t` from right to left.
+8. For every position `(i, j)`:
+   - First, we consider skipping `s[i]`.
+     This contributes:
+     `dp[j]`
+   - If `s[i] == t[j]`, we can also use this character to match `t[j]`.
+     This contributes:
+     `prev`
+     where `prev` stores the old value of `dp[j+1]` (the diagonal value in the original 2D DP table).
+9. Therefore:
+   ```python
+   if s[i] == t[j]:
+       dp[j] = dp[j] + prev"""
