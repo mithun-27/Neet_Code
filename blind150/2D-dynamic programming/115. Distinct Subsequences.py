@@ -52,3 +52,15 @@ class Solution:
                 dp[j] = res
 
         return dp[0]
+
+#example:
+"""Input
+s =
+"rabbbit"
+t =
+"rabbit"
+Output
+3
+Expected
+3
+"""
