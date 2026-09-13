@@ -67,3 +67,22 @@ Output
 Expected
 3
 """
+
+"""Walkthrough:
+1. We want to find the minimum number of operations required to convert `word1` into `word2`.
+2. The allowed operations are:
+   - Insert a character
+   - Delete a character
+   - Replace a character
+3. This is the classic Edit Distance (Levenshtein Distance) problem.
+4. Define:
+   `dp[i][j]`
+   as the minimum operations needed to convert:
+   `word1[i:]` → `word2[j:]`.
+5. Base cases:
+   - If `word1` is exhausted, we must insert all remaining characters of `word2`.
+   - If `word2` is exhausted, we must delete all remaining characters of `word1`.
+6. The code first ensures that `word2` is the shorter string, allowing a smaller DP array and better space efficiency.
+7. We initialize:
+   ```python
+   dp[j] = n - j"""
