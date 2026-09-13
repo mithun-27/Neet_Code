@@ -55,3 +55,15 @@ class Solution:
                     dp[j] = 1 + min(dp[j], dp[j + 1], nextDp)
                 nextDp = temp
         return dp[0]
+
+#example:
+"""Input
+word1 =
+"horse"
+word2 =
+"ros"
+Output
+3
+Expected
+3
+"""
