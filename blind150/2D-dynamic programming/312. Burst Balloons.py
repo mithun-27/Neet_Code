@@ -44,6 +44,15 @@ class Solution:
         return dp[1][n]
 
 
+#example:
+"""Input
+nums =
+[3,1,5,8]
+Output
+167
+Expected
+167"""
+
 
 """Walkthrough:
 1. We want to maximize the number of coins obtained by bursting all balloons, where bursting a balloon gives `left * current * right` coins based on its current neighbors.
