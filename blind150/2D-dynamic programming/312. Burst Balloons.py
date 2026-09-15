@@ -42,3 +42,19 @@ class Solution:
                     dp[l][r] = max(dp[l][r], coins)
 
         return dp[1][n]
+
+
+
+"""Walkthrough:
+1. We want to maximize the number of coins obtained by bursting all balloons, where bursting a balloon gives `left * current * right` coins based on its current neighbors.
+2. Since the neighbors of a balloon change whenever other balloons are burst, it is difficult to decide which balloon to burst first.
+3. To simplify the problem, we think in reverse and choose the **last balloon to burst** within a range instead of the first.
+4. We add virtual balloons with value `1` at both ends of the array so that every balloon always has valid left and right neighbors.
+5. We define `dp[l][r]` as the maximum coins that can be collected by bursting all balloons between indices `l` and `r` inclusive.
+6. For every interval `[l, r]`, we try each balloon `i` as the last balloon to burst in that interval.
+7. If `i` is burst last, then all balloons on its left and right inside the interval have already been removed, so its neighbors become `new_nums[l-1]` and `new_nums[r+1]`.
+8. The coins earned in this case are `new_nums[l-1] * new_nums[i] * new_nums[r+1]` plus the best results from the left subinterval `dp[l][i-1]` and the right subinterval `dp[i+1][r]`.
+9. We compute this value for every possible last balloon `i` and store the maximum value in `dp[l][r]`.
+10. The intervals are processed from smaller ranges to larger ranges so that all required subproblems are already solved before being used.
+11. After filling the DP table, `dp[1][n]` contains the maximum coins obtainable by bursting all balloons.
+12. The time complexity is `O(n³)` because for every interval we try every possible last balloon, and the auxiliary space complexity is `O(n²)` for the DP table."""
