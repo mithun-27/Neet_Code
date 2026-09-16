@@ -66,3 +66,22 @@ Output
 false
 Expected
 false"""
+
+#walkthrough:
+"""Walkthrough:
+1. We want to determine whether the string `s` matches the pattern `p`, where `'.'` matches any single character and `'*'` matches zero or more occurrences of the preceding character.
+2. This is a Dynamic Programming problem because the answer for a position `(i, j)` depends on the answers of smaller suffixes of the string and pattern.
+3. Let `dp[i][j]` represent whether the substring `s[i:]` matches the pattern `p[j:]`.
+4. Instead of storing the full 2D DP table, this solution uses a 1D DP array to optimize space, where `dp[j]` represents the current row's value for pattern position `j`.
+5. The base case is `dp[len(p)] = True`, meaning an empty string matches an empty pattern.
+6. We process the string and pattern from right to left because each state depends on future positions.
+7. For every pair `(i, j)`, we first check whether the current characters match:
+   - `s[i] == p[j]`
+   - or `p[j] == '.'`
+8. If the next character in the pattern is `'*'`, we have two choices:
+   - Ignore the current pattern character and `'*'` completely (`zero occurrences`), which corresponds to `dp[j + 2]`.
+   - Use the current character if it matches, and stay at the same pattern position to potentially consume more characters, which corresponds to `dp[j]`.
+9. If there is no `'*'`, then a valid match requires the current characters to match and the remaining suffixes to match as well, which corresponds to the diagonal DP value stored in `dp1`.
+10. The result for each state is stored back into `dp[j]`, while `dp1` keeps track of the previous diagonal value needed for the next iteration.
+11. By processing all positions from the end toward the beginning, we gradually build the answer for larger prefixes of the string and pattern.
+12. After all states have been evaluated, `dp[0]` indicates whether the entire string matches the entire pattern. The time complexity is `O(len(s) × len(p))`, and the auxiliary space complexity is `O(len(p))` because only a single DP row is stored."""
