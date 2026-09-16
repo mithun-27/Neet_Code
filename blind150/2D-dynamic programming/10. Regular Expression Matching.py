@@ -55,3 +55,14 @@ class Solution:
                 dp[j], dp1 = res, dp[j]
 
         return dp[0]
+
+#examplle:
+"""Input
+s =
+"aa"
+p =
+"a"
+Output
+false
+Expected
+false"""
