@@ -27,3 +27,28 @@ Constraints:
  
 
 Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle."""
+
+
+#answer:
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        def dfs(l, r):
+            if l > r:
+                return float("-inf")
+
+            m = (l + r) >> 1
+            leftSum = rightSum = curSum = 0
+            for i in range(m - 1, l - 1, -1):
+                curSum += nums[i]
+                leftSum = max(leftSum, curSum)
+
+            curSum = 0
+            for i in range(m + 1, r + 1):
+                curSum += nums[i]
+                rightSum = max(rightSum, curSum)
+
+            return (max(dfs(l, m - 1),
+                        dfs(m + 1, r),
+                        leftSum + nums[m] + rightSum))
+
+        return dfs(0, len(nums) - 1)
