@@ -52,3 +52,9 @@ class Solution:
                         leftSum + nums[m] + rightSum))
 
         return dfs(0, len(nums) - 1)
+
+#example:
+solution = Solution()
+print(solution.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))  # Output: 6
+print(solution.maxSubArray([1]))  # Output: 1
+print(solution.maxSubArray([5,4,-1,7,8]))  # Output: 23
