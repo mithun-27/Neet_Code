@@ -58,3 +58,25 @@ solution = Solution()
 print(solution.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))  # Output: 6
 print(solution.maxSubArray([1]))  # Output: 1
 print(solution.maxSubArray([5,4,-1,7,8]))  # Output: 23
+
+
+"""Walkthrough:
+1. We want to find the maximum sum of any contiguous subarray in the given array `nums`.
+2. This solution uses the Divide and Conquer approach, where the array is repeatedly divided into smaller halves.
+3. For any range `[l, r]`, we calculate the middle index `m` and consider three possible locations for the maximum subarray:
+   - Entirely in the left half.
+   - Entirely in the right half.
+   - Crossing the middle element.
+4. The function `dfs(l, r)` returns the maximum subarray sum within the range `[l, r]`.
+5. If `l > r`, the range is invalid, so we return negative infinity to ensure it is never chosen as the maximum.
+6. To calculate the maximum subarray crossing the middle, we first find the largest possible sum extending from the middle toward the left side.
+7. Similarly, we find the largest possible sum extending from the middle toward the right side.
+8. The best crossing subarray must include the middle element, so its total sum is:
+   `leftSum + nums[m] + rightSum`.
+9. We recursively compute the maximum subarray sum in the left half and the right half.
+10. The answer for the current range is the maximum among:
+    - Maximum subarray entirely in the left half.
+    - Maximum subarray entirely in the right half.
+    - Maximum subarray crossing the middle.
+11. By recursively solving smaller ranges and combining their results, we eventually obtain the maximum subarray sum for the entire array.
+12. The time complexity is `O(n log n)` because each level of recursion processes all elements once while the recursion depth is `log n`, and the auxiliary space complexity is `O(log n)` due to the recursion stack."""
