@@ -60,3 +60,18 @@ Output
 3
 Expected
 3"""
+
+
+"""Walkthrough:
+1. We want to find the length of the Longest Common Subsequence (LCS) between `text1` and `text2`, where a subsequence preserves the relative order of characters but does not need to be contiguous.
+2. The classic DP solution defines `dp[i][j]` as the length of the LCS between `text1[i:]` and `text2[j:]`.
+3. Since each DP state depends only on the current row and the next row, we can optimize the space complexity from `O(m × n)` to `O(n)` using a single DP array.
+4. To further reduce memory usage, the code ensures that `text2` is the shorter string, so the DP array size is minimized.
+5. We create a DP array of size `len(text2) + 1`, initialized with zeros. The extra position represents the base case where one string has been fully processed.
+6. We process both strings from right to left because each state depends on suffixes that have already been computed.
+7. For every pair of characters `(text1[i], text2[j])`, if the characters match, we extend a common subsequence and set `dp[j] = 1 + prev`, where `prev` stores the old diagonal value corresponding to `dp[i+1][j+1]`.
+8. If the characters do not match, we choose the better option between skipping a character from `text1` or skipping a character from `text2`, so `dp[j] = max(dp[j], dp[j + 1])`.
+9. During each iteration, `temp` stores the old value of `dp[j]` before it is updated, and `prev` is updated to simulate the diagonal value needed for the next calculation.
+10. By continuously updating the DP array from right to left, we effectively simulate the full 2D DP table using only one row of memory.
+11. After processing all characters, `dp[0]` contains the length of the Longest Common Subsequence between the two strings.
+12. The time complexity is `O(m × n)` where `m` and `n` are the lengths of the two strings, and the auxiliary space complexity is `O(min(m, n))` because only one DP array is stored."""
