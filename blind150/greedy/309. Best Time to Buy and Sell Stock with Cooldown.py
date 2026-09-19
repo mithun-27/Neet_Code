@@ -50,3 +50,13 @@ Output
 3
 Expected
 3"""
+
+#example:
+"""Input
+prices =
+[1]
+Output
+0
+Expected
+0
+"""
