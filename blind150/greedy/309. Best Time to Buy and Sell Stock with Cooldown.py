@@ -60,3 +60,22 @@ Output
 Expected
 0
 """
+
+"""Walkthrough:
+1. We want to find the maximum profit that can be earned by buying and selling stocks any number of times, with the restriction that after selling a stock, we must wait one day before buying again (cooldown period).
+2. At every day, we can be in one of two main states:
+   - Buy state: we are allowed to buy a stock.
+   - Sell state: we currently hold a stock and can choose to sell it.
+3. Let:
+   - `buy[i]` = maximum profit starting from day `i` when we are allowed to buy.
+   - `sell[i]` = maximum profit starting from day `i` when we currently hold a stock.
+4. Instead of storing full DP arrays, this solution keeps only the future values that are needed, reducing the space complexity to `O(1)`.
+5. We process the prices from right to left because each state depends on future days.
+6. When we are in the buy state on day `i`, we have two choices:
+   - Buy the stock today and move to the sell state:
+     `sell[i+1] - prices[i]`
+   - Skip today and remain in the buy state:
+     `buy[i+1]`
+   Therefore:
+   ```python
+   buy[i] = max(sell[i+1] - prices[i], buy[i+1])"""
