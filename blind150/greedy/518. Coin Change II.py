@@ -57,3 +57,15 @@ Output
 4
 Expected
 4"""
+
+
+#example:
+"""Input
+amount =
+3
+coins =
+[2]
+Output
+0
+Expected
+0"""
