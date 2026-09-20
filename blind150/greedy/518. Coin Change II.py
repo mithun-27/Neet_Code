@@ -46,3 +46,14 @@ class Solution:
             for a in range(1, amount + 1):
                 dp[a] += dp[a - coins[i]] if coins[i] <= a else 0
         return dp[amount]
+
+#example:
+"""Input
+amount =
+5
+coins =
+[1,2,5]
+Output
+4
+Expected
+4"""
