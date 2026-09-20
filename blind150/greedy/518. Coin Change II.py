@@ -69,3 +69,15 @@ Output
 0
 Expected
 0"""
+
+#example:
+"""Input
+amount =
+10
+coins =
+[10]
+Output
+1
+Expected
+1
+"""
