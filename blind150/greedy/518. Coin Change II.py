@@ -81,3 +81,14 @@ Output
 Expected
 1
 """
+
+"""Walkthrough:
+1. We want to find the number of unique combinations of coins that can make up the given `amount`, where each coin can be used an unlimited number of times.
+2. This is a Dynamic Programming problem where we count combinations rather than minimizing or maximizing a value.
+3. We create a DP array `dp` of size `amount + 1`, where `dp[a]` represents the number of ways to form amount `a`.
+4. The base case is `dp[0] = 1` because there is exactly one way to form amount `0` — by choosing no coins.
+5. We process the coins one by one. For each coin, we update all amounts from `1` to `amount`.
+6. For a particular amount `a`, if the current coin value is less than or equal to `a`, then any way to form `a - coin` can be extended by adding the current coin to form `a`.
+7. Therefore, we update:
+   ```python
+   dp[a] += dp[a - coin]"""
