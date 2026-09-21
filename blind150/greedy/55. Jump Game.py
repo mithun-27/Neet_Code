@@ -31,3 +31,14 @@ class Solution:
             if i + nums[i] >= goal:
                 goal = i
         return goal == 0
+
+
+#example:
+"""Input
+nums =
+[2,3,1,1,4]
+Output
+true
+Expected
+true
+"""
