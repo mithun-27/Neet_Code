@@ -81,3 +81,22 @@ Output
 Expected
 -1
 """
+
+
+"""Walkthrough:
+1. We want to find a gas station from which we can start, travel through every station exactly once in a circular route, and return to the starting station without running out of fuel.
+2. At each station `i`, we gain `gas[i]` units of fuel and spend `cost[i]` units of fuel to travel to the next station.
+3. The first observation is that if the total amount of gas available in all stations is less than the total cost required to travel the entire circuit, then completing the circuit is impossible, so we immediately return `-1`.
+4. If the total gas is greater than or equal to the total cost, then at least one valid starting station is guaranteed to exist.
+5. We use a greedy approach and maintain a variable `total` to track the current fuel balance while testing a candidate starting station.
+6. We also maintain a variable `res` that stores the current candidate starting station.
+7. As we iterate through each station, we update the fuel balance by adding the net gain or loss at that station, which is `gas[i] - cost[i]`.
+8. If the fuel balance remains non-negative, we can continue traveling and keep the current candidate starting station.
+9. If the fuel balance becomes negative at station `i`, it means we cannot reach the next station when starting from the current candidate station.
+10. In this situation, every station between the current candidate station and station `i` can also be eliminated as a possible starting point because they would have even less fuel available before reaching the same failure point.
+11. Therefore, we reset the fuel balance to `0` and update the candidate starting station to `i + 1`.
+12. We continue this process until all stations have been processed.
+13. Since the total gas is sufficient to cover the total cost, the final candidate station stored in `res` is guaranteed to be able to complete the entire circuit.
+14. The key insight is that whenever we fail at a station, all stations in the failed segment can be discarded at once, allowing us to find the answer in a single traversal.
+15. After completing the iteration, we return `res`, which represents the valid starting gas station index.
+16. The time complexity is `O(n)` because we traverse the stations only once, and the auxiliary space complexity is `O(1)` since only a few variables are used."""
