@@ -56,3 +56,16 @@ class Solution:
                 res = i + 1
 
         return res
+
+
+#example:
+"""Input
+gas =
+[1,2,3,4,5]
+cost =
+[3,4,5,1,2]
+Output
+3
+Expected
+3
+"""
