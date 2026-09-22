@@ -69,3 +69,15 @@ Output
 Expected
 3
 """
+
+#example:
+"""Input
+gas =
+[2,3,4]
+cost =
+[3,4,3]
+Output
+-1
+Expected
+-1
+"""
