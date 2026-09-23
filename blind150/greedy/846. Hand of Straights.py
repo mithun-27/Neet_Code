@@ -56,3 +56,14 @@ Output
 true
 Expected
 true"""
+
+#example:
+"""Input
+hand =
+[1,2,3,4,5]
+groupSize =
+4
+Output
+false
+Expected
+false"""
