@@ -44,3 +44,15 @@ class Solution:
                         count[i] -= 1
                 start += 1
         return True
+
+
+#example:
+"""Input
+hand =
+[1,2,3,6,2,3,4,7,8]
+groupSize =
+3
+Output
+true
+Expected
+true"""
