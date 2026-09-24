@@ -72,3 +72,25 @@ false
 Expected
 false
 """
+
+
+"""Walkthrough:
+1. We want to determine whether it is possible to obtain the `target` triplet by merging some of the given triplets.
+2. When two triplets are merged, the resulting triplet takes the maximum value at each index.
+3. Therefore, any triplet containing a value greater than the corresponding value in the target cannot be part of a valid merge because that value can never be reduced.
+4. To form the target triplet, we need to find triplets that can individually contribute the target value for each position.
+5. We maintain three boolean variables:
+   - `x` → whether we found a valid triplet contributing `target[0]`.
+   - `y` → whether we found a valid triplet contributing `target[1]`.
+   - `z` → whether we found a valid triplet contributing `target[2]`.
+6. For each triplet `t`, we check whether its first value equals `target[0]` while its other values do not exceed the corresponding target values.
+7. If such a triplet exists, then it can safely contribute the first coordinate of the target, so we set `x = True`.
+8. Similarly, we check whether the triplet can contribute the second coordinate of the target and update `y`.
+9. We also check whether the triplet can contribute the third coordinate of the target and update `z`.
+10. Since merging takes the maximum value at each position, having separate triplets that contribute each target coordinate is sufficient to construct the target.
+11. After processing a triplet, if `x`, `y`, and `z` are all `True`, then we already have all required components of the target.
+12. In that case, we can immediately return `True` because merging those valid triplets will produce the target triplet.
+13. If the loop finishes and at least one of `x`, `y`, or `z` is still `False`, then some target coordinate cannot be obtained.
+14. Therefore, it is impossible to form the target triplet, and we return `False`.
+15. The key insight is that we only need to verify the existence of valid contributors for each target coordinate rather than explicitly performing all possible merges.
+16. The time complexity is `O(n)` because each triplet is processed once, and the auxiliary space complexity is `O(1)` since only three boolean variables are used."""
