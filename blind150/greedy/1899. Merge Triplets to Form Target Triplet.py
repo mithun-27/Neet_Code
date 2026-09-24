@@ -49,3 +49,14 @@ class Solution:
             if x and y and z:
                 return True
         return False
+
+#example:
+"""Input
+triplets =
+[[2,5,3],[1,8,4],[1,7,5]]
+target =
+[2,7,5]
+Output
+true
+Expected
+true"""
