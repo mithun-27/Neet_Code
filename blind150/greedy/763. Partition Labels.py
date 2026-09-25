@@ -54,3 +54,13 @@ Output
 [9,7,8]
 Expected
 [9,7,8]"""
+
+#example:
+"""Input
+s =
+"eccbbbbdec"
+Output
+[10]
+Expected
+[10]
+"""
