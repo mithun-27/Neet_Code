@@ -44,3 +44,13 @@ class Solution:
                 res.append(size)
                 size = 0
         return res
+
+
+#example:
+"""Input
+s =
+"ababcbacadefegdehijhklij"
+Output
+[9,7,8]
+Expected
+[9,7,8]"""
