@@ -50,3 +50,13 @@ class Solution:
             if leftMin < 0:
                 leftMin = 0
         return leftMin == 0
+
+
+#example:
+"""Input
+s =
+"()"
+Output
+true
+Expected
+true"""
