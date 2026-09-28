@@ -61,3 +61,28 @@ Output
 [[1,5],[6,9]]
 Expected
 [[1,5],[6,9]]"""
+
+
+"""Walkthrough:
+1. We are given a list of non-overlapping intervals sorted by their start times and a new interval that must be inserted into the list.
+2. Our goal is to insert the new interval while maintaining the sorted order and merging any overlapping intervals.
+3. We create a result list `res` that will store the final set of intervals.
+4. We iterate through each interval in the existing intervals list and compare it with the current `newInterval`.
+5. If the end of `newInterval` is smaller than the start of the current interval, then `newInterval` comes completely before the current interval and does not overlap with it.
+6. Since the intervals are already sorted, we can safely add `newInterval` to the result and return the result along with all remaining intervals.
+7. If the start of `newInterval` is greater than the end of the current interval, then the current interval comes completely before `newInterval` and does not overlap with it.
+8. In this case, we add the current interval to the result and continue checking the next intervals.
+9. Otherwise, the current interval overlaps with `newInterval`.
+10. When an overlap occurs, we merge them by updating:
+    - The new start as the minimum of both starts.
+    - The new end as the maximum of both ends.
+11. After merging, `newInterval` now represents the combined interval and will continue to be compared with the remaining intervals.
+12. This allows multiple overlapping intervals to be merged into a single larger interval.
+13. We continue scanning the intervals until all intervals have been processed.
+14. If the loop finishes without inserting `newInterval`, it means the merged interval belongs at the end of the list.
+15. Therefore, we append the final version of `newInterval` to the result.
+16. The result list now contains all intervals in sorted order with all necessary overlaps merged.
+17. The key insight is that every interval falls into one of three cases: completely before the new interval, completely after the new interval, or overlapping with the new interval.
+18. By handling these three cases in a single pass, we can efficiently build the final answer.
+19. The time complexity is `O(n)` because each interval is processed once.
+20. The auxiliary space complexity is `O(n)` for storing the resulting intervals."""
