@@ -49,3 +49,15 @@ class Solution:
                 ]
         res.append(newInterval)
         return res
+
+
+#example:
+"""Input
+intervals =
+[[1,3],[6,9]]
+newInterval =
+[2,5]
+Output
+[[1,5],[6,9]]
+Expected
+[[1,5],[6,9]]"""
