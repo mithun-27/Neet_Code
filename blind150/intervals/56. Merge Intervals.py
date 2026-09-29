@@ -78,3 +78,13 @@ class Solution:
             res.append([interval_start, have])
 
         return res
+
+
+#example:
+"""Input
+intervals =
+[[1,3],[2,6],[8,10],[15,18]]
+Output
+[[1,6],[8,10],[15,18]]
+Expected
+[[1,6],[8,10],[15,18]]"""
