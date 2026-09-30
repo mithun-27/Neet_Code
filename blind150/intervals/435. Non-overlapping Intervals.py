@@ -54,3 +54,12 @@ Output
 1
 Expected
 1"""
+
+#example:
+"""Input
+intervals =
+[[1,2],[1,2],[1,2]]
+Output
+2
+Expected
+2"""
