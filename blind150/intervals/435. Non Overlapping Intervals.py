@@ -37,3 +37,8 @@ class Solution:
 
 
         return res
+
+#example:
+solution = Solution()
+print(solution.eraseOverlapIntervals([[1,2],[2,4],[1,4]]))  # Output: 1
+print(solution.eraseOverlapIntervals([[1,2],[2,4]]))  # Output: 0
