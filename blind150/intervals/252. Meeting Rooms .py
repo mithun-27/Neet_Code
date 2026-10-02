@@ -42,3 +42,10 @@ class Solution:
             if i1.end > i2.start:
                 return False
         return True
+
+
+#example:
+solution = Solution()
+print(solution.canAttendMeetings([Interval(0,30), Interval(5,10), Interval(15,20)]))  # Output: False
+print(solution.canAttendMeetings([Interval(5,8), Interval(9,15)]))  # Output: True
+print(solution.canAttendMeetings([Interval(0,8), Interval(8,10)]))  # Output: True
