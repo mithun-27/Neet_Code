@@ -49,3 +49,31 @@ solution = Solution()
 print(solution.canAttendMeetings([Interval(0,30), Interval(5,10), Interval(15,20)]))  # Output: False
 print(solution.canAttendMeetings([Interval(5,8), Interval(9,15)]))  # Output: True
 print(solution.canAttendMeetings([Interval(0,8), Interval(8,10)]))  # Output: True
+
+
+
+"""
+Walkthrough:
+1. We are given a list of meeting intervals, and our goal is to determine whether a person can attend all meetings without any scheduling conflicts.
+2. A conflict occurs when two meetings overlap in time, meaning one meeting starts before the previous meeting has ended.
+3. To efficiently detect overlaps, we first sort all meetings based on their starting times.
+4. After sorting, any potential overlap can only occur between neighboring meetings in the sorted order.
+5. We then iterate through the meetings starting from the second meeting.
+6. For each position, we compare the current meeting with the previous meeting.
+7. Let:
+   - `i1` be the previous meeting.
+   - `i2` be the current meeting.
+8. If:
+   ```python
+   i1.end > i2.start
+then the previous meeting ends after the current meeting begins.
+9. This means the two meetings overlap and cannot both be attended.
+10. As soon as an overlap is found, we immediately return `False`.
+11. If no overlap exists, we continue checking the remaining meetings.
+12. If the loop completes successfully, it means every meeting starts after or exactly when the previous meeting ends.
+13. Therefore, all meetings can be attended without any conflicts.
+14. We then return `True`.
+15. The key insight is that after sorting by start time, checking adjacent meetings is sufficient to detect every possible overlap.
+16. The time complexity is `O(n log n)` because of sorting, and the overlap check takes `O(n)`.
+17. The auxiliary space complexity is `O(1)` excluding the space used by the sorting algorithm.
+"""
