@@ -32,6 +32,9 @@ class Interval(object):
         self.end = end
 """
 
+from annotated_types import Interval
+
+
 class Solution:
     def minMeetingRooms(self, intervals: List[Interval]) -> int:
         time = []
@@ -46,3 +49,9 @@ class Solution:
             count += t[1]
             res = max(res, count)
         return res
+
+
+#example:
+solution = Solution()
+print(solution.minMeetingRooms([Interval(0,40), Interval(5,10), Interval(15,20)]))  # Output: 2
+print(solution.minMeetingRooms([Interval(4,9)]))  # Output: 1   
