@@ -116,3 +116,32 @@ solution = Solution()
 print(solution.minInterval([[1,4],[2,4],[3,6],[4,4]], [2,3,4,5]))  # Output: [3,3,1,4]
 print(solution.minInterval([[2,3],[2,5],[1,8],[20,25]], [2,19,5,22]))  # Output: [2,-1,4,6] 
 print(solution.minInterval([[1,2],[3,4],[5,6]], [7,8,9]))  # Output: [-1,-1,-1]
+
+
+"""Walkthrough:
+1. We are given several intervals and queries, and for each query we need to find the size of the smallest interval that contains that query.
+2. Since interval values and query values can be large, we first collect every interval start, interval end, and query value into a single list called `points`.
+3. We sort these values, remove duplicates, and perform coordinate compression so that each original value is mapped to a smaller index from `0` to `N - 1`.
+4. After compression, every interval `[left, right]` becomes a range of compressed indices, which allows us to process it efficiently using a Segment Tree.
+5. The Segment Tree is initialized with `infinity` because initially no interval has been assigned to any position.
+6. Each tree node stores the minimum interval size that covers its range, and the `lazy` array stores pending minimum updates that still need to be pushed to child nodes.
+7. For every original interval, we calculate its size using:
+   `length = right - left + 1`.
+8. We then update the compressed range corresponding to that interval with this length.
+9. The update operation is a range-min update, meaning every compressed point inside the interval should remember the smallest interval length that covers it.
+10. Before accessing a Segment Tree node, `propagate()` applies any pending lazy value to that node using `min()`.
+11. If the current Segment Tree range is completely outside the update range, we ignore it.
+12. If the current range is completely inside the interval range, we store the minimum interval length in the lazy value and propagate it immediately.
+13. If the current range only partially overlaps, we recursively update both children and then store the minimum value of the two children in the current node.
+14. After all intervals have been added to the Segment Tree, each compressed position can tell us the minimum interval size that covers that point.
+15. For every query, we convert the query value into its compressed index.
+16. We then perform a point query on the Segment Tree to find the minimum interval size stored at that position.
+17. During the point query, pending lazy updates are propagated while moving from the root toward the corresponding leaf node.
+18. Once we reach the leaf representing the query position, its value gives the size of the smallest interval containing that query.
+19. If the value is still `infinity`, then no interval contains that query, so we return `-1`.
+20. Otherwise, we add the minimum interval size to the answer list.
+21. After processing every query, we return the complete answer list.
+22. The key idea is to combine coordinate compression with a lazy Segment Tree so that each interval performs a range minimum update and each query performs a point lookup.
+23. If `N` is the number of unique compressed coordinates, each range update takes `O(log N)` in typical Segment Tree analysis and each point query takes `O(log N)`.
+24. Therefore, the overall complexity is roughly `O((I + Q) log N + N log N)` including coordinate sorting, where `I` is the number of intervals and `Q` is the number of queries.
+25. The auxiliary space complexity is `O(N)` for the compressed coordinates, mapping, Segment Tree, and lazy array."""
