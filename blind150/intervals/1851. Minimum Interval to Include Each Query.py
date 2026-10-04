@@ -109,3 +109,10 @@ class Solution:
             res = segTree.query_point(idx)
             ans.append(res if res != float('inf') else -1)
         return ans
+
+
+#example:
+solution = Solution()
+print(solution.minInterval([[1,4],[2,4],[3,6],[4,4]], [2,3,4,5]))  # Output: [3,3,1,4]
+print(solution.minInterval([[2,3],[2,5],[1,8],[20,25]], [2,19,5,22]))  # Output: [2,-1,4,6] 
+print(solution.minInterval([[1,2],[3,4],[5,6]], [7,8,9]))  # Output: [-1,-1,-1]
