@@ -30,3 +30,11 @@ class Solution:
         for i in range(len(matrix)):
             for j in range(i + 1, len(matrix)):
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+
+
+#example 1:
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+solution = Solution()
+solution.rotate(matrix)
+print(matrix)  # Output: [[7,4,1],[8,5,2],[9,6,3]]
