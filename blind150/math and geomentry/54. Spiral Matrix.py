@@ -39,3 +39,8 @@ class Solution:
             d += 1
             d %= 4
         return res
+
+#example 1:
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+solution = Solution()
+print(solution.spiralOrder(matrix))  # Output: [1,2,3,6,9,8,7,4,5]
