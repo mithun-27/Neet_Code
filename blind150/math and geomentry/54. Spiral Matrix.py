@@ -44,3 +44,9 @@ class Solution:
 matrix = [[1,2,3],[4,5,6],[7,8,9]]
 solution = Solution()
 print(solution.spiralOrder(matrix))  # Output: [1,2,3,6,9,8,7,4,5]
+
+
+#example 2:
+matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+solution = Solution()
+print(solution.spiralOrder(matrix))  # Output: [1,2,3,4,8,12,11,10,9,5,6,7]
