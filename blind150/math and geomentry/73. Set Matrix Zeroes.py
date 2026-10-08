@@ -51,3 +51,10 @@ class Solution:
         if rowZero:
             for c in range(COLS):
                 matrix[0][c] = 0
+
+
+#example usage:
+matrix1 = [[1,1,1],[1,0,1],[1,1,1]]
+solution = Solution()
+solution.setZeroes(matrix1)
+print(matrix1)  # Output: [[1,0,1],[0,0,0],[1,0,1]] 
