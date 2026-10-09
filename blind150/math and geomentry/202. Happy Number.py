@@ -54,3 +54,10 @@ class Solution:
             output += digit
             n = n // 10
         return output
+
+
+#example:
+s = Solution()
+print(s.isHappy(19))  # Output: True
+print(s.isHappy(2))   # Output: False   
+print(s.isHappy(7))   # Output: True
