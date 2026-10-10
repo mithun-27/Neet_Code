@@ -45,3 +45,10 @@ class Solution:
             digits[i] = 0
 
         return [1] + digits
+
+
+#example:
+s = Solution()
+print(s.plusOne([1, 2, 3]))  # Output: [1, 2, 4]
+print(s.plusOne([4, 3, 2, 1]))  # Output: [4, 3, 2, 2]
+print(s.plusOne([9]))  # Output: [1, 0] 
