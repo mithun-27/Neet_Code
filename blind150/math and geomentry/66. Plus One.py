@@ -52,3 +52,37 @@ s = Solution()
 print(s.plusOne([1, 2, 3]))  # Output: [1, 2, 4]
 print(s.plusOne([4, 3, 2, 1]))  # Output: [4, 3, 2, 2]
 print(s.plusOne([9]))  # Output: [1, 0] 
+
+
+"""Walkthrough:
+
+1. We are given an array `digits` representing a non-negative integer, and we need to add `1` to that number and return the result as an array of digits.
+
+2. We start by calculating `n = len(digits)` to determine the number of digits in the given number.
+
+3. We iterate through the array from right to left, starting from the last digit, because addition begins at the units place.
+
+4. At each position `i`, we check whether `digits[i]` is less than `9`.
+
+5. If the current digit is less than `9`, we increment it by `1` and immediately return the updated array because no carry is required.
+
+6. If the current digit is `9`, adding `1` makes it `10`, so we set that digit to `0` and carry the extra `1` to the previous digit.
+
+7. We continue moving left, setting consecutive `9`s to `0` until we find a digit smaller than `9` or reach the beginning of the array.
+
+8. If we find a digit smaller than `9`, we increment it and return the array with all necessary carry operations completed.
+
+9. If every digit is `9`, all digits become `0`, and the loop finishes without returning.
+
+10. In this case, we create a new array using `[1] + digits`, which places `1` at the beginning to represent the additional digit created by the carry.
+
+11. For example, if `digits = [1, 2, 9]`, the last digit becomes `0`, the previous digit becomes `3`, and the result is `[1, 3, 0]`.
+
+12. If `digits = [9, 9, 9]`, every digit becomes `0`, and adding `1` at the beginning produces `[1, 0, 0, 0]`.
+
+13. The key idea is to process digits from right to left, propagate the carry only when the current digit is `9`, and stop as soon as the carry is resolved.
+
+14. The time complexity is O(n) in the worst case because every digit may need to be processed.
+
+15. The auxiliary space complexity is O(1) when the existing array is updated in-place; however, the all-`9` case creates a new array requiring O(n) additional space.
+"""
