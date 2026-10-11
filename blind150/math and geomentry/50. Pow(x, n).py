@@ -52,3 +52,10 @@ public:
         return res;
     }
 };
+
+
+#example:
+s = Solution()
+print(s.myPow(2.00000, 10))  # Output: 1024.00000
+print(s.myPow(2.10000, 3))   # Output: 9.26100
+print(s.myPow(2.00000, -2))  # Output: 0.25000
