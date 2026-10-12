@@ -42,3 +42,9 @@ class Solution:
             beg += 1
         res = map(str, res[beg:])
         return "".join(res)
+
+#example:
+s = Solution()
+print(s.multiply("2", "3"))  # Output: "6"
+print(s.multiply("123", "456"))  # Output: "56088"
+print(s.multiply("0", "123"))  # Output: "0"
