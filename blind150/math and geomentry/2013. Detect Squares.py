@@ -73,3 +73,23 @@ detectSquares = CountSquares()
 print(detectSquares.add([3, 10]))  # Output: None
 print(detectSquares.add([11, 2]))  # Output: None
 print(detectSquares.count([11, 10]))  # Output: 1
+
+
+"""Walkthrough:
+
+1. We need to design a data structure that supports adding points to a 2D plane and counting how many axis-aligned squares can be formed using a given point as one of the corners.
+2. In the constructor, `self.ptsCount = defaultdict(lambda: defaultdict(int))` creates a nested dictionary where `ptsCount[x][y]` stores the number of times the point `(x, y)` has been added.
+3. The `add()` method receives a point `[x, y]` and increments `self.ptsCount[x][y]` by one, allowing duplicate points to be counted correctly.
+4. The `count()` method receives a query point `[x1, y1]` and initializes `res = 0` to store the total number of squares that can be formed using this point as a corner.
+5. We iterate through every existing y-coordinate `y2` stored in the same vertical column `x1`, treating `(x1, y2)` as a potential second corner of a square.
+6. We calculate `side = y2 - y1`, which represents the vertical distance between the query point and the potential second corner.
+7. If `side == 0`, we skip that point because two points with the same coordinates cannot form a square with a nonzero side length.
+8. We calculate two possible x-coordinates for the opposite vertical side of the square: `x3 = x1 + side` and `x4 = x1 - side`. These represent squares extending to the right and left of the query point.
+9. For the square extending to the right, the other two required corners are `(x3, y1)` and `(x3, y2)`. We multiply the frequencies of all three required points other than the query point: `ptsCount[x1][y2] * ptsCount[x3][y1] * ptsCount[x3][y2]`.
+10. This multiplication counts every possible combination of duplicate points that can form a square on the right side.
+11. We perform the same calculation for the square extending to the left, using `(x4, y1)` and `(x4, y2)`, and add the result to `res`.
+12. We repeat this process for every possible `y2`, considering every valid vertical side that could form a square with the query point.
+13. Since both possible horizontal directions are checked, the algorithm counts squares extending either left or right, including all combinations created by duplicate points.
+14. After examining all potential second corners, the `count()` method returns `res`, representing the total number of squares that can be formed with the query point as one corner.
+15. The key idea is to fix the query point and another point sharing its x-coordinate, calculate the possible square side length, and check whether the other two corners exist.
+16. If \\(P\\) is the number of distinct y-coordinates stored in the query point's column, the `count()` method takes \\(O(P)\\) time. The `add()` method takes \\(O(1)\\) average time, and the auxiliary space complexity is \\(O(N)\\) for storing the added points and their frequencies."""
