@@ -66,3 +66,10 @@ class CountSquares:
             res += (self.ptsCount[x1][y2] * self.ptsCount[x4][y1] *
                     self.ptsCount[x4][y2])
         return res
+
+
+#example:
+detectSquares = CountSquares()
+print(detectSquares.add([3, 10]))  # Output: None
+print(detectSquares.add([11, 2]))  # Output: None
+print(detectSquares.count([11, 10]))  # Output: 1
