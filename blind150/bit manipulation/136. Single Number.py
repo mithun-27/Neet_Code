@@ -32,9 +32,19 @@ Constraints:
 Each element in the array appears twice except for one element which appears only once."""
 
 #answer:
+from ast import List
+
+
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
         res = 0
         for num in nums:
             res = num ^ res
         return res
+
+
+#example:
+solution = Solution()
+print(solution.singleNumber([2, 2, 1]))  # Output: 1
+print(solution.singleNumber([4, 1, 2, 1, 2]))  # Output: 4
+print(solution.singleNumber([1]))  # Output: 1
