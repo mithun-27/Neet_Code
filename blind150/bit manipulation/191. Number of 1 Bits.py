@@ -50,3 +50,11 @@ class Solution:
             n &= n - 1
             res += 1
         return res
+
+
+
+#example:
+solution = Solution()
+print(solution.hammingWeight(11))  # Output: 3
+print(solution.hammingWeight(128))  # Output: 1
+print(solution.hammingWeight(2147483645))  # Output: 30
