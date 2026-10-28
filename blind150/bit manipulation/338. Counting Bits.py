@@ -42,3 +42,10 @@ class Solution:
         for i in range(n + 1):
             dp[i] = dp[i >> 1] + (i & 1)
         return dp
+
+
+#example:
+solution = Solution()
+print(solution.countBits(2))  # Output: [0, 1, 1]
+print(solution.countBits(5))  # Output: [0, 1, 1, 2, 1, 2]
+print(solution.countBits(10))  # Output: [0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2]
