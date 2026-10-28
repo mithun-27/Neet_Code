@@ -33,3 +33,12 @@ Constraints:
 Follow up:
 
 It is very easy to come up with a solution with a runtime of O(n log n). Can you do it in linear time O(n) and possibly in a single pass?"""
+
+
+#answer:
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        dp = [0] * (n + 1)
+        for i in range(n + 1):
+            dp[i] = dp[i >> 1] + (i & 1)
+        return dp
