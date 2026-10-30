@@ -46,3 +46,10 @@ class Solution:
         res = ((res & 0xcccccccc) >> 2) | ((res & 0x33333333) << 2)
         res = ((res & 0xaaaaaaaa) >> 1) | ((res & 0x55555555) << 1)
         return res & 0xFFFFFFFF
+
+
+#example:
+solution = Solution()
+print(solution.reverseBits(43261596))  # Output: 964176192
+print(solution.reverseBits(2147483644))  # Output: 1073741822
+print(solution.reverseBits(0))  # Output: 0
