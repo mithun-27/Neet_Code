@@ -49,3 +49,13 @@ All the numbers of nums are unique.
  
 
 Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?"""
+
+
+#answer:
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        res = len(nums)
+
+        for i in range(len(nums)):
+            res += i - nums[i]
+        return res
