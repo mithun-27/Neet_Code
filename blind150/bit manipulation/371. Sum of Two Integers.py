@@ -30,3 +30,10 @@ class Solution:
             b = carry & mask
 
         return a if a <= max_int else ~(a ^ mask)
+
+
+#example:
+solution = Solution()           
+print(solution.getSum(1, 2))  # Output: 3
+print(solution.getSum(2, 3))  # Output: 5   
+print(solution.getSum(-1, 1))  # Output: 0
