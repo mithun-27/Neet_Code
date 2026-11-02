@@ -42,3 +42,11 @@ class Solution:
             res = (res * 10) + digit
 
         return res
+
+
+
+#example:
+solution = Solution()   
+print(solution.reverse(123))  # Output: 321
+print(solution.reverse(-123))  # Output: -321
+print(solution.reverse(120))  # Output: 21
